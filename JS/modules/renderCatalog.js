@@ -5,7 +5,12 @@
 
 export async function renderCatalog() {
     try {
-        const response = await fetch('js/data/catalog.json');
+        // Detecta automáticamente si estamos en GitHub Pages o en tu computador local
+        const isGitHubPages = window.location.hostname.includes("github.io");
+        const basePath = isGitHubPages ? "/feral-dubai" : "";
+
+        // Realiza la petición usando la ruta adaptada dinámicamente
+        const response = await fetch(`${basePath}/js/data/catalog.json`);
         if (!response.ok) {
             throw new Error('No se pudo establecer la conexión con el catálogo de datos.');
         }
