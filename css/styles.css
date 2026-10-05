@@ -1,0 +1,107 @@
+/* ==========================================
+   ESTILOS GENERALES Y FONDO CREMA CON BRILLO
+   ========================================== */
+body {
+    /* Fondo degradado suave en tonos crema/champán brillante */
+    background: linear-gradient(135deg, #fbf7f4 0%, #f3ece4 100%);
+    color: #2b2b2b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    padding: 2rem 0;
+}
+
+/* Colores corporativos principales */
+.text-burgundy {
+    color: #6A1B29 !important;
+}
+
+.bg-burgundy {
+    background-color: #6A1B29 !important;
+}
+
+/* ==========================================
+   CONTENEDOR PRINCIPAL (EFECTO VITRINA / LANDING)
+   ========================================== */
+.luxury-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px rgba(106, 27, 41, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+    overflow: hidden;
+}
+
+/* ==========================================
+   TARJETAS DE ACTIVOS CON EFECTO HOVER ELEVADO
+   ========================================== */
+.card-luxury {
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(106, 27, 41, 0.06) !important;
+    background-color: #ffffff;
+}
+
+.card-luxury:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 1.5rem 3rem rgba(106, 27, 41, 0.15) !important;
+}
+
+/* ==========================================
+   CONTENEDOR DE IMAGEN OPTIMIZADO (EVITA CORTES)
+   ========================================== */
+.img-zoom-container {
+    overflow: hidden;
+    position: relative;
+    background-color: #f7f5f0; /* Fondo sutil para armonizar si la imagen es vertical/horizontal */
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    /* Usamos 'contain' para garantizar que el activo (auto, yate o depa) se vea completo sin recortes */
+    object-fit: contain; 
+    padding: 10px;
+    transition: transform 0.6s ease;
+}
+
+.card-luxury:hover .card-img-top {
+    transform: scale(1.06);
+}
+
+/* ==========================================
+   ANIMACIÓN DE APARICIÓN SUAVE (FADE-IN)
+   ========================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-card {
+    animation: fadeInUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+/* ==========================================
+   ESTILOS DE BOTONES REFINADOS
+   ========================================== */
+.btn-outline-dark {
+    border-color: #2b2b2b;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+}
+
+.btn-outline-dark:hover {
+    background-color: #6A1B29;
+    border-color: #6A1B29;
+    color: #fff;
+}

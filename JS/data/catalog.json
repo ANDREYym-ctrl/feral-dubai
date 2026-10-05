@@ -1,0 +1,72 @@
+{
+  "categorias": [
+    { "id_categoria": 1, "nombre": "Bienes Raíces" },
+    { "id_categoria": 2, "nombre": "Yates" },
+    { "id_categoria": 3, "nombre": "Carros" }
+  ],
+  "proyectos_lanzamiento": [
+    {
+      "id_lanzamiento": 101,
+      "titulo_lanzamiento": "Dubai Marina Exclusive Launch",
+      "estado": "Activo"
+    }
+  ],
+  "activos": [
+    {
+      "id_activo": 1,
+      "id_categoria": 1,
+      "id_lanzamiento": 101,
+      "titulo": "Penthouse Vista Palm Jumeirah",
+      "ubicacion": "Dubái, EAU",
+      "detalles_tecnicos": {
+        "superficie": "450 m²",
+        "habitaciones": 4,
+        "amenidades": "Playa privada, piscina infinity"
+      },
+      "imagen_url": "assets/img - apartamento/APARTAMENTO_SALE.jpg",
+      "galeria": [
+        "assets/img - apartamento/APARTAMENTO_SALE.jpg",
+        "assets/img - apartamento/APARTAMENTO_COMEDOR.jpg"
+      ],
+      "destacado": true
+    },
+    {
+      "id_activo": 2,
+      "id_categoria": 2,
+      "id_lanzamiento": 101,
+      "titulo": "Yate de Lujo Azimut 84",
+      "ubicacion": "Dubai Marina Harbor",
+      "detalles_tecnicos": {
+        "eslora": "26 metros",
+        "capacidad": "12 personas",
+        "tripulacion": "Incluida (Capitán y 2 marineros)"
+      },
+      "imagen_url": "assets/img - yate/FRONTAL_YATE.jpeg",
+      "galeria": [
+        "assets/img - yate/FRONTAL_YATE.jpeg",
+        "assets/img - yate/ALUMBRADO_FRONTAL_YATE.jpeg",
+        "assets/img - yate/INTERIOR_DE_YATE.jpeg",
+        "assets/img - yate/PLANO_DE_YATE.jpeg"
+      ],
+      "destacado": true
+    },
+    {
+      "id_activo": 3,
+      "id_categoria": 3,
+      "id_lanzamiento": 101,
+      "titulo": "Rolls-Royce Cullinan Black Badge",
+      "ubicacion": "Downtown Dubai",
+      "detalles_tecnicos": {
+        "motor": "V12 Biturbo de 6.75L",
+        "potencia": "600 HP",
+        "transmision": "Automática de 8 velocidades"
+      },
+      "imagen_url": "assets/img - autos/ROLL_FRENTE.jpeg",
+      "galeria": [
+        "assets/img - autos/ROLL_FRENTE.jpeg",
+        "assets/img - autos/ROLL_ATRAS.jpeg"
+      ],
+      "destacado": true
+    }
+  ]
+}
