@@ -6,22 +6,20 @@
     <title>FERAL | Catálogo Exclusivo Dubái</title>
     <!-- Enlace a Bootstrap 5 CSS para diseño responsivo -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Enlace a Google Fonts para tipografías de lujo -->
+    <!-- Enlace a Google Fonts para tipografía -->
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=DM+Sans:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="./css/styles.css">
-    
-    <!-- Script principal (asegúrate de que la carpeta se llame 'js' en minúsculas) -->
-    <script type="module" src="/feral-dubai/js/main.js"></script></head>
+</head>
 <body>
 
     <!-- ==========================================
-         CONTENEDOR GENERAL DE LA LANDING PAGE (VITRINA)
+         CONTENEDOR GENERAL DE LA LANDING PAGE
          ========================================== -->
     <div class="landing-container luxury-wrapper shadow-lg my-3">
 
         <!-- ==========================================
-             CABECERA / NAVEGACIÓN PRINCIPAL
+             NAVEGACIÓN PRINCIPAL
              ========================================== -->
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-burgundy px-4 py-3" aria-label="Navegación Principal">
@@ -33,7 +31,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 
-                <!-- Opciones del menú superior con filtros -->
+                <!-- Opciones del menú superior  -->
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
@@ -54,18 +52,18 @@
         </header>
 
         <!-- ==========================================
-             CONTENIDO PRINCIPAL DE LA LANDING
+             CONTENIDO LANDING
              ========================================== -->
         <main id="main-content" class="p-4 p-md-5">
             
-            <!-- Título y subtítulo de la marca con detalle editorial -->
+            <!-- Título y subtítulo  -->
             <section class="text-center mb-5 border-bottom pb-4">
                 <span class="text-uppercase text-muted small tracking-widest fw-semibold d-block mb-2" style="letter-spacing: 3px;">Exclusive Portfolio • Dubai Edition</span>
                 <h1 class="font-heading display-4 text-burgundy fw-bold">Inversiones Exclusivas en Dubái</h1>
                 <p class="font-body fs-5 text-muted fst-italic mt-2">"Donde la experiencia se convierte en poder."</p>
             </section>
 
-            <!-- Contenedor dinámico del catálogo (Aquí se inyectan las tarjetas vía JS) -->
+            <!-- Contenedor dinámico del catálogo  -->
             <div id="catalog-container" class="row g-4">
                 <!-- Las tarjetas se cargan automáticamente desde catalog.json -->
             </div>
@@ -73,7 +71,7 @@
         </main>
 
         <!-- ==========================================
-             PIE DE PÁGINA (FOOTER)
+             (FOOTER)
              ========================================== -->
         <footer class="bg-burgundy text-white text-center py-4">
             <p class="mb-0 font-ui small">&copy; 2026 Feral Dubai. Todos los derechos reservados.</p>
@@ -83,7 +81,7 @@
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Script Principal JS -->
-    <script type="module" src="js/main.js"></script>
+    <!-- Script Principal JS (Cargado una sola vez de forma limpia y modular) -->
+    <script type="module" src="./js/main.js"></script>
 </body>
 </html>
