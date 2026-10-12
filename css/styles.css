@@ -1,105 +1,87 @@
 /* ==========================================
-   ESTILOS GENERALES Y FONDO 
+   ESTILOS DE ULTRALUJO - FERAL DUBAI
    ========================================== */
+
+:root {
+    --bg-burgundy: #800020;
+    --bg-bordeaux: #6B0F1A;
+    --accent-ruby: #9B2335;
+    --dark-deep: #0a0a0a;
+}
+
 body {
-    background: linear-gradient(135deg, #fbf7f4 0%, #f3ece4 100%);
-    color: #2b2b2b;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('../assets/img-pagina/fondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #c11d1d;
+    font-family: 'Cormorant Garamond', serif;
     min-height: 100vh;
-    padding: 2rem 0;
+    margin: 0;
 }
 
-/* Colores corporativos principales */
-.text-burgundy {
-    color: #6A1B29 !important;
-}
+/* Tipografías oficiales */
+.font-display { font-family: 'Pinyon Script', cursive; }
+.font-heading { font-family: 'Bodoni Moda', serif; }
+.font-body { font-family: 'Cormorant Garamond', serif; }
+.font-ui { font-family: 'DM Sans', sans-serif; }
 
-.bg-burgundy {
-    background-color: #6A1B29 !important;
-}
-
-/* ==========================================
-   CONTENEDOR PRINCIPAL (LANDING)
-   ========================================== */
+/* Contenedor principal con un fondo translúcido oscuro muy elegante para que resalten los textos */
 .luxury-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 25px 50px rgba(106, 27, 41, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+    background: rgba(10, 10, 10, 0.75); /* Translúcido para dejar entrever la textura de atrás */
+    border: 1px solid rgba(155, 35, 53, 0.4);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+    min-height: 95vh;
+}
+
+/* Carrusel Hero Inmersivo 3D */
+.hero-3d-container {
+    position: relative;
+    padding: 3rem 0;
     overflow: hidden;
 }
 
-/* ==========================================
-   TARJETAS DE ACTIVOS 
-   ========================================== */
-.card-luxury {
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+.carousel-item img {
     border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid rgba(106, 27, 41, 0.06) !important;
-    background-color: #ffffff;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.5s ease;
+}
+
+.carousel-item img:hover {
+    transform: scale(1.02);
+}
+
+/* Tarjetas de lujo en el catálogo */
+.card-luxury {
+    background: rgba(20, 20, 20, 0.9);
+    border: 1px solid rgba(155, 35, 53, 0.3) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-luxury:hover {
     transform: translateY(-8px);
-    box-shadow: 0 1.5rem 3rem rgba(106, 27, 41, 0.15) !important;
+    box-shadow: 0 12px 30px rgba(128, 0, 32, 0.4);
+    border-color: var(--accent-ruby) !important;
 }
 
-/* ==========================================
-   CONTENEDOR DE IMAGEN 
-   ========================================== */
 .img-zoom-container {
     overflow: hidden;
-    position: relative;
-    background-color: #f7f5f0; 
-    height: 240px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.card-img-top {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; 
-    padding: 10px;
+.img-zoom-container img {
     transition: transform 0.6s ease;
 }
 
-.card-luxury:hover .card-img-top {
-    transform: scale(1.06);
+.card-luxury:hover .img-zoom-container img {
+    transform: scale(1.08);
 }
 
-/* ==========================================
-  (FADE-IN)
-   ========================================== */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.bg-burgundy {
+    background-color: var(--bg-burgundy) !important;
 }
 
-.fade-in-card {
-    animation: fadeInUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-}
-
-/* ==========================================
-   ESTILOS DE BOTONES REFINADOS
-   ========================================== */
-.btn-outline-dark {
-    border-color: #2b2b2b;
-    transition: all 0.3s ease;
-    border-radius: 6px;
-}
-
-.btn-outline-dark:hover {
-    background-color: #6A1B29;
-    border-color: #6A1B29;
-    color: #fff;
+.text-burgundy {
+    color: #d1495b !important;
 }
