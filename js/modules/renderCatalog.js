@@ -1,99 +1,55 @@
-/**
- * Módulo: renderCatalog.js
- * Descripción: Renderiza el catálogo dinámicamente, aplica animaciones de lujo y gestiona filtros por categoría.
- */
-
 export async function renderCatalog() {
     const container = document.getElementById('catalog-container');
+    if (!container) return;
 
     try {
-        // Detecta automáticamente si estamos en GitHub Pages o en tu computador local
-        const isGitHubPages = window.location.hostname.includes("github.io");
-        const basePath = isGitHubPages ? "/feral-dubai" : "";
-
-        const response = await fetch(`${basePath}/js/data/catalog.json`);
-        if (!response.ok) {
-            throw new Error(`Error HTTP: ${response.status}`);
-        }
-        
+        const response = await fetch('./js/data/catalog.json');
         const data = await response.json();
 
-        // Función interna para pintar las tarjetas
-        const displayCards = (activosAMostrar) => {
+        const loadCategory = (categoryKey) => {
             container.innerHTML = '';
-            
-            if (!activosAMostrar || activosAMostrar.length === 0) {
-                container.innerHTML = `<div class="col-12 text-center py-5 text-muted">No se encontraron activos disponibles en esta categoría.</div>`;
-                return;
-            }
+            const items = data[categoryKey] || [];
 
-            activosAMostrar.forEach((activo, index) => {
-                const animationDelay = index * 0.15;
-
-                const cardHTML = `
-                    <div class="col-md-4 mb-4">
-                        <div class="card card-luxury h-100 border-0 shadow-sm fade-in-card" style="animation-delay: ${animationDelay}s;">
-                            <div class="img-zoom-container">
-                                <img src="${activo.imagen_url}" class="card-img-top" alt="${activo.titulo}" style="height: 240px; object-fit: cover;">
-                            </div>
-                            
-                            <div class="card-body d-flex flex-column bg-white">
-                                <span class="badge bg-burgundy mb-2 align-self-start">Dubái Launch</span>
-                                
-                                <h3 class="card-title font-heading fs-4 text-burgundy">${activo.titulo}</h3>
-                                <p class="card-text font-body text-muted small mb-3">${activo.ubicacion}</p>
-                                
-                                <div class="mt-auto">
-                                    <ul class="list-unstyled small text-secondary mb-4 border-top pt-2">
-                                        ${Object.entries(activo.detalles_tecnicos).map(([key, value]) => `<li><strong>${key}:</strong>${value}</li>`).join('')}
-                                    </ul>
-                                    
-                                    <a href="https://wa.me/573000000000?text=Hola,%20estoy%20interesado%20en%20el%20proyecto:%20${encodeURIComponent(activo.titulo)}" target="_blank" class="btn btn-outline-dark w-100 font-ui py-2">
-                                        Contactar por Asesor
-                                    </a>
-                                </div>
+            items.forEach(item => {
+                const col = document.createElement('div');
+                col.className = 'col-lg-6 mb-4';
+                col.innerHTML = `
+                    <div class="luxury-card h-100">
+                        <div class="card-img-wrapper">
+                            <img src="${item.image}" alt="${item.title}">
+                        </div>
+                        <div class="p-4">
+                            <span class="text-muted small text-uppercase fw-semibold" style="letter-spacing: 2px;">${item.location}</span>
+                            <h3 class="font-heading h4 fw-bold mt-2 mb-2">${item.title}</h3>
+                            <p class="text-muted small mb-4" style="line-height: 1.7;">${item.description}</p>
+                            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+                                <span class="fw-bold fs-5 text-dark">${item.price}</span>
+                                <button class="btn btn-luxury">Consultar VIP</button>
                             </div>
                         </div>
                     </div>
                 `;
-                container.innerHTML += cardHTML;
+                container.appendChild(col);
             });
         };
 
-        // Renderizar todos los activos por defecto
-        displayCards(data.activos);
+        // Cargar todos por defecto o apartamentos
+        loadCategory('todos');
 
-        // Configurar los eventos de filtrado por botones
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        filterButtons.forEach(btn => {
+        // Escuchar pestañas
+        const tabButtons = document.querySelectorAll('.nav-pills .nav-link');
+        tabButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
-                e.preventDefault();
+                tabButtons.forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
                 
-                filterButtons.forEach(b => b.classList.remove('active', 'fw-bold', 'text-warning'));
-                btn.classList.add('active', 'fw-bold', 'text-warning');
-
-                const categoriaId = btn.getAttribute('data-categoria');
-
-                if (categoriaId === 'all') {
-                    displayCards(data.activos);
-                } else {
-                    const filtrados = data.activos.filter(item => item.id_categoria == categoriaId);
-                    displayCards(filtrados);
-                }
+                const category = e.target.getAttribute('data-category');
+                loadCategory(category);
             });
         });
 
     } catch (error) {
-        console.error('Error crítico al renderizar el catálogo:', error);
-        // Retroalimentación visual obligatoria para el usuario final (Ajuste técnico sugerido)
-        if (container) {
-            container.innerHTML = `
-                <div class="col-12 text-center py-5">
-                    <div class="alert alert-danger shadow-sm mx-auto" style="max-width: 500px;" role="alert">
-                        <h4 class="alert-heading fs-5">⚠️ Temporalmente no disponible</h4>
-                        <p class="mb-0 small">No pudimos cargar el catálogo de activos en este momento. Por favor, intente recargar la página más tarde.</p>
-                    </div>
-                </div>`;
-        }
+        console.error("Error al cargar el catálogo:", error);
+        container.innerHTML = `<p class="text-center text-danger">No se pudieron cargar los datos del catálogo.</p>`;
     }
 }

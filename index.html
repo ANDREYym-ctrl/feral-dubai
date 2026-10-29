@@ -3,127 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FERAL | Catálogo Exclusivo Dubái</title>
+    <title>Feral Dubai Luxury Portfolio</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=DM+Sans:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
-    <!-- Estilos personalizados -->
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Estilos CSS -->
     <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body class="py-4">
+<body>
 
-    <div class="container luxury-wrapper my-3">
-
-        <!-- NAVEGACIÓN PRINCIPAL -->
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-4 py-3 border-bottom border-secondary" aria-label="Navegación Principal">
-                <a class="navbar-brand font-display fs-1 text-white" href="#">Feral</a>
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Cambiar navegación">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav font-ui">
-                        <li class="nav-item">
-                            <a class="nav-link text-white filter-btn active fw-bold px-3" href="#" data-categoria="all">TODOS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white filter-btn px-3" href="#" data-categoria="1">BIENES RAÍCES</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white filter-btn px-3" href="#" data-categoria="2">YATES</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white filter-btn px-3" href="#" data-categoria="3">AUTOS</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-
-        <!-- SECCIÓN HERO INMERSIVO CON CARRUSEL 3D DINÁMICO -->
-        <section class="hero-3d-container px-4 py-5 text-center">
-<span class="text-uppercase text-warning small tracking-widest fw-semibold d-block mb-2 font-ui" style="letter-spacing: 4px;">Exclusive Portfolio • Dubai Edition</span>            <h1 class="font-heading display-4 text-white fw-bold mb-3">Inversiones de Lujo sin Límites</h1>
-            <p class="font-body fs-4 text-light fst-italic mb-4">"Donde la exclusividad se convierte en poder."</p>
-
-            <!-- Carrusel Bootstrap Interactivo (Efecto 3D / Deslizamiento automático) -->
-            <div id="feralCarousel" class="carousel slide carousel-fade shadow-lg mx-auto" data-bs-ride="carousel" style="max-width: 900px;">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#feralCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#feralCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#feralCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner rounded border border-secondary">
-                    <div class="carousel-item active" data-bs-interval="4000">
-                        <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=1200&q=80" class="d-block w-100 object-fit-cover" alt="Bienes Raíces Dubái" style="height: 420px;">
-                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-3 rounded">
-                            <h3 class="font-heading text-warning">Bienes Raíces Exclusivos</h3>
-                            <p class="font-body small text-light">Penthouses y residencias de ultra alta gama en el corazón de Dubái.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item" data-bs-interval="4000">
-                        <img src="https://images.unsplash.com/photo-1569263979104-865ab9cd8d5c?auto=format&fit=crop&w=1200&q=80" class="d-block w-100 object-fit-cover" alt="Yates de Lujo" style="height: 420px;">
-                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-3 rounded">
-                            <h3 class="font-heading text-warning">Yates Privados</h3>
-                            <p class="font-body small text-light">Navegación y confort absoluto en el Golfo Pérsico.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item" data-bs-interval="4000">
-                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" class="d-block w-100 object-fit-cover" alt="Superdeportivos" style="height: 420px;">
-                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-3 rounded">
-                            <h3 class="font-heading text-warning">Superdeportivos</h3>
-                            <p class="font-body small text-light">Velocidad, potencia y diseño aerodinámico sin precedentes.</p>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#feralCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#feralCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Siguiente</span>
-                </button>
-            </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#feralCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#feralCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Siguiente</span>
-                </button>
-            </div>
-        </section>
-
-        <!-- CONTENIDO DEL CATÁLOGO DINÁMICO (PARRILLA INTERACTIVA CON BOTONES FLOTANTES) -->
-        <main id="main-content" class="px-4 py-4">
-            
-            <div class="text-center mb-5 border-top border-secondary pt-5">
-                <h2 class="font-heading display-5 text-white fw-bold">Nuestros Activos Disponibles</h2>
-                <div class="divider mx-auto bg-danger my-3" style="width: 60px; height: 3px;"></div>
-                <p class="text-muted font-body fs-5">Seleccione una categoría o explore los activos directamente.</p>
-            </div>
-
-            <!-- Contenedor dinámico donde renderCatalog.js pinta las tarjetas -->
-            <div id="catalog-container" class="row g-4">
-                <!-- Las tarjetas se cargan automáticamente desde catalog.json -->
-            </div>
-
-        </main>
-
-        <!-- FOOTER -->
-        <footer class="bg-black text-white text-center py-4 border-top border-secondary mt-5">
-            <p class="mb-0 font-ui small text-muted">&copy; 2026 Feral Dubai. Todos los derechos reservados.</p>
-        </footer>
-
+    <!-- BARRA SUPERIOR DE CONTACTO -->
+    <div class="top-bar py-2 px-4 d-none d-lg-flex justify-content-between align-items-center">
+        <span>DUBAI SILICON OASIS & DOWNTOWN FLAGSHIP SHOWCASE</span>
+        <div>
+            <span class="me-4"><i class="bi bi-telephone"></i> +971 4 888 FERAL</span>
+            <span><i class="bi bi-envelope"></i> yiyi@FERAL-DUBAI.AE</span>
+        </div>
     </div>
 
-    <!-- Bootstrap 5 JS Bundle -->
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top navbar-feral px-4 py-3">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="./assets/img-pagina/logo.png" alt="Feral Dubai Logo" style="height: 40px; width: auto;" class="me-2" onerror="this.style.display='none'">
+                <span class="font-heading fw-bold fs-3 text-dark">FERAL</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item mx-2"><a class="nav-link text-uppercase small fw-semibold" href="#hero">Inicio</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link text-uppercase small fw-semibold" href="#catalogo">Portafolio</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link text-uppercase small fw-semibold" href="#ingenieria">Novedades</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link text-uppercase small fw-semibold" href="#concierge">Contacto</a></li>
+                    <li class="nav-item ms-3">
+                        <a href="#concierge" class="btn btn-luxury px-4 py-2">Agendar Visita</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO CINEMÁTICO CON IMAGEN DE FONDO Y FILTRO DE LUJO -->
+<header id="hero" class="hero-dark text-center" style="background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('./assets/img - apartamento/APARTAMENTO_SALE.jpg'); background-size: cover; background-position: center;">
+    <div class="container position-relative py-5">
+        <span class="text-uppercase tracking-widest text-warning fw-semibold mb-3 d-block" style="letter-spacing: 4px; font-size: 0.8rem;">Dubai Ultra-Luxury Real Estate & Lifestyle</span>
+        <h1 class="font-heading display-3 fw-bold mb-3 text-white">El Arte de Vivir <br><span class="fst-italic text-warning">sin Límites</span> en Dubái</h1>
+        <p class="fs-5 fw-light text-light mb-5 mx-auto" style="max-width: 650px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Plataforma de inversión exclusiva en Penthouses panorámicos, superyates en el Golfo Pérsico y superdeportivos de edición limitada.</p>
+        <a href="#catalogo" class="btn btn-danger px-5 py-3 rounded-pill text-uppercase fw-semibold shadow-lg" style="letter-spacing: 2px; font-size: 0.8rem; background-color: #8B0000; border: none;">Explorar Colección</a>
+    </div>
+</header>
+    <!-- SECCIÓN DE PORTAFOLIO DINÁMICO -->
+    <main id="catalogo" class="container py-5 my-5">
+        <div class="text-center mb-5">
+            <span class="text-uppercase text-muted small fw-bold" style="letter-spacing: 3px;">Activos de Alta Gama</span>
+            <h2 class="font-heading display-4 fw-bold mt-2">Portafolio Exclusivo 2026</h2>
+            <p class="text-muted small mt-2">Seleccione una categoría para explorar especificaciones técnicas, galerías fotográficas y disponibilidad de inversión en Dubái.</p>
+        </div>
+
+        <!-- Pestañas de Filtrado -->
+        <ul class="nav nav-pills justify-content-center mb-5">
+    <li class="nav-item"><button class="nav-link active" data-category="todos">Todos</button></li>
+    <li class="nav-item"><button class="nav-link" data-category="apartamentos">Bienes Raíces</button></li>
+    <li class="nav-item"><button class="nav-link" data-category="yates">Yates Privados</button></li>
+    <li class="nav-item"><button class="nav-link" data-category="autos">Superdeportivos</button></li>
+    <li class="nav-item"><button class="nav-link" data-category="asesoria">Asesoría & Family Office</button></li>
+</ul>
+
+        <!-- Contenedor inyectado por JS -->
+        <div id="catalog-container" class="row g-4">
+            <!-- Renderizado dinámico desde catalog.json -->
+        </div>
+    </main>
+
+    <!-- SECCIÓN INGENIERÍA ADSO -->
+    <section id="ingenieria" class="py-5 bg-light border-top border-bottom">
+        <div class="container py-4">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <span class="text-uppercase text-danger fw-bold small tracking-widest">Lujo, Arquitectura, Elegancia</span>
+                    <h2 class="font-heading display-5 fw-bold my-3">Lujo Inmobiliario</h2>
+                    <p class="text-muted lh-lg">Feral Dubai integra, aun no se que poner en esta seccion una informacion relevante de la que tu quieras para que se vea puede ver que sea interesante, o un dato que la gente se detenga o un informativo, seccion de noticias como la que haces en tus videos</p>
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <h4 class="font-heading fw-bold">99.9%</h4>
+                            <p class="text-muted small text-uppercase">Rendimiento para el 2030</p>
+                        </div>
+                        <div class="col-6">
+                            <h4 class="font-heading fw-bold">100% ganacias</h4>
+                            <p class="text-muted small text-uppercase">al 6 años</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="rounded-4 overflow-hidden shadow-lg border">
+                        <img src="./assets/img - apartamento/APARTAMENTO_SALE.jpg" alt="Ingeniería Feral" class="w-100 object-fit-cover" style="height: 380px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONCIERGE -->
+    <section id="concierge" class="concierge-section position-relative py-5" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('./assets/img - yate/ALUMBRADO_FRONTAL_YATE.jpeg'); background-size: cover; background-position: center;">
+    <div class="container py-5">
+        <div class="concierge-box p-5 mx-auto shadow-lg" style="max-width: 900px; background: rgba(12, 12, 12, 0.88); backdrop-filter: blur(16px); border: 1px solid rgba(212, 175, 55, 0.3);">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <span class="text-uppercase fw-semibold small tracking-widest" style="color: #d4af37; letter-spacing: 2px;">Atención Personalizada</span>
+                    <h2 class="font-heading display-6 fw-bold text-white my-3">Conecte con yiyi</h2>
+                    <p class="fs-6 fw-light mb-4 text-light" style="opacity: 0.9; line-height: 1.7;">Nuestros asesores privados en Downtown Dubai están listos para coordinar visitas virtuales o presenciales a nuestros activos de lujo</p>
+                    <ul class="list-unstyled small mt-3 text-white">
+                        <li class="mb-3 d-flex align-items-center"><span style="color: #d4af37; font-size: 1.1rem; margin-right: 10px;">✓</span> Asesoría legal y financiera en Dubái</li>
+                        <li class="mb-3 d-flex align-items-center"><span style="color: #d4af37; font-size: 1.1rem; margin-right: 10px;">✓</span> privados en ROLL o YATE</li>
+                        <li class="d-flex align-items-center"><span style="color: #d4af37; font-size: 1.1rem; margin-right: 10px;">✓</span> PAGOS en cripto </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control text-white border-secondary py-3" placeholder="Nombre Completo" style="background-color: rgba(30, 30, 30, 0.9) !important; color: #fff !important; border-color: #444 !important;">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control text-white border-secondary py-3" placeholder="Correo Electrónico Corporativo" style="background-color: rgba(30, 30, 30, 0.9) !important; color: #fff !important; border-color: #444 !important;">
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-select text-white border-secondary py-3" style="background-color: rgba(30, 30, 30, 0.9) !important; color: #fff !important; border-color: #444 !important;">
+                                <option selected>Inversión en Penthouses</option>
+                                <option>Adquisición de Superyates</option>
+                                <option>Flota de Superdeportivos</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn w-100 py-3 fw-bold text-uppercase text-white shadow" style="background-color: #8B0000; border: none; letter-spacing: 1px;">Enviar Solicitud VIP</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- FOOTER -->
+    <footer class="text-white py-5 text-center">
+        <div class="container">
+            <div class="d-flex justify-content-center align-items-center mb-3">
+                <img src="./assets/img-pagina/logo.png" alt="Logo Feral" style="height: 35px; width: auto;" class="me-2" onerror="this.style.display='none'">
+                <span class="font-heading fw-bold fs-4">FERAL DUBAI</span>
+            </div>
+            <p class="text-muted small mb-3">Desarrollo modular profesional para Portafolio AndreyYama. Todos los derechos reservados &copy; (falta por redactar contrato, privacidad etc..)2026 Feral Dubai Real Estate & Lifestyle.</p>
+            <div class="d-flex justify-content-center gap-3 text-muted">
+                <a href="#" class="text-white text-decoration-none">Instagram</a>
+                <a href="#" class="text-white text-decoration-none">LinkedIn</a>
+                <a href="#" class="text-white text-decoration-none">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Script Principal JS -->
+    <!-- Script Modular Principal -->
     <script type="module" src="./js/main.js"></script>
 </body>
 </html>

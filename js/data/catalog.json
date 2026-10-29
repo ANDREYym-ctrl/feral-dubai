@@ -1,72 +1,100 @@
 {
-  "categorias": [
-    { "id_categoria": 1, "nombre": "Bienes Raíces" },
-    { "id_categoria": 2, "nombre": "Yates" },
-    { "id_categoria": 3, "nombre": "Carros" }
-  ],
-  "proyectos_lanzamiento": [
+  "todos": [
     {
-      "id_lanzamiento": 101,
-      "titulo_lanzamiento": "Dubai Marina Exclusive Launch",
-      "estado": "Activo"
+      "title": "Skyline Presidential Penthouse",
+      "location": "Downtown Dubai",
+      "price": "$14,500,000 USD",
+      "image": "./assets/img - apartamento/APARTAMENTO_COMEDOR.jpg",
+      "description": "Residencia de gran altura con vistas directas al Burj Khalifa, acabados en mármol italiano y domótica integral.",
+      "category": "Bienes Raíces"
+    },
+    {
+      "title": "Superyacht Royal Feral",
+      "location": "Marina de Dubái",
+      "price": "Consultar VIP",
+      "image": "./assets/img - yate/ALUMBRADO_FRONTAL_YATE.jpeg",
+      "description": "Iluminación perimetral avanzada y cubiertas de teca de altísima gama en el Golfo Pérsico.",
+      "category": "Yates"
+    },
+    {
+      "title": "Feral Phantom GT Concept",
+      "location": "Edición Limitada",
+      "price": "$3,200,000 USD",
+      "image": "./assets/img - autos/ROLL_FRENTE.jpeg",
+      "description": "Potencia extrema con aerodinámica de competición e interiores artesanales hechos a medida.",
+      "category": "Autos"
+    },
+    {
+      "title": "Global Family Office & Asset Structuring",
+      "location": "Dubai International Financial Centre (DIFC)",
+      "price": "Servicio Exclusivo",
+      "image": "./assets/img - apartamento/APARTAMENTO_SALE.jpg",
+      "description": "Estructuración patrimonial internacional, fideicomisos privados y protección de activos transfronterizos para UHNWI.",
+      "category": "Asesoría"
     }
   ],
-  "activos": [
+  "apartamentos": [
     {
-      "id_activo": 1,
-      "id_categoria": 1,
-      "id_lanzamiento": 101,
-      "titulo": "Penthouse Vista Palm Jumeirah",
-      "ubicacion": "Dubái, EAU",
-      "detalles_tecnicos": {
-        "superficie": "450 m²",
-        "habitaciones": 4,
-        "amenidades": "Playa privada, piscina infinity"
-      },
-      "imagen_url": "assets/img - apartamento/APARTAMENTO_SALE.jpg",
-      "galeria": [
-        "assets/img - apartamento/APARTAMENTO_SALE.jpg",
-        "assets/img - apartamento/APARTAMENTO_COMEDOR.jpg"
-      ],
-      "destacado": true
+      "title": "Skyline Presidential Penthouse",
+      "location": "Downtown Dubai",
+      "price": "$14,500,000 USD",
+      "image": "./assets/img - apartamento/APARTAMENTO_COMEDOR.jpg",
+      "description": "Residencia de gran altura con vistas directas al Burj Khalifa y acabados en mármol."
     },
     {
-      "id_activo": 2,
-      "id_categoria": 2,
-      "id_lanzamiento": 101,
-      "titulo": "Yate de Lujo Azimut 84",
-      "ubicacion": "Dubai Marina Harbor",
-      "detalles_tecnicos": {
-        "eslora": "26 metros",
-        "capacidad": "12 personas",
-        "tripulacion": "Incluida (Capitán y 2 marineros)"
-      },
-      "imagen_url": "assets/img - yate/FRONTAL_YATE.jpeg",
-      "galeria": [
-        "assets/img - yate/FRONTAL_YATE.jpeg",
-        "assets/img - yate/ALUMBRADO_FRONTAL_YATE.jpeg",
-        "assets/img - yate/INTERIOR_DE_YATE.jpeg",
-        "assets/img - yate/PLANO_DE_YATE.jpeg"
-      ],
-      "destacado": true
+      "title": "Palm Water Villa & Beach",
+      "location": "Palm Jumeirah",
+      "price": "$22,000,000 USD",
+      "image": "./assets/img - apartamento/APARTAMENTO_SALE.jpg",
+      "description": "Acceso privado a la playa, muelle exclusivo para yates y piscina infinita contemporánea."
+    }
+  ],
+  "yates": [
+    {
+      "title": "Superyacht Royal Feral",
+      "location": "Marina de Dubái",
+      "price": "Consultar VIP",
+      "image": "./assets/img - yate/ALUMBRADO_FRONTAL_YATE.jpeg",
+      "description": "Iluminación perimetral avanzada y cubiertas de teca de altísima gama en el Golfo Pérsico."
     },
     {
-      "id_activo": 3,
-      "id_categoria": 3,
-      "id_lanzamiento": 101,
-      "titulo": "Rolls-Royce Cullinan Black Badge",
-      "ubicacion": "Downtown Dubai",
-      "detalles_tecnicos": {
-        "motor": "V12 Biturbo de 6.75L",
-        "potencia": "600 HP",
-        "transmision": "Automática de 8 velocidades"
-      },
-      "imagen_url": "assets/img - autos/ROLL_FRENTE.jpeg",
-      "galeria": [
-        "assets/img - autos/ROLL_FRENTE.jpeg",
-        "assets/img - autos/ROLL_ATRAS.jpeg"
-      ],
-      "destacado": true
+      "title": "Ocean Explorer 50M",
+      "location": "Golfo Pérsico",
+      "price": "Consultar VIP",
+      "image": "./assets/img - yate/FRONTAL_YATE.jpeg",
+      "description": "Diseño aerodinámico vanguardista y confort absoluto para alta mar con camarotes VIP."
+    }
+  ],
+  "autos": [
+    {
+      "title": "Feral Phantom GT Concept",
+      "location": "Edición Limitada",
+      "price": "$3,200,000 USD",
+      "image": "./assets/img - autos/ROLL_FRENTE.jpeg",
+      "description": "Potencia extrema con aerodinámica de competición e interiores artesanales hechos a medida."
+    },
+    {
+      "title": "Aerodynamic V12 Edition",
+      "location": "Rendimiento Pura Sangre",
+      "price": "$4,500,000 USD",
+      "image": "./assets/img - autos/ROLL_ATRAS.jpeg",
+      "description": "Ingeniería de velocidad exclusiva diseñada para coleccionistas globales de superdeportivos."
+    }
+  ],
+  "asesoria": [
+    {
+      "title": "Global Family Office & Asset Structuring",
+      "location": "Dubai International Financial Centre (DIFC)",
+      "price": "Servicio Exclusivo",
+      "image": "./assets/img - apartamento/APARTAMENTO_SALE.jpg",
+      "description": "Estructuración patrimonial internacional, fideicomisos privados y protección de activos transfronterizos para inversores globales."
+    },
+    {
+      "title": "Golden Visa & Corporate Residency",
+      "location": "Downtown Dubai Advisory",
+      "price": "Gestión Integral",
+      "image": "./assets/img - apartamento/APARTAMENTO_COMEDOR.jpg",
+      "description": "Acompañamiento legal completo para obtención de residencia a 10 años en los Emiratos Árabes Unidos a través de inversiones."
     }
   ]
 }
