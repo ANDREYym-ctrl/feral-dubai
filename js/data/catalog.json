@@ -1,100 +1,274 @@
 {
-  "todos": [
+  "items": [
     {
-      "title": "Skyline Presidential Penthouse",
-      "location": "Downtown Dubai",
+      "id": "skyline-penthouse",
+      "category": "apartamentos",
+      "categoryName": {
+        "es": "Bienes Raíces Prime",
+        "en": "Prime Real Estate"
+      },
+      "title": {
+        "es": "Skyline Presidential Penthouse",
+        "en": "Skyline Presidential Penthouse"
+      },
+      "location": {
+        "es": "Downtown Dubái · Vistas al Burj Khalifa",
+        "en": "Downtown Dubai · Direct Burj Khalifa View"
+      },
+      "specs": {
+        "es": "5 Habs · 820 m² · Piscina Infinita Privada · Domótica Crestron",
+        "en": "5 Beds · 8,826 sq ft · Private Infinity Pool · Crestron Automation"
+      },
       "price": "$14,500,000 USD",
       "image": "./assets/img - apartamento/APARTAMENTO_COMEDOR.jpg",
-      "description": "Residencia de gran altura con vistas directas al Burj Khalifa, acabados en mármol italiano y domótica integral.",
-      "category": "Bienes Raíces"
+      "description": {
+        "es": "Residencia de gran altura con vistas panorámicas directas al Burj Khalifa, revestimientos en mármol Calacatta italiano, terraza perimetral y helipuerto con acceso directo.",
+        "en": "Sky-high residence with direct panoramic Burj Khalifa views, Italian Calacatta marble cladding, wraparound sky terrace, and direct helipad access."
+      },
+      "badge": {
+        "es": "Entrega Inmediata",
+        "en": "Immediate Delivery"
+      }
     },
     {
-      "title": "Superyacht Royal Feral",
-      "location": "Marina de Dubái",
-      "price": "Consultar VIP",
-      "image": "./assets/img - yate/ALUMBRADO_FRONTAL_YATE.jpeg",
-      "description": "Iluminación perimetral avanzada y cubiertas de teca de altísima gama en el Golfo Pérsico.",
-      "category": "Yates"
-    },
-    {
-      "title": "Feral Phantom GT Concept",
-      "location": "Edición Limitada",
-      "price": "$3,200,000 USD",
-      "image": "./assets/img - autos/ROLL_FRENTE.jpeg",
-      "description": "Potencia extrema con aerodinámica de competición e interiores artesanales hechos a medida.",
-      "category": "Autos"
-    },
-    {
-      "title": "Global Family Office & Asset Structuring",
-      "location": "Dubai International Financial Centre (DIFC)",
-      "price": "Servicio Exclusivo",
-      "image": "./assets/img - apartamento/APARTAMENTO_SALE.jpg",
-      "description": "Estructuración patrimonial internacional, fideicomisos privados y protección de activos transfronterizos para UHNWI.",
-      "category": "Asesoría"
-    }
-  ],
-  "apartamentos": [
-    {
-      "title": "Skyline Presidential Penthouse",
-      "location": "Downtown Dubai",
-      "price": "$14,500,000 USD",
-      "image": "./assets/img - apartamento/APARTAMENTO_COMEDOR.jpg",
-      "description": "Residencia de gran altura con vistas directas al Burj Khalifa y acabados en mármol."
-    },
-    {
-      "title": "Palm Water Villa & Beach",
-      "location": "Palm Jumeirah",
+      "id": "palm-water-villa",
+      "category": "apartamentos",
+      "categoryName": {
+        "es": "Bienes Raíces Prime",
+        "en": "Prime Real Estate"
+      },
+      "title": {
+        "es": "Palm Jumeirah Signature Water Villa",
+        "en": "Palm Jumeirah Signature Water Villa"
+      },
+      "location": {
+        "es": "Palm Jumeirah · Frond N",
+        "en": "Palm Jumeirah · Frond N"
+      },
+      "specs": {
+        "es": "7 Suites · 1,450 m² · Muelle Privado · Playa Exclusiva",
+        "en": "7 Suites · 15,600 sq ft · Private Dock · Exclusive Beachfront"
+      },
       "price": "$22,000,000 USD",
       "image": "./assets/img - apartamento/APARTAMENTO_SALE.jpg",
-      "description": "Acceso privado a la playa, muelle exclusivo para yates y piscina infinita contemporánea."
-    }
-  ],
-  "yates": [
-    {
-      "title": "Superyacht Royal Feral",
-      "location": "Marina de Dubái",
-      "price": "Consultar VIP",
-      "image": "./assets/img - yate/ALUMBRADO_FRONTAL_YATE.jpeg",
-      "description": "Iluminación perimetral avanzada y cubiertas de teca de altísima gama en el Golfo Pérsico."
+      "description": {
+        "es": "Mansión frente al mar con acceso privado a la bahía, muelle para superyates, arquitectura bioclimática contemporánea y jardines zen diseñados por paisajistas europeos.",
+        "en": "Beachfront trophy mansion with private bay access, private superyacht berth, contemporary bioclimatic architecture, and European-designed zen gardens."
+      },
+      "badge": {
+        "es": "Off-Market Exclusivo",
+        "en": "Off-Market Exclusive"
+      }
     },
     {
-      "title": "Ocean Explorer 50M",
-      "location": "Golfo Pérsico",
-      "price": "Consultar VIP",
-      "image": "./assets/img - yate/FRONTAL_YATE.jpeg",
-      "description": "Diseño aerodinámico vanguardista y confort absoluto para alta mar con camarotes VIP."
-    }
-  ],
-  "autos": [
+      "id": "superyacht-royal-feral",
+      "category": "yates",
+      "categoryName": {
+        "es": "Superyates Privados",
+        "en": "Private Superyachts"
+      },
+      "title": {
+        "es": "Superyacht Royal Feral 65M",
+        "en": "Superyacht Royal Feral 65M"
+      },
+      "location": {
+        "es": "Dubai Harbour Marina · Golfo Pérsico",
+        "en": "Dubai Harbour Marina · Arabian Gulf"
+      },
+      "specs": {
+        "es": "Eslora 65 m · 6 Suites VIP · Helipuerto Touch-and-Go · Beach Club",
+        "en": "Length 65m · 6 VIP Suites · Touch-and-Go Helipad · Beach Club"
+      },
+      "price": "Consultar VIP / POA",
+      "image": "./assets/img - yate/ALUMBRADO_FRONTAL_YATE.jpeg",
+      "description": {
+        "es": "Embarcación insignia con casco de acero naval, cubiertas de teca birmana, iluminación arquitectónica perimetral sumergida y autonomía transatlántica de 5,000 millas náuticas.",
+        "en": "Flagship vessel with naval steel hull, Burmese teak decks, submersible architectural lighting, and 5,000 nautical mile transatlantic autonomy."
+      },
+      "badge": {
+        "es": "Construcción a Medida",
+        "en": "Bespoke Build"
+      }
+    },
     {
-      "title": "Feral Phantom GT Concept",
-      "location": "Edición Limitada",
+      "id": "ocean-explorer-50m",
+      "category": "yates",
+      "categoryName": {
+        "es": "Superyates Privados",
+        "en": "Private Superyachts"
+      },
+      "title": {
+        "es": "Ocean Explorer 50M Custom",
+        "en": "Ocean Explorer 50M Custom"
+      },
+      "location": {
+        "es": "Port Rashid · Dubái",
+        "en": "Port Rashid · Dubai"
+      },
+      "specs": {
+        "es": "Eslora 50 m · 12 Huéspedes · Jacuzzi Panorámico · Garaje de Tenders",
+        "en": "Length 50m · 12 Guests · Panoramic Jacuzzi · Twin Tender Garage"
+      },
+      "price": "Consultar VIP / POA",
+      "image": "./assets/img - yate/FRONTAL_YATE.jpeg",
+      "description": {
+        "es": "Ingeniería de vanguardia diseñada para expediciones de ultralujo, con estabilizadores giroscópicos de fondeo cero y acabados interiores en roble ahumado y titanio.",
+        "en": "Avant-garde engineering designed for ultra-luxury worldwide expeditions, featuring zero-speed gyroscopic stabilizers and smoked oak and titanium interior accents."
+      },
+      "badge": {
+        "es": "Disponible en Marina",
+        "en": "Marina Ready"
+      }
+    },
+    {
+      "id": "yacht-executive-interior",
+      "category": "yates",
+      "categoryName": {
+        "es": "Superyates Privados",
+        "en": "Private Superyachts"
+      },
+      "title": {
+        "es": "Majesty Master Suite & Salon",
+        "en": "Majesty Master Suite & Salon"
+      },
+      "location": {
+        "es": "Dubai Marina Yacht Club",
+        "en": "Dubai Marina Yacht Club"
+      },
+      "specs": {
+        "es": "Interiorismo Hermes · Audio Focal Utopia · Cava Climatizada",
+        "en": "Hermes Interior Design · Focal Utopia Audio · Climatized Wine Cellar"
+      },
+      "price": "$9,800,000 USD",
+      "image": "./assets/img - yate/INTERIOR_DE_YATE.jpeg",
+      "description": {
+        "es": "Diseño interior concebido por firmas de alta costura europea, con salones de conferencias privadas sobre el mar y suite de armador con terraza retráctil.",
+        "en": "Interior architecture conceived by European haute-couture studios, featuring private sea-facing conference lounges and owner's suite with folding balconies."
+      },
+      "badge": {
+        "es": "Edición Limitada",
+        "en": "Limited Edition"
+      }
+    },
+    {
+      "id": "feral-phantom-gt",
+      "category": "autos",
+      "categoryName": {
+        "es": "Superdeportivos Bespoke",
+        "en": "Bespoke Hypercars"
+      },
+      "title": {
+        "es": "Feral Phantom GT Black Badge",
+        "en": "Feral Phantom GT Black Badge"
+      },
+      "location": {
+        "es": "Dubái Autodrome Club · Edición 1 de 5",
+        "en": "Dubai Autodrome Club · Edition 1 of 5"
+      },
+      "specs": {
+        "es": "V12 Twin-Turbo 850 HP · 0-100 en 2.8s · Carrocería Fibra de Carbono",
+        "en": "V12 Twin-Turbo 850 HP · 0-60 in 2.8s · Full Carbon Fiber Monocoque"
+      },
       "price": "$3,200,000 USD",
       "image": "./assets/img - autos/ROLL_FRENTE.jpeg",
-      "description": "Potencia extrema con aerodinámica de competición e interiores artesanales hechos a medida."
+      "description": {
+        "es": "Ingeniería de aerodinámica activa con chasis monocasco de fibra de carbono aeroespacial, detalles en oro mate de 24 quilates e interiores en piel Connolly personalizada.",
+        "en": "Active aerodynamic engineering with aerospace-grade carbon fiber monocoque, 24-karat matte gold details, and personalized Connolly leather interior."
+      },
+      "badge": {
+        "es": "Pieza de Colección",
+        "en": "Collector's Piece"
+      }
     },
     {
-      "title": "Aerodynamic V12 Edition",
-      "location": "Rendimiento Pura Sangre",
+      "id": "aerodynamic-v12",
+      "category": "autos",
+      "categoryName": {
+        "es": "Superdeportivos Bespoke",
+        "en": "Bespoke Hypercars"
+      },
+      "title": {
+        "es": "Rolls-Royce Spectre Bespoke Atelier",
+        "en": "Rolls-Royce Spectre Bespoke Atelier"
+      },
+      "location": {
+        "es": "Showroom Flagship DIFC",
+        "en": "DIFC Flagship Showroom"
+      },
+      "specs": {
+        "es": "Propulsión Total Eléctrica Bespoke · Techo Starlight · Blindaje Nivel VR7",
+        "en": "Bespoke All-Electric Powertrain · Starlight Headliner · VR7 Armored"
+      },
       "price": "$4,500,000 USD",
       "image": "./assets/img - autos/ROLL_ATRAS.jpeg",
-      "description": "Ingeniería de velocidad exclusiva diseñada para coleccionistas globales de superdeportivos."
-    }
-  ],
-  "asesoria": [
-    {
-      "title": "Global Family Office & Asset Structuring",
-      "location": "Dubai International Financial Centre (DIFC)",
-      "price": "Servicio Exclusivo",
-      "image": "./assets/img - apartamento/APARTAMENTO_SALE.jpg",
-      "description": "Estructuración patrimonial internacional, fideicomisos privados y protección de activos transfronterizos para inversores globales."
+      "description": {
+        "es": "El pináculo de la elegancia silenciosa con programa de blindaje discreto para mandatarios y ejecutivos globales, acompañado de telemetría y seguridad satelital 24/7.",
+        "en": "The pinnacle of silent luxury featuring discreet armored protection for global dignitaries and family offices, backed by 24/7 private satellite security."
+      },
+      "badge": {
+        "es": "Entrega Inmediata",
+        "en": "Immediate Delivery"
+      }
     },
     {
-      "title": "Golden Visa & Corporate Residency",
-      "location": "Downtown Dubai Advisory",
-      "price": "Gestión Integral",
+      "id": "difc-family-office",
+      "category": "asesoria",
+      "categoryName": {
+        "es": "Family Office & Asesoría",
+        "en": "Family Office & Advisory"
+      },
+      "title": {
+        "es": "DIFC Global Family Office & Asset Structuring",
+        "en": "DIFC Global Family Office & Asset Structuring"
+      },
+      "location": {
+        "es": "Dubai International Financial Centre (DIFC)",
+        "en": "Dubai International Financial Centre (DIFC)"
+      },
+      "specs": {
+        "es": "Fideicomisos Privados · Estructura Common Law · 0% Impuestos Corporativos",
+        "en": "Private Trusts · Common Law Framework · 0% Corporate Tax"
+      },
+      "price": "Gestión Patrimonial VIP",
+      "image": "./assets/img-pagina/fondo.jpg",
+      "description": {
+        "es": "Estructuración integral de patrimonios familiares transfronterizos bajo el marco legal anglosajón del DIFC, garantizando confidencialidad, sucesión generacional y protección fiduciaria de activos.",
+        "en": "Comprehensive cross-border wealth structuring under DIFC English Common Law, ensuring absolute confidentiality, generational succession, and fiduciary asset protection."
+      },
+      "badge": {
+        "es": "Servicio Institucional",
+        "en": "Institutional Service"
+      }
+    },
+    {
+      "id": "golden-visa-residency",
+      "category": "asesoria",
+      "categoryName": {
+        "es": "Family Office & Asesoría",
+        "en": "Family Office & Advisory"
+      },
+      "title": {
+        "es": "UAE Golden Visa & Fast-Track Residency",
+        "en": "UAE Golden Visa & Fast-Track Residency"
+      },
+      "location": {
+        "es": "Downtown Dubai Concierge",
+        "en": "Downtown Dubai Concierge"
+      },
+      "specs": {
+        "es": "10 Años Renovables · Inclusión Familiar · Apertura de Cuentas Privadas",
+        "en": "10 Years Renewable · Immediate Family Inclusion · Private Banking Onboarding"
+      },
+      "price": "Asesoría Premium",
       "image": "./assets/img - apartamento/APARTAMENTO_COMEDOR.jpg",
-      "description": "Acompañamiento legal completo para obtención de residencia a 10 años en los Emiratos Árabes Unidos a través de inversiones."
+      "description": {
+        "es": "Acompañamiento VIP integral ante ministerios y entidades bancarias de Dubái para la obtención de la residencia dorada de 10 años mediante inversión inmobiliaria o depósito fiduciario.",
+        "en": "VIP concierge assistance with UAE ministries and private banks for 10-year Golden Visa residency issuance through property acquisition or fiduciary capital placement."
+      },
+      "badge": {
+        "es": "Tramitación 7 Días",
+        "en": "7-Day Fast Track"
+      }
     }
   ]
 }

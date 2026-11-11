@@ -2,166 +2,450 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feral Dubai Luxury Portfolio</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Estilos CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Feral Dubái | Luxury Real Estate, Superyachts & Family Office</title>
+    
+    <!-- Meta SEO & Open Graph -->
+    <meta name="description" content="Plataforma privada de inversión de ultralujo en Dubái: Penthouses panorámicos frente al Burj Khalifa, superyates en el Golfo Pérsico y estructuración patrimonial DIFC Family Office.">
+    <meta name="theme-color" content="#080808">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons 1.11.3 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Google Fonts: Bodoni Moda (Editorial Serif) & Plus Jakarta Sans (Clean Modern Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Master Luxury Stylesheet -->
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
 
-    <!-- BARRA SUPERIOR DE CONTACTO -->
+    <!-- ==========================================
+         TOP BAR DE CONTACTO INSTITUCIONAL (DESKTOP)
+         ========================================== -->
     <div class="top-bar py-2 px-4 d-none d-lg-flex justify-content-between align-items-center">
-        <span>DUBAI SILICON OASIS & DOWNTOWN FLAGSHIP SHOWCASE</span>
-        <div>
-            <span class="me-4"><i class="bi bi-telephone"></i> +971 4 888 FERAL</span>
-            <span><i class="bi bi-envelope"></i> yiyi@FERAL-DUBAI.AE</span>
+        <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-shield-lock text-ruby"></i>
+            <span data-i18n="topbar.flagship">DIFC & DOWNTOWN DUBAI FLAGSHIP SHOWCASE</span>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+            <a href="tel:+97148883372" class="d-flex align-items-center gap-1">
+                <i class="bi bi-telephone text-ruby"></i>
+                <span data-i18n="topbar.phone">+971 4 888 FERAL</span>
+            </a>
+            <a href="mailto:private@feral-dubai.ae" class="d-flex align-items-center gap-1">
+                <i class="bi bi-envelope text-ruby"></i>
+                <span data-i18n="topbar.email">private@feral-dubai.ae</span>
+            </a>
+            <!-- Selector Bilingüe Desktop -->
+            <div class="lang-switcher ms-2">
+                <button type="button" class="lang-btn active" data-lang="es">ES</button>
+                <button type="button" class="lang-btn" data-lang="en">EN</button>
+            </div>
         </div>
     </div>
 
-    <!-- BARRA DE NAVEGACIÓN -->
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top navbar-feral px-4 py-3">
-        <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="./assets/logo.png" alt="Feral Dubai Logo" style="height: 40px; width: auto;" class="me-2" onerror="this.style.display='none'">
-                <span class="font-heading fw-bold fs-3 text-dark">FERAL</span>
+    <!-- ==========================================
+         BARRA DE NAVEGACIÓN PRINCIPAL (GLASSMORPHIC)
+         ========================================== -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-feral">
+        <div class="container-fluid px-2 px-md-4">
+            <!-- Brand Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="#hero">
+                <img src="./assets/logo.png" alt="Feral Dubái Logo" class="brand-logo me-2" onerror="this.style.display='none'">
+                <span class="brand-title">FERAL</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-center">
-                    <li class="nav-item mx-2"><a class="nav-link text-uppercase small fw-semibold" href="#hero">Inicio</a></li>
-                    <li class="nav-item mx-2"><a class="nav-link text-uppercase small fw-semibold" href="#catalogo">Portafolio</a></li>
-                    <li class="nav-item mx-2"><a class="nav-link text-uppercase small fw-semibold" href="#ingenieria">Novedades</a></li>
-                    <li class="nav-item mx-2"><a class="nav-link text-uppercase small fw-semibold" href="#concierge">Contacto</a></li>
+
+            <!-- Acciones Móviles: Selector de Idioma + Menú Hamburguesa -->
+            <div class="d-flex align-items-center gap-2 d-lg-none">
+                <div class="lang-switcher">
+                    <button type="button" class="lang-btn active" data-lang="es">ES</button>
+                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="navbar-toggler-luxury" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Abrir Menú">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+
+            <!-- Navegación Desktop -->
+            <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex" id="navbarDesktop">
+                <ul class="navbar-nav align-items-center gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="#hero" data-i18n="nav.home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="#catalogo" data-i18n="nav.portfolio">Portafolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="#ingenieria" data-i18n="nav.insights">Excelencia & Métricas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="#concierge" data-i18n="nav.concierge">Concierge VIP</a>
+                    </li>
                     <li class="nav-item ms-3">
-                        <a href="#concierge" class="btn btn-luxury px-4 py-2">Agendar Visita</a>
+                        <a href="#concierge" class="btn btn-feral-cta" data-i18n="nav.cta">
+                            <i class="bi bi-calendar2-check"></i> Agendar Visita
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- HERO CINEMÁTICO CON IMAGEN DE FONDO Y FILTRO DE LUJO -->
-<header id="hero" class="hero-dark text-center" style="background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('./assets/img - apartamento/APARTAMENTO_SALE.jpg'); background-size: cover; background-position: center;">
-    <div class="container position-relative py-5">
-        <span class="text-uppercase tracking-widest text-warning fw-semibold mb-3 d-block" style="letter-spacing: 4px; font-size: 0.8rem;">Dubai Ultra-Luxury Real Estate & Lifestyle</span>
-        <h1 class="font-heading display-3 fw-bold mb-3 text-white">El Arte de Vivir <br><span class="fst-italic text-warning">sin Límites</span> en Dubái</h1>
-        <p class="fs-5 fw-light text-light mb-5 mx-auto" style="max-width: 650px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Plataforma de inversión exclusiva en Penthouses panorámicos, superyates en el Golfo Pérsico y superdeportivos de edición limitada.</p>
-        <a href="#catalogo" class="btn btn-danger px-5 py-3 rounded-pill text-uppercase fw-semibold shadow-lg" style="letter-spacing: 2px; font-size: 0.8rem; background-color: #8B0000; border: none;">Explorar Colección</a>
-    </div>
-</header>
-    <!-- SECCIÓN DE PORTAFOLIO DINÁMICO -->
-    <main id="catalogo" class="container py-5 my-5">
-        <div class="text-center mb-5">
-            <span class="text-uppercase text-muted small fw-bold" style="letter-spacing: 3px;">Activos de Alta Gama</span>
-            <h2 class="font-heading display-4 fw-bold mt-2">Portafolio Exclusivo 2026</h2>
-            <p class="text-muted small mt-2">Seleccione una categoría para explorar especificaciones técnicas, galerías fotográficas y disponibilidad de inversión en Dubái.</p>
+    <!-- ==========================================
+         OFFCANVAS MOBILE DRAWER FLOTANTE DE LUJO
+         ========================================== -->
+    <div class="offcanvas offcanvas-end offcanvas-luxury" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+        <div class="offcanvas-header d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <img src="./assets/logo.png" alt="Feral Logo" class="brand-logo me-2" style="height: 32px;" onerror="this.style.display='none'">
+                <span class="font-heading fw-bold fs-4 text-white">FERAL DUBÁI</span>
+            </div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
         </div>
+        <div class="offcanvas-body d-flex flex-column justify-content-between p-4">
+            <ul class="navbar-nav mb-4">
+                <li class="nav-item">
+                    <a class="nav-link" href="#hero">
+                        <span data-i18n="nav.home">Inicio</span>
+                        <i class="bi bi-chevron-right small text-ruby"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#catalogo">
+                        <span data-i18n="nav.portfolio">Portafolio</span>
+                        <i class="bi bi-chevron-right small text-ruby"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ingenieria">
+                        <span data-i18n="nav.insights">Excelencia & Métricas</span>
+                        <i class="bi bi-chevron-right small text-ruby"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#concierge">
+                        <span data-i18n="nav.concierge">Concierge VIP</span>
+                        <i class="bi bi-chevron-right small text-ruby"></i>
+                    </a>
+                </li>
+            </ul>
 
-        <!-- Pestañas de Filtrado -->
-        <ul class="nav nav-pills justify-content-center mb-5">
-    <li class="nav-item"><button class="nav-link active" data-category="todos">Todos</button></li>
-    <li class="nav-item"><button class="nav-link" data-category="apartamentos">Bienes Raíces</button></li>
-    <li class="nav-item"><button class="nav-link" data-category="yates">Yates Privados</button></li>
-    <li class="nav-item"><button class="nav-link" data-category="autos">Superdeportivos</button></li>
-    <li class="nav-item"><button class="nav-link" data-category="asesoria">Asesoría & Family Office</button></li>
-</ul>
+            <div class="mobile-drawer-footer border-top border-secondary-subtle pt-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <span class="small text-muted text-uppercase tracking-widest">Idioma / Language</span>
+                    <div class="lang-switcher">
+                        <button type="button" class="lang-btn active" data-lang="es">ES</button>
+                        <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                </div>
+                
+                <a href="#concierge" class="btn btn-feral-cta w-100 mb-3" data-i18n="nav.cta">
+                    <i class="bi bi-calendar2-check"></i> Agendar Visita
+                </a>
+                
+                <a href="https://wa.me/97148883372?text=Hola%20Feral%20Dubai%2C%20deseo%20atencion%20VIP" target="_blank" rel="noopener noreferrer" class="btn btn-feral-outline w-100 d-flex align-items-center justify-content-center gap-2">
+                    <i class="bi bi-whatsapp text-success"></i>
+                    <span data-i18n="form.whatsapp_direct">Contacto Directo WhatsApp</span>
+                </a>
 
-        <!-- Contenedor inyectado por JS -->
-        <div id="catalog-container" class="row g-4">
-            <!-- Renderizado dinámico desde catalog.json -->
+                <div class="text-center mt-4 small text-muted">
+                    <i class="bi bi-geo-alt text-ruby"></i> DIFC Gate Precinct 4, Dubai, UAE
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         HERO CINEMÁTICO DE ULTRALUJO (MOBILE-FIRST)
+         ========================================== -->
+    <header id="hero" class="hero-luxury text-center">
+        <!-- Imagen de Fondo Inmersiva -->
+        <img src="./assets/img - apartamento/APARTAMENTO_SALE.jpg" alt="Feral Dubái Luxury Penthouse" class="hero-bg-img" loading="eager">
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content py-4">
+            <span class="hero-badge" data-i18n="hero.badge">
+                Dubái · Bienes Raíces de Ultralujo & Family Office
+            </span>
+            
+            <h1 class="font-heading hero-title" data-i18n="hero.title">
+                El Arte de Vivir <br><span class="text-ruby-light fst-italic">sin Límites</span> en Dubái
+            </h1>
+            
+            <p class="hero-subtitle" data-i18n="hero.subtitle">
+                Plataforma privada de inversión en Penthouses panorámicos frente al Burj Khalifa, superyates de alta mar y vehículos bespoke de colección.
+            </p>
+
+            <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
+                <a href="#catalogo" class="btn btn-feral-cta w-100 w-sm-auto" data-i18n="hero.cta_catalog">
+                    <i class="bi bi-collection-play"></i> Explorar Portafolio
+                </a>
+                <a href="#concierge" class="btn btn-feral-outline w-100 w-sm-auto" data-i18n="hero.cta_vip">
+                    <i class="bi bi-gem"></i> Asesoría Privada
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         SECCIÓN DE PORTAFOLIO DINÁMICO (GENEROUS WHITESPACE)
+         ========================================== -->
+    <main id="catalogo" class="portfolio-section">
+        <div class="container">
+            <!-- Encabezado de Sección -->
+            <div class="text-center mb-4 mb-md-5">
+                <span class="section-tag" data-i18n="portfolio.subtitle">Activos de Alta Gama</span>
+                <h2 class="font-heading section-title mt-2 text-white" data-i18n="portfolio.title">Colección Privada 2026</h2>
+                <p class="section-desc" data-i18n="portfolio.desc">
+                    Seleccione una categoría para consultar especificaciones técnicas, dossiers confidenciales y disponibilidad inmediata en los Emiratos Árabes Unidos.
+                </p>
+            </div>
+
+            <!-- Pestañas de Filtrado Adaptables (Scroll Táctil en Móvil) -->
+            <div class="filter-tabs-wrapper mb-4 mb-md-5">
+                <div class="d-flex justify-content-start justify-content-md-center align-items-center gap-2 px-2">
+                    <button class="category-filter-btn active" data-category="todos" data-i18n="filter.todos">
+                        Todos los Activos
+                    </button>
+                    <button class="category-filter-btn" data-category="apartamentos" data-i18n="filter.apartamentos">
+                        Bienes Raíces
+                    </button>
+                    <button class="category-filter-btn" data-category="yates" data-i18n="filter.yates">
+                        Yates Privados
+                    </button>
+                    <button class="category-filter-btn" data-category="autos" data-i18n="filter.autos">
+                        Superdeportivos
+                    </button>
+                    <button class="category-filter-btn" data-category="asesoria" data-i18n="filter.asesoria">
+                        Family Office & Asesoría
+                    </button>
+                </div>
+            </div>
+
+            <!-- Contenedor Inyectado Dinámicamente por JS -->
+            <div id="catalog-container" class="row g-4">
+                <!-- Renderizado por js/modules/renderCatalog.js -->
+            </div>
         </div>
     </main>
 
-    <!-- SECCIÓN INGENIERÍA ADSO -->
-    <section id="ingenieria" class="py-5 bg-light border-top border-bottom">
-        <div class="container py-4">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <span class="text-uppercase text-danger fw-bold small tracking-widest">Lujo, Arquitectura, Elegancia</span>
-                    <h2 class="font-heading display-5 fw-bold my-3">Lujo Inmobiliario</h2>
-                    <p class="text-muted lh-lg">Feral Dubai integra, aun no se que poner en esta seccion una informacion relevante de la que tu quieras para que se vea puede ver que sea interesante, o un dato que la gente se detenga o un informativo, seccion de noticias como la que haces en tus videos</p>
-                    <div class="row mt-4">
+    <!-- ==========================================
+         SECCIÓN DE EXCELENCIA & FAMILY OFFICE (MÉTRICAS)
+         ========================================== -->
+    <section id="ingenieria" class="insights-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <!-- Columna de Narrativa y Métricas -->
+                <div class="col-lg-6">
+                    <span class="section-tag" data-i18n="insights.badge">Arquitectura Patrimonial & Rendimiento</span>
+                    <h2 class="font-heading section-title my-3 text-white" data-i18n="insights.title">
+                        Inversión Estratégica en el Epicentro del Ultralujo
+                    </h2>
+                    <p class="text-secondary lh-lg mb-4 fs-6" data-i18n="insights.desc">
+                        Feral Dubái estructura inversiones fiduciarias 'off-market' para familias de alto patrimonio (UHNWI) e inversores globales. Combinamos custodia legal bajo normativa anglosajona DIFC Common Law con acceso preferencial a las oportunidades más codiciadas de los Emiratos Árabes Unidos.
+                    </p>
+
+                    <!-- Cuadrícula de Métricas Financieras Clave -->
+                    <div class="row g-3">
                         <div class="col-6">
-                            <h4 class="font-heading fw-bold">99.9%</h4>
-                            <p class="text-muted small text-uppercase">Rendimiento para el 2030</p>
+                            <div class="stat-card h-100">
+                                <div class="stat-value" data-i18n="insights.stat1_val">0%</div>
+                                <div class="stat-label" data-i18n="insights.stat1_lbl">
+                                    Impuesto sobre la renta personal, ganancias de capital y herencias.
+                                </div>
+                            </div>
                         </div>
                         <div class="col-6">
-                            <h4 class="font-heading fw-bold">100% ganacias</h4>
-                            <p class="text-muted small text-uppercase">al 6 años</p>
+                            <div class="stat-card h-100">
+                                <div class="stat-value" data-i18n="insights.stat2_val">+14.8%</div>
+                                <div class="stat-label" data-i18n="insights.stat2_lbl">
+                                    Apreciación anual promedio en activos residenciales prime (DLD).
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-card h-100">
+                                <div class="stat-value" data-i18n="insights.stat3_val">10 Años</div>
+                                <div class="stat-label" data-i18n="insights.stat3_lbl">
+                                    Golden Visa de residencia garantizada para titular y familia.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-card h-100">
+                                <div class="stat-value" data-i18n="insights.stat4_val">100%</div>
+                                <div class="stat-label" data-i18n="insights.stat4_lbl">
+                                    Propiedad extranjera total en zonas Freehold con título directo.
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Columna Visual con Imagen Arquitectónica de Alta Gama -->
                 <div class="col-lg-6">
-                    <div class="rounded-4 overflow-hidden shadow-lg border">
-                        <img src="./assets/img - apartamento/APARTAMENTO_SALE.jpg" alt="Ingeniería Feral" class="w-100 object-fit-cover" style="height: 380px;">
+                    <div class="position-relative rounded-4 overflow-hidden shadow-lg border border-secondary-subtle">
+                        <img src="./assets/img-pagina/fondo.jpg" alt="DIFC Family Office Architecture" class="w-100 object-fit-cover" style="height: clamp(340px, 45vw, 490px); filter: brightness(0.92) contrast(1.08);">
+                        <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(transparent, rgba(8,8,8,0.95));">
+                            <span class="badge bg-burgundy-subtle text-white px-3 py-1 mb-2 text-uppercase">DIFC Gate District</span>
+                            <h4 class="font-heading h5 text-white mb-1">Dubai International Financial Centre</h4>
+                            <p class="small text-muted mb-0">Epicentro regulatorio bajo jurisdicción Common Law independiente.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN CONCIERGE -->
-    <section id="concierge" class="concierge-section position-relative py-5" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('./assets/img - yate/ALUMBRADO_FRONTAL_YATE.jpeg'); background-size: cover; background-position: center;">
-    <div class="container py-5">
-        <div class="concierge-box p-5 mx-auto shadow-lg" style="max-width: 900px; background: rgba(12, 12, 12, 0.88); backdrop-filter: blur(16px); border: 1px solid rgba(212, 175, 55, 0.3);">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <span class="text-uppercase fw-semibold small tracking-widest" style="color: #d4af37; letter-spacing: 2px;">Atención Personalizada</span>
-                    <h2 class="font-heading display-6 fw-bold text-white my-3">Conecte con yiyi</h2>
-                    <p class="fs-6 fw-light mb-4 text-light" style="opacity: 0.9; line-height: 1.7;">Nuestros asesores privados en Downtown Dubai están listos para coordinar visitas virtuales o presenciales a nuestros activos de lujo</p>
-                    <ul class="list-unstyled small mt-3 text-white">
-                        <li class="mb-3 d-flex align-items-center"><span style="color: #d4af37; font-size: 1.1rem; margin-right: 10px;">✓</span> Asesoría legal y financiera en Dubái</li>
-                        <li class="mb-3 d-flex align-items-center"><span style="color: #d4af37; font-size: 1.1rem; margin-right: 10px;">✓</span> privados en ROLL o YATE</li>
-                        <li class="d-flex align-items-center"><span style="color: #d4af37; font-size: 1.1rem; margin-right: 10px;">✓</span> PAGOS en cripto </li>
-                    </ul>
+    <!-- ==========================================
+         SECCIÓN CONCIERGE VIP & FORMULARIO
+         ========================================== -->
+    <section id="concierge" class="concierge-section position-relative">
+        <!-- Fondo de Superyate Iluminado -->
+        <img src="./assets/img - yate/ALUMBRADO_FRONTAL_YATE.jpeg" alt="Superyate Feral Dubái" class="concierge-bg-img" loading="lazy">
+
+        <div class="container concierge-container">
+            <div class="concierge-box mx-auto">
+                <div class="row align-items-center g-5">
+                    <!-- Información y Beneficios VIP -->
+                    <div class="col-lg-6">
+                        <span class="section-tag" data-i18n="concierge.badge">Atención Personalizada 24/7</span>
+                        <h2 class="font-heading display-6 fw-bold text-white my-3" data-i18n="concierge.title">
+                            Conecte con un Director Privado
+                        </h2>
+                        <p class="fs-6 fw-light mb-4 text-secondary" style="line-height: 1.8;" data-i18n="concierge.desc">
+                            Nuestros directores de banca privada y asesores inmobiliarios en Downtown Dubai coordinan inspecciones en helicóptero, traslados privados en Rolls-Royce y asesoría confidencial para Family Offices.
+                        </p>
+                        
+                        <ul class="list-unstyled small mt-4 text-white">
+                            <li class="mb-3 d-flex align-items-start gap-2">
+                                <span class="text-ruby fs-5 lh-1">✓</span>
+                                <span class="text-secondary" data-i18n="concierge.feat1">Estructuración legal y fiduciaria bajo estándar DIFC Common Law.</span>
+                            </li>
+                            <li class="mb-3 d-flex align-items-start gap-2">
+                                <span class="text-ruby fs-5 lh-1">✓</span>
+                                <span class="text-secondary" data-i18n="concierge.feat2">Inspecciones privadas VIP en Rolls-Royce o Superyate.</span>
+                            </li>
+                            <li class="d-flex align-items-start gap-2">
+                                <span class="text-ruby fs-5 lh-1">✓</span>
+                                <span class="text-secondary" data-i18n="concierge.feat3">Liquidación institucional en USD, AED, EUR y Criptoactivos con custodia escrow certificada.</span>
+                            </li>
+                        </ul>
+
+                        <!-- Botón WhatsApp Directo -->
+                        <div class="mt-4 pt-2">
+                            <a href="https://wa.me/97148883372?text=Hola%20Feral%20Dubai%2C%20deseo%20atencion%20VIP" target="_blank" rel="noopener noreferrer" class="btn btn-feral-outline w-100 w-sm-auto d-inline-flex align-items-center justify-content-center gap-2">
+                                <i class="bi bi-whatsapp text-success fs-5"></i>
+                                <span data-i18n="form.whatsapp_direct">Contacto Directo por WhatsApp VIP</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Formulario de Contacto Confidencial -->
+                    <div class="col-lg-6">
+                        <form id="concierge-form" novalidate>
+                            <div class="mb-3">
+                                <input type="text" id="concierge-name" class="form-control luxury-input" placeholder="Nombre Completo o Razón Social" data-i18n-placeholder="form.name_placeholder" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" id="concierge-email" class="form-control luxury-input" placeholder="Correo Corporativo Confidencial" data-i18n-placeholder="form.email_placeholder" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="tel" id="concierge-phone" class="form-control luxury-input" placeholder="Teléfono / WhatsApp (ej. +971... o +34...)" data-i18n-placeholder="form.phone_placeholder">
+                            </div>
+                            <div class="mb-3">
+                                <select id="concierge-interest" class="form-select luxury-input" aria-label="Interés de Activo">
+                                    <option value="penthouse" selected data-i18n="form.opt_penthouse">Penthouses & Villas de Autor en Downtown / Palm</option>
+                                    <option value="yachts" data-i18n="form.opt_yacht">Adquisición de Superyates (50M - 70M)</option>
+                                    <option value="cars" data-i18n="form.opt_cars">Flota de Superdeportivos Bespoke & Blindados</option>
+                                    <option value="family" data-i18n="form.opt_family">Family Office, DIFC Trusts & Golden Visa 10 Años</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <textarea id="concierge-message" class="form-control luxury-input" rows="3" placeholder="Indique requerimientos específicos o preferencias de contacto confidencial..." data-i18n-placeholder="form.message_placeholder"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-feral-cta w-100 py-3" data-i18n="form.submit">
+                                <i class="bi bi-send"></i> Solicitar Atención VIP Confidencial
+                            </button>
+                        </form>
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                    <form>
-                        <div class="mb-3">
-                            <input type="text" class="form-control text-white border-secondary py-3" placeholder="Nombre Completo" style="background-color: rgba(30, 30, 30, 0.9) !important; color: #fff !important; border-color: #444 !important;">
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control text-white border-secondary py-3" placeholder="Correo Electrónico Corporativo" style="background-color: rgba(30, 30, 30, 0.9) !important; color: #fff !important; border-color: #444 !important;">
-                        </div>
-                        <div class="mb-3">
-                            <select class="form-select text-white border-secondary py-3" style="background-color: rgba(30, 30, 30, 0.9) !important; color: #fff !important; border-color: #444 !important;">
-                                <option selected>Inversión en Penthouses</option>
-                                <option>Adquisición de Superyates</option>
-                                <option>Flota de Superdeportivos</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn w-100 py-3 fw-bold text-uppercase text-white shadow" style="background-color: #8B0000; border: none; letter-spacing: 1px;">Enviar Solicitud VIP</button>
-                    </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         MODAL DE CONFIRMACIÓN VIP
+         ========================================== -->
+    <div class="modal fade" id="vipConfirmationModal" tabindex="-1" aria-labelledby="vipModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-luxury-content text-center">
+                <div class="modal-body py-4">
+                    <div class="text-ruby fs-1 mb-3">
+                        <i class="bi bi-check2-circle"></i>
+                    </div>
+                    <h3 class="font-heading h3 text-white mb-3" id="vipModalLabel" data-i18n="modal.title">
+                        Solicitud VIP Recibida
+                    </h3>
+                    <p class="text-muted small mb-4" data-i18n="modal.body">
+                        Gracias por contactar a Feral Dubái. Su solicitud confidencial ha sido asignada a uno de nuestros directores patrimoniales en Downtown Dubái. Nos comunicaremos con usted en un plazo máximo de 2 horas hábiles.
+                    </p>
+                    <button type="button" class="btn btn-luxury px-4 py-2" data-bs-dismiss="modal" data-i18n="modal.close">
+                        Cerrar
+                    </button>
                 </div>
             </div>
         </div>
     </div>
-</section>
 
-    <!-- FOOTER -->
-    <footer class="text-white py-5 text-center">
+    <!-- ==========================================
+         BOTÓN FLOTANTE WHATSAPP VIP (MÓVIL / ESCRITORIO)
+         ========================================== -->
+    <a href="https://wa.me/97148883372?text=Hola%20Feral%20Dubai%2C%20deseo%20consultar%20sobre%20el%20portafolio%20VIP" target="_blank" rel="noopener noreferrer" class="floating-vip-btn" aria-label="WhatsApp VIP">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <!-- ==========================================
+         FOOTER INSTITUCIONAL DE ALTA GAMA
+         ========================================== -->
+    <footer class="footer-luxury text-center">
         <div class="container">
             <div class="d-flex justify-content-center align-items-center mb-3">
-    <img src="./assets/logo.png" alt="Logo Feral" style="height: 35px; width: auto;" class="me-2" onerror="this.style.display='none'">
-    <span class="font-heading fw-bold fs-4">FERAL DUBAI</span>
-</div>
-            <p class="text-muted small mb-3">Desarrollo modular profesional para Portafolio AndreyYama. Todos los derechos reservados &copy; (falta por redactar contrato, privacidad etc..)2026 Feral Dubai Real Estate & Lifestyle.</p>
-            <div class="d-flex justify-content-center gap-3 text-muted">
-                <a href="#" class="text-white text-decoration-none">Instagram</a>
-                <a href="#" class="text-white text-decoration-none">LinkedIn</a>
-                <a href="#" class="text-white text-decoration-none">WhatsApp</a>
+                <img src="./assets/logo.png" alt="Feral Logo" style="height: 36px; width: auto;" class="me-2" onerror="this.style.display='none'">
+                <span class="font-heading fw-bold fs-4 text-white">FERAL DUBÁI</span>
+            </div>
+            
+            <p class="text-ruby-light small mb-3" data-i18n="footer.tagline">
+                Plataforma Privada de Activos de Ultralujo & Family Office · Dubái, EAU
+            </p>
+
+            <p class="text-muted small mx-auto mb-4" style="max-width: 820px; line-height: 1.7;" data-i18n="footer.legal">
+                Feral Dubái opera en estricta conformidad con las directrices regulatorias del Dubai Financial Services Authority (DFSA) y el Dubai Land Department (DLD). Todas las operaciones de comercialización y corretaje se gestionan bajo acuerdos de estricta confidencialidad (NDA). Portafolio profesional desarrollado por AndreyYama.
+            </p>
+
+            <div class="footer-links d-flex flex-wrap justify-content-center gap-4 mb-4 small">
+                <a href="#hero" data-i18n="footer.privacy">Aviso de Privacidad</a>
+                <a href="#hero" data-i18n="footer.terms">Términos Institucionales</a>
+                <a href="#hero" data-i18n="footer.dld">Certificación DLD</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram me-1"></i> Instagram</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin me-1"></i> LinkedIn</a>
+            </div>
+
+            <div class="small text-muted border-top border-secondary-subtle pt-3" data-i18n="footer.copy">
+                &copy; 2026 Feral Dubai Real Estate & Private Assets. Todos los derechos reservados.
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap 5.3.3 Bundle JS (with Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
     <!-- Script Modular Principal -->
     <script type="module" src="./js/main.js"></script>
 </body>
