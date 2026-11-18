@@ -88,13 +88,10 @@
                         <a class="nav-link text-uppercase" href="#about" data-i18n="nav.about">Acerca de Feral</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="#mapa" data-i18n="nav.map">Mapa GPS</a>
+                        <a class="nav-link text-uppercase" href="#mapa" data-i18n="nav.insights_map">Por Qué Dubái & Mapa</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-uppercase" href="#calculadora" data-i18n="nav.calculator">Calculadora ROI</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="#insights" data-i18n="nav.insights">Por Qué Dubái</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-uppercase" href="#concierge" data-i18n="nav.concierge">Contacto VIP</a>
@@ -142,19 +139,13 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#mapa">
-                        <span data-i18n="nav.map">Mapa GPS</span>
+                        <span data-i18n="nav.insights_map">Por Qué Dubái & Mapa</span>
                         <i class="bi bi-chevron-right small text-burgundy"></i>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#calculadora">
                         <span data-i18n="nav.calculator">Calculadora ROI</span>
-                        <i class="bi bi-chevron-right small text-burgundy"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#insights">
-                        <span data-i18n="nav.insights">Por Qué Dubái</span>
                         <i class="bi bi-chevron-right small text-burgundy"></i>
                     </a>
                 </li>
@@ -587,6 +578,8 @@
         </div>
     </main>
 
+    <hr class="luxury-divider">
+
     <!-- ==========================================
          SECCIÓN INSTITUCIONAL & AUTORIDAD ("ACERCA DE FERAL")
          ========================================== -->
@@ -665,134 +658,17 @@
         </div>
     </section>
 
-    <!-- ==========================================
-         SECCIÓN MAPA INTERACTIVO CON GPS (LEAFLET.JS)
-         ========================================== -->
-    <section id="mapa" class="map-section">
-        <div class="container">
-            <div class="text-center mb-4 mb-md-5">
-                <span class="section-tag" data-i18n="map.badge">Ubicación Geoespacial Estratégica</span>
-                <h2 class="font-heading section-title mt-2" data-i18n="map.title">Geolocalización de Activos Exclusivos en Dubái</h2>
-                <p class="section-desc" data-i18n="map.desc">
-                    Explore la ubicación geoespacial exacta de nuestras residencias, amarres privados para superyates y sedes fiduciarias en los distritos de mayor plusvalía de los Emiratos Árabes Unidos.
-                </p>
-                <div class="small text-muted mt-2">
-                    <i class="bi bi-info-circle text-burgundy me-1"></i>
-                    <span data-i18n="map.instruction">Haga clic en los marcadores interactivos para inspeccionar el activo y solicitar su asignación.</span>
-                </div>
-            </div>
-            
-            <!-- Contenedor del Mapa Leaflet -->
-            <div class="dubai-map-container" id="dubai-map">
-                <!-- Inicializado por js/modules/map.js -->
-            </div>
-        </div>
-    </section>
+    <hr class="luxury-divider">
 
     <!-- ==========================================
-         SECCIÓN CALCULADORA DE RENTABILIDAD (LEAD MAGNET)
+         SECCIÓN FUSIONADA: POR QUÉ DUBÁI & MAPA GPS INTERACTIVO (LEAFLET.JS)
          ========================================== -->
-    <section id="calculadora" class="calculator-section">
+    <section id="mapa" class="insights-map-section position-relative">
+        <div id="insights" class="position-absolute" style="top: -80px;"></div>
         <div class="container">
-            <div class="text-center mb-4 mb-md-5">
-                <span class="section-tag" data-i18n="calc.badge">Simulador de Crecimiento & Rendimiento</span>
-                <h2 class="font-heading section-title mt-2" data-i18n="calc.title">Calculadora Interactiva de Inversión Fiduciaria</h2>
-                <p class="section-desc" data-i18n="calc.desc">
-                    Simule la plusvalía proyectada de capital, los rendimientos netos por rentas y el ahorro fiscal total (0% impuestos en Dubái) con base en datos históricos auditados.
-                </p>
-            </div>
-
-            <div class="calculator-card mx-auto" id="investment-calculator" style="max-width: 1040px;">
-                <div class="row g-4 g-lg-5 align-items-center">
-                    <!-- Controles de Entrada -->
-                    <div class="col-lg-6">
-                        <!-- Slider de Capital -->
-                        <div class="mb-4">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <label class="fw-semibold small text-uppercase tracking-widest text-dark" data-i18n="calc.label_amount">Monto de Inversión Estimado</label>
-                                <span class="fs-4 fw-bold font-heading text-burgundy" id="calc-amount-display">$5,000,000</span>
-                            </div>
-                            <input type="range" class="calc-slider" id="calc-amount-slider" min="1000000" max="25000000" step="500000" value="5000000">
-                            <div class="d-flex justify-content-between small text-muted mt-1">
-                                <span>$1,000,000 USD</span>
-                                <span>$25,000,000+ USD</span>
-                            </div>
-                        </div>
-
-                        <!-- Selector de Tipo de Activo -->
-                        <div class="mb-4">
-                            <label class="fw-semibold small text-uppercase tracking-widest text-dark mb-2 d-block" data-i18n="calc.label_asset">Tipo de Activo Fiduciario</label>
-                            <select class="form-select luxury-input" id="calc-asset-type">
-                                <option value="penthouse" selected data-i18n="calc.opt_penthouse">Penthouses & Residencial Prime (Downtown / Palm)</option>
-                                <option value="yachts" data-i18n="calc.opt_yachts">Superyates & Chárter Privado de Alta Mar</option>
-                                <option value="cars" data-i18n="calc.opt_cars">Superdeportivos Bespoke & Colección</option>
-                                <option value="family" data-i18n="calc.opt_family">Family Office & Estructuración Integral DIFC</option>
-                            </select>
-                        </div>
-
-                        <!-- Horizonte Temporal -->
-                        <div class="mb-3">
-                            <label class="fw-semibold small text-uppercase tracking-widest text-dark mb-2 d-block" data-i18n="calc.label_horizon">Horizonte Temporal de Inversión</label>
-                            <div class="d-flex gap-2">
-                                <button type="button" class="calc-year-btn flex-grow-1" data-years="3" data-i18n="calc.years_3">3 Años</button>
-                                <button type="button" class="calc-year-btn flex-grow-1 active" data-years="5" data-i18n="calc.years_5">5 Años</button>
-                                <button type="button" class="calc-year-btn flex-grow-1" data-years="10" data-i18n="calc.years_10">10 Años</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Resultados Dinámicos & Lead Magnet -->
-                    <div class="col-lg-6">
-                        <div class="calc-result-highlight mb-3">
-                            <span class="small text-uppercase fw-semibold text-muted d-block mb-1" data-i18n="calc.res_portfolio">Valor Total Proyectado de Cartera</span>
-                            <div class="calc-metric-val highlight" id="calc-portfolio-value">$8,655,000</div>
-                            <div class="small fw-semibold text-success mt-1 d-flex align-items-center gap-1">
-                                <i class="bi bi-arrow-up-right-circle-fill"></i>
-                                <span data-i18n="calc.res_return">Retorno Total Estimado:</span>
-                                <span id="calc-total-return" class="ms-1">+$3,655,000</span>
-                            </div>
-                        </div>
-
-                        <div class="row g-2 mb-4">
-                            <div class="col-6">
-                                <div class="calc-result-box">
-                                    <span class="small text-muted d-block" style="font-size: 0.76rem;" data-i18n="calc.res_appreciation">Apreciación Capital</span>
-                                    <div class="fw-bold fs-6 mt-1 text-dark" id="calc-appreciation">+$2,485,000</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="calc-result-box">
-                                    <span class="small text-muted d-block" style="font-size: 0.76rem;" data-i18n="calc.res_yield">Rentas / Yield</span>
-                                    <div class="fw-bold fs-6 mt-1 text-dark" id="calc-yield">+$1,170,000</div>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="calc-result-box bg-white border border-secondary-subtle">
-                                    <span class="small text-muted d-block" style="font-size: 0.76rem;" data-i18n="calc.res_tax">Ahorro Fiscal en Dubái (0% vs Jurisdicciones 42% Tax)</span>
-                                    <div class="fw-bold fs-5 mt-1 text-burgundy" id="calc-tax-savings">$1,535,100</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Botón Disparador del Lead Magnet Modal -->
-                        <button type="button" class="btn btn-feral-cta w-100 py-3 shadow" data-bs-toggle="modal" data-bs-target="#leadMagnetModal">
-                            <i class="bi bi-file-earmark-pdf me-2"></i>
-                            <span data-i18n="calc.cta_lead">Descargar Corrida Financiera & Auditoría Completa (PDF)</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         SECCIÓN DE PROPUESTA DE VALOR E INVERSIÓN
-         ========================================== -->
-    <section id="insights" class="insights-section">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <!-- Columna de Narrativa y Métricas Financieras -->
-                <div class="col-lg-6">
+            <div class="row align-items-center g-4 g-lg-5">
+                <!-- Columna Izquierda: Narrativa Institucional & Métricas de Plusvalía -->
+                <div class="col-lg-5">
                     <span class="section-tag" data-i18n="insights.badge">Arquitectura Patrimonial & Rendimiento</span>
                     <h2 class="font-heading section-title my-3" data-i18n="insights.title">
                         Por Qué Dubái: Seguridad de Capital en el Epicentro Financiero Global
@@ -802,12 +678,12 @@
                     </p>
 
                     <!-- Cuadrícula de Métricas Financieras Clave -->
-                    <div class="row g-3">
+                    <div class="row g-3 mb-4">
                         <div class="col-6">
                             <div class="stat-card h-100">
                                 <div class="stat-value" data-i18n="insights.stat1_val">0%</div>
                                 <div class="stat-label" data-i18n="insights.stat1_lbl">
-                                    Exención de impuestos sobre renta, ganancias de capital y transmisión hereditaria.
+                                    Exención de impuestos sobre renta, ganancias de capital y herencia.
                                 </div>
                             </div>
                         </div>
@@ -823,7 +699,7 @@
                             <div class="stat-card h-100">
                                 <div class="stat-value" data-i18n="insights.stat3_val">10 Años</div>
                                 <div class="stat-label" data-i18n="insights.stat3_lbl">
-                                    Golden Visa de residencia garantizada para inversor, familia directa y personal clave.
+                                    Golden Visa garantizada para inversor, familia directa y personal clave.
                                 </div>
                             </div>
                         </div>
@@ -831,27 +707,134 @@
                             <div class="stat-card h-100">
                                 <div class="stat-value" data-i18n="insights.stat4_val">100%</div>
                                 <div class="stat-label" data-i18n="insights.stat4_lbl">
-                                    Propiedad extranjera total en zonas Freehold con título de propiedad pleno e irrevocable.
+                                    Propiedad extranjera total en zonas Freehold con título pleno e irrevocable.
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Indicador Interactivo del Mapa -->
+                    <div class="d-flex align-items-center gap-2 p-2 px-3 rounded-pill bg-white border border-light-subtle shadow-sm small text-dark fw-medium">
+                        <i class="bi bi-geo-alt-fill text-burgundy"></i>
+                        <span data-i18n="map.instruction">Haga clic en los marcadores del mapa para inspeccionar activos en Downtown, Palm Jumeirah y DIFC.</span>
+                    </div>
                 </div>
 
-                <!-- Columna Visual con Imagen Arquitectónica de Alta Gama -->
-                <div class="col-lg-6">
-                    <div class="position-relative rounded-4 overflow-hidden shadow-sm border border-light-subtle">
-                        <img src="./assets/img-pagina/fondo.jpg" alt="DIFC Family Office Architecture" class="w-100 object-fit-cover" style="height: clamp(340px, 45vw, 480px); filter: brightness(0.96) contrast(1.04);">
-                        <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(transparent, rgba(20,20,20,0.85));">
-                            <span class="badge px-3 py-1 mb-2 text-uppercase fw-semibold" style="background-color: var(--feral-burgundy); color: #FFFFFF;">DIFC Gate District</span>
-                            <h4 class="font-heading h5 text-white mb-1">Dubai International Financial Centre</h4>
-                            <p class="small text-white-50 mb-0">Epicentro regulatorio bajo jurisdicción Common Law independiente.</p>
+                <!-- Columna Derecha: Mapa Interactivo GPS (Leaflet.js) -->
+                <div class="col-lg-7">
+                    <div class="position-relative">
+                        <div class="dubai-map-container" id="dubai-map">
+                            <!-- Inicializado por js/modules/map.js -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <hr class="luxury-divider">
+
+    <!-- ==========================================
+         SECCIÓN DESTACADA: CALCULADORA DE RENTABILIDAD & LEAD MAGNET (ALTO IMPACTO)
+         ========================================== -->
+    <section id="calculadora" class="calculator-section text-center">
+        <div class="container">
+            <span class="section-tag" data-i18n="calc.badge">Simulador Patrimonial · Lead Magnet</span>
+            <h2 class="font-heading section-title mt-2 text-white" data-i18n="calc.title">Simulador de Rentabilidad Fiduciaria & Ahorro Fiscal</h2>
+            <p class="section-desc" data-i18n="calc.desc">
+                Le invitamos a simular su inversión patrimonial estimada en activos prime de Dubái. Ajuste el capital y reciba una corrida financiera confidencial auditada bajo normativa DIFC.
+            </p>
+
+            <!-- Mensaje Asesor de Invitación Directa -->
+            <div class="calculator-advisor-pill mx-auto mb-4 mb-md-5 mt-3 text-center">
+                <i class="bi bi-shield-check text-warning me-2 fs-5"></i>
+                <span data-i18n="calc.advisor_note">Diseñado para clientes e inversores fiduciarios: simule sus parámetros y solicite su corrida financiera a medida con auditoría DIFC.</span>
+            </div>
+
+            <div class="calculator-card mx-auto text-start" id="investment-calculator" style="max-width: 1040px;">
+                <div class="row g-4 g-lg-5 align-items-center">
+                    <!-- Controles de Entrada -->
+                    <div class="col-lg-6">
+                        <!-- Slider de Capital -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <label class="fw-semibold small text-uppercase tracking-widest text-white" data-i18n="calc.label_amount">Monto de Inversión Estimado</label>
+                                <span class="fs-4 fw-bold font-heading" id="calc-amount-display" style="color: #F7E7C4 !important;">$5,000,000</span>
+                            </div>
+                            <input type="range" class="calc-slider" id="calc-amount-slider" min="1000000" max="25000000" step="500000" value="5000000">
+                            <div class="d-flex justify-content-between small text-white-50 mt-1">
+                                <span>$1,000,000 USD</span>
+                                <span>$25,000,000+ USD</span>
+                            </div>
+                        </div>
+
+                        <!-- Selector de Tipo de Activo -->
+                        <div class="mb-4">
+                            <label class="fw-semibold small text-uppercase tracking-widest text-white mb-2 d-block" data-i18n="calc.label_asset">Tipo de Activo Fiduciario</label>
+                            <select class="form-select luxury-input" id="calc-asset-type">
+                                <option value="penthouse" selected data-i18n="calc.opt_penthouse">Penthouses & Residencial Prime (Downtown / Palm)</option>
+                                <option value="yachts" data-i18n="calc.opt_yachts">Superyates & Chárter Privado de Alta Mar</option>
+                                <option value="cars" data-i18n="calc.opt_cars">Superdeportivos Bespoke & Colección</option>
+                                <option value="family" data-i18n="calc.opt_family">Family Office & Estructuración Integral DIFC</option>
+                            </select>
+                        </div>
+
+                        <!-- Horizonte Temporal -->
+                        <div class="mb-3">
+                            <label class="fw-semibold small text-uppercase tracking-widest text-white mb-2 d-block" data-i18n="calc.label_horizon">Horizonte Temporal de Inversión</label>
+                            <div class="d-flex gap-2">
+                                <button type="button" class="calc-year-btn flex-grow-1" data-years="3" data-i18n="calc.years_3">3 Años</button>
+                                <button type="button" class="calc-year-btn flex-grow-1 active" data-years="5" data-i18n="calc.years_5">5 Años</button>
+                                <button type="button" class="calc-year-btn flex-grow-1" data-years="10" data-i18n="calc.years_10">10 Años</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resultados Dinámicos & Lead Magnet -->
+                    <div class="col-lg-6">
+                        <div class="calc-result-highlight mb-3">
+                            <span class="small text-uppercase fw-semibold d-block mb-1 text-white-50" data-i18n="calc.res_portfolio">Valor Total Proyectado de Cartera</span>
+                            <div class="calc-metric-val highlight" id="calc-portfolio-value">$8,655,000</div>
+                            <div class="small fw-semibold mt-1 d-flex align-items-center gap-1" style="color: #6BE89B;">
+                                <i class="bi bi-arrow-up-right-circle-fill"></i>
+                                <span data-i18n="calc.res_return">Retorno Total Estimado:</span>
+                                <span id="calc-total-return" class="ms-1">+$3,655,000</span>
+                            </div>
+                        </div>
+
+                        <div class="row g-2 mb-4">
+                            <div class="col-6">
+                                <div class="calc-result-box">
+                                    <span class="small text-white-50 d-block" style="font-size: 0.76rem;" data-i18n="calc.res_appreciation">Apreciación Capital</span>
+                                    <div class="fw-bold fs-6 mt-1 text-white" id="calc-appreciation">+$2,485,000</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="calc-result-box">
+                                    <span class="small text-white-50 d-block" style="font-size: 0.76rem;" data-i18n="calc.res_yield">Rentas / Yield</span>
+                                    <div class="fw-bold fs-6 mt-1 text-white" id="calc-yield">+$1,170,000</div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="calc-result-box border" style="background: rgba(128, 0, 32, 0.25); border-color: rgba(197, 160, 89, 0.4) !important;">
+                                    <span class="small text-white-50 d-block" style="font-size: 0.76rem;" data-i18n="calc.res_tax">Ahorro Fiscal en Dubái (0% vs Jurisdicciones 42% Tax)</span>
+                                    <div class="fw-bold fs-5 mt-1" id="calc-tax-savings" style="color: #F7E7C4;">$1,535,100</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botón Disparador del Lead Magnet Modal -->
+                        <button type="button" class="btn btn-lead-magnet w-100 py-3 shadow" data-bs-toggle="modal" data-bs-target="#leadMagnetModal">
+                            <i class="bi bi-file-earmark-pdf-fill me-2"></i>
+                            <span data-i18n="calc.cta_lead">Descargar Corrida Financiera & Auditoría Completa (PDF)</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="luxury-divider">
 
     <!-- ==========================================
          SECCIÓN CONCIERGE VIP & EMBUDO DE CONVERSIÓN
@@ -1108,6 +1091,44 @@
               }
             }
           });
+
+          // Calculator Fallback Interaction (for file:// protocol)
+          var slider = document.getElementById('calc-amount-slider');
+          var amountDisplay = document.getElementById('calc-amount-display');
+          var yearBtns = document.querySelectorAll('.calc-year-btn');
+          var portfolioVal = document.getElementById('calc-portfolio-value');
+          var totalReturnVal = document.getElementById('calc-total-return');
+          var taxSavingsVal = document.getElementById('calc-tax-savings');
+
+          function updateQuickCalc() {
+            if (!slider) return;
+            var val = parseFloat(slider.value) || 5000000;
+            if (amountDisplay) amountDisplay.textContent = '$' + Number(val).toLocaleString('en-US');
+            var years = 5;
+            yearBtns.forEach(function(b) {
+              if (b.classList.contains('active')) years = parseInt(b.getAttribute('data-years') || '5', 10);
+            });
+            var future = val * Math.pow(1 + 0.148, years);
+            var yieldTot = val * 0.078 * years;
+            var ret = (future - val) + yieldTot;
+            var tot = val + ret;
+            if (portfolioVal) portfolioVal.textContent = '$' + Math.round(tot).toLocaleString('en-US');
+            if (totalReturnVal) totalReturnVal.textContent = '+$' + Math.round(ret).toLocaleString('en-US');
+            if (taxSavingsVal) taxSavingsVal.textContent = '$' + Math.round(ret * 0.42).toLocaleString('en-US');
+          }
+
+          if (slider) {
+            slider.addEventListener('input', updateQuickCalc);
+          }
+          if (yearBtns && yearBtns.length) {
+            yearBtns.forEach(function(btn) {
+              btn.addEventListener('click', function() {
+                yearBtns.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                updateQuickCalc();
+              });
+            });
+          }
         });
       })();
     </script>

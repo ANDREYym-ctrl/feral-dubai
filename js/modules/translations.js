@@ -17,6 +17,7 @@ export const translations = {
     "nav.map": "Mapa GPS",
     "nav.calculator": "Calculadora ROI",
     "nav.insights": "Por Qué Dubái",
+    "nav.insights_map": "Por Qué Dubái & Mapa",
     "nav.concierge": "Contacto VIP",
     "nav.cta": "Agendar Visita",
 
@@ -67,9 +68,10 @@ export const translations = {
     "map.instruction": "Haga clic en los marcadores interactivos para inspeccionar el activo y solicitar su asignación.",
 
     // ROI Calculator Section (Lead Magnet)
-    "calc.badge": "Simulador de Crecimiento & Rendimiento",
-    "calc.title": "Calculadora Interactiva de Inversión Fiduciaria",
-    "calc.desc": "Simule la plusvalía proyectada de capital, los rendimientos netos por rentas y el ahorro fiscal total (0% impuestos en Dubái) con base en datos históricos auditados.",
+    "calc.badge": "Simulador Patrimonial · Lead Magnet",
+    "calc.title": "Simulador de Rentabilidad Fiduciaria & Ahorro Fiscal",
+    "calc.desc": "Le invitamos a simular su inversión patrimonial estimada en activos prime de Dubái. Ajuste el capital y reciba una corrida financiera confidencial auditada bajo normativa DIFC.",
+    "calc.advisor_note": "Diseñado para clientes e inversores fiduciarios: simule sus parámetros y solicite su corrida financiera a medida con auditoría DIFC.",
     "calc.label_amount": "Monto de Inversión Estimado",
     "calc.label_asset": "Tipo de Activo Fiduciario",
     "calc.label_horizon": "Horizonte Temporal de Inversión",
@@ -153,6 +155,7 @@ export const translations = {
     "nav.map": "GPS Map",
     "nav.calculator": "ROI Calculator",
     "nav.insights": "Why Dubai",
+    "nav.insights_map": "Why Dubai & Map",
     "nav.concierge": "VIP Contact",
     "nav.cta": "Book Private Tour",
 
@@ -203,9 +206,10 @@ export const translations = {
     "map.instruction": "Click on any interactive marker to inspect specifications and request private allocation.",
 
     // ROI Calculator Section (Lead Magnet)
-    "calc.badge": "Wealth & Growth Simulator",
-    "calc.title": "Interactive Fiduciary Investment Calculator",
-    "calc.desc": "Simulate projected capital growth, net rental yields, and complete fiscal preservation (0% taxes in Dubai) based on audited historical performance.",
+    "calc.badge": "Institutional Lead Magnet · Wealth Simulator",
+    "calc.title": "Fiduciary ROI & Fiscal Shield Simulator",
+    "calc.desc": "We invite you to project your portfolio returns and tax shield in Dubai. Adjust capital allocation to receive a confidential audited financial report under DIFC governance.",
+    "calc.advisor_note": "Designed for fiduciary clients and investors: configure your allocation to request a tailored DIFC financial audit.",
     "calc.label_amount": "Estimated Investment Capital",
     "calc.label_asset": "Fiduciary Asset Category",
     "calc.label_horizon": "Investment Time Horizon",

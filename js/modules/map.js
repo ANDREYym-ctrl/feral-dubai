@@ -127,6 +127,19 @@ export function initMap() {
   mapInstance.on('focus', () => {
     mapInstance.scrollWheelZoom.enable();
   });
+
+  // Ensure 100% full tile coverage and responsive re-centering
+  setTimeout(() => {
+    if (mapInstance) {
+      mapInstance.invalidateSize();
+    }
+  }, 350);
+
+  window.addEventListener('resize', () => {
+    if (mapInstance) {
+      mapInstance.invalidateSize();
+    }
+  }, { passive: true });
 }
 
 function renderMapMarkers() {
