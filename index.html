@@ -14,6 +14,9 @@
     
     <!-- Bootstrap Icons 1.11.3 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Leaflet.js 1.9.4 CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     
     <!-- Google Fonts: Bodoni Moda (Editorial Serif) & Plus Jakarta Sans (Clean Modern Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,7 +77,7 @@
 
             <!-- Navegación Desktop -->
             <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex" id="navbarDesktop">
-                <ul class="navbar-nav align-items-center gap-2">
+                <ul class="navbar-nav align-items-center gap-1">
                     <li class="nav-item">
                         <a class="nav-link text-uppercase" href="#hero" data-i18n="nav.home">Inicio</a>
                     </li>
@@ -85,12 +88,18 @@
                         <a class="nav-link text-uppercase" href="#catalogo" data-i18n="nav.portfolio">Portafolio</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="#mapa" data-i18n="nav.map">Mapa GPS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="#calculadora" data-i18n="nav.calculator">Calculadora ROI</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link text-uppercase" href="#insights" data-i18n="nav.insights">Por Qué Dubái</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-uppercase" href="#concierge" data-i18n="nav.concierge">Contacto VIP</a>
                     </li>
-                    <li class="nav-item ms-3">
+                    <li class="nav-item ms-2">
                         <a href="#concierge" class="btn btn-feral-cta" data-i18n="nav.cta">
                             <i class="bi bi-calendar2-check"></i> Agendar Visita
                         </a>
@@ -128,6 +137,18 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#catalogo">
                         <span data-i18n="nav.portfolio">Portafolio</span>
+                        <i class="bi bi-chevron-right small text-burgundy"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#mapa">
+                        <span data-i18n="nav.map">Mapa GPS</span>
+                        <i class="bi bi-chevron-right small text-burgundy"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#calculadora">
+                        <span data-i18n="nav.calculator">Calculadora ROI</span>
                         <i class="bi bi-chevron-right small text-burgundy"></i>
                     </a>
                 </li>
@@ -374,6 +395,126 @@
     </main>
 
     <!-- ==========================================
+         SECCIÓN MAPA INTERACTIVO CON GPS (LEAFLET.JS)
+         ========================================== -->
+    <section id="mapa" class="map-section">
+        <div class="container">
+            <div class="text-center mb-4 mb-md-5">
+                <span class="section-tag" data-i18n="map.badge">Ubicación Geoespacial Estratégica</span>
+                <h2 class="font-heading section-title mt-2" data-i18n="map.title">Geolocalización de Activos Exclusivos en Dubái</h2>
+                <p class="section-desc" data-i18n="map.desc">
+                    Explore la ubicación geoespacial exacta de nuestras residencias, amarres privados para superyates y sedes fiduciarias en los distritos de mayor plusvalía de los Emiratos Árabes Unidos.
+                </p>
+                <div class="small text-muted mt-2">
+                    <i class="bi bi-info-circle text-burgundy me-1"></i>
+                    <span data-i18n="map.instruction">Haga clic en los marcadores interactivos para inspeccionar el activo y solicitar su asignación.</span>
+                </div>
+            </div>
+            
+            <!-- Contenedor del Mapa Leaflet -->
+            <div class="dubai-map-container" id="dubai-map">
+                <!-- Inicializado por js/modules/map.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SECCIÓN CALCULADORA DE RENTABILIDAD (LEAD MAGNET)
+         ========================================== -->
+    <section id="calculadora" class="calculator-section">
+        <div class="container">
+            <div class="text-center mb-4 mb-md-5">
+                <span class="section-tag" data-i18n="calc.badge">Simulador de Crecimiento & Rendimiento</span>
+                <h2 class="font-heading section-title mt-2" data-i18n="calc.title">Calculadora Interactiva de Inversión Fiduciaria</h2>
+                <p class="section-desc" data-i18n="calc.desc">
+                    Simule la plusvalía proyectada de capital, los rendimientos netos por rentas y el ahorro fiscal total (0% impuestos en Dubái) con base en datos históricos auditados.
+                </p>
+            </div>
+
+            <div class="calculator-card mx-auto" id="investment-calculator" style="max-width: 1040px;">
+                <div class="row g-4 g-lg-5 align-items-center">
+                    <!-- Controles de Entrada -->
+                    <div class="col-lg-6">
+                        <!-- Slider de Capital -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <label class="fw-semibold small text-uppercase tracking-widest text-dark" data-i18n="calc.label_amount">Monto de Inversión Estimado</label>
+                                <span class="fs-4 fw-bold font-heading text-burgundy" id="calc-amount-display">$5,000,000</span>
+                            </div>
+                            <input type="range" class="calc-slider" id="calc-amount-slider" min="1000000" max="25000000" step="500000" value="5000000">
+                            <div class="d-flex justify-content-between small text-muted mt-1">
+                                <span>$1,000,000 USD</span>
+                                <span>$25,000,000+ USD</span>
+                            </div>
+                        </div>
+
+                        <!-- Selector de Tipo de Activo -->
+                        <div class="mb-4">
+                            <label class="fw-semibold small text-uppercase tracking-widest text-dark mb-2 d-block" data-i18n="calc.label_asset">Tipo de Activo Fiduciario</label>
+                            <select class="form-select luxury-input" id="calc-asset-type">
+                                <option value="penthouse" selected data-i18n="calc.opt_penthouse">Penthouses & Residencial Prime (Downtown / Palm)</option>
+                                <option value="yachts" data-i18n="calc.opt_yachts">Superyates & Chárter Privado de Alta Mar</option>
+                                <option value="cars" data-i18n="calc.opt_cars">Superdeportivos Bespoke & Colección</option>
+                                <option value="family" data-i18n="calc.opt_family">Family Office & Estructuración Integral DIFC</option>
+                            </select>
+                        </div>
+
+                        <!-- Horizonte Temporal -->
+                        <div class="mb-3">
+                            <label class="fw-semibold small text-uppercase tracking-widest text-dark mb-2 d-block" data-i18n="calc.label_horizon">Horizonte Temporal de Inversión</label>
+                            <div class="d-flex gap-2">
+                                <button type="button" class="calc-year-btn flex-grow-1" data-years="3" data-i18n="calc.years_3">3 Años</button>
+                                <button type="button" class="calc-year-btn flex-grow-1 active" data-years="5" data-i18n="calc.years_5">5 Años</button>
+                                <button type="button" class="calc-year-btn flex-grow-1" data-years="10" data-i18n="calc.years_10">10 Años</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resultados Dinámicos & Lead Magnet -->
+                    <div class="col-lg-6">
+                        <div class="calc-result-highlight mb-3">
+                            <span class="small text-uppercase fw-semibold text-muted d-block mb-1" data-i18n="calc.res_portfolio">Valor Total Proyectado de Cartera</span>
+                            <div class="calc-metric-val highlight" id="calc-portfolio-value">$8,655,000</div>
+                            <div class="small fw-semibold text-success mt-1 d-flex align-items-center gap-1">
+                                <i class="bi bi-arrow-up-right-circle-fill"></i>
+                                <span data-i18n="calc.res_return">Retorno Total Estimado:</span>
+                                <span id="calc-total-return" class="ms-1">+$3,655,000</span>
+                            </div>
+                        </div>
+
+                        <div class="row g-2 mb-4">
+                            <div class="col-6">
+                                <div class="calc-result-box">
+                                    <span class="small text-muted d-block" style="font-size: 0.76rem;" data-i18n="calc.res_appreciation">Apreciación Capital</span>
+                                    <div class="fw-bold fs-6 mt-1 text-dark" id="calc-appreciation">+$2,485,000</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="calc-result-box">
+                                    <span class="small text-muted d-block" style="font-size: 0.76rem;" data-i18n="calc.res_yield">Rentas / Yield</span>
+                                    <div class="fw-bold fs-6 mt-1 text-dark" id="calc-yield">+$1,170,000</div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="calc-result-box bg-white border border-secondary-subtle">
+                                    <span class="small text-muted d-block" style="font-size: 0.76rem;" data-i18n="calc.res_tax">Ahorro Fiscal en Dubái (0% vs Jurisdicciones 42% Tax)</span>
+                                    <div class="fw-bold fs-5 mt-1 text-burgundy" id="calc-tax-savings">$1,535,100</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botón Disparador del Lead Magnet Modal -->
+                        <button type="button" class="btn btn-feral-cta w-100 py-3 shadow" data-bs-toggle="modal" data-bs-target="#leadMagnetModal">
+                            <i class="bi bi-file-earmark-pdf me-2"></i>
+                            <span data-i18n="calc.cta_lead">Descargar Corrida Financiera & Auditoría Completa (PDF)</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
          SECCIÓN DE PROPUESTA DE VALOR E INVERSIÓN
          ========================================== -->
     <section id="insights" class="insights-section">
@@ -516,6 +657,41 @@
     </section>
 
     <!-- ==========================================
+         MODAL LEAD MAGNET (CORRIDA FINANCIERA & AUDITORÍA)
+         ========================================== -->
+    <div class="modal fade" id="leadMagnetModal" tabindex="-1" aria-labelledby="leadMagnetModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-luxury-content">
+                <div class="modal-header border-0 pb-0">
+                    <h3 class="font-heading h4 text-dark mb-0" id="leadMagnetModalLabel" data-i18n="lead.modal_title">
+                        Descargar Corrida Financiera Confidencial
+                    </h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body py-3">
+                    <p class="small text-muted mb-4" data-i18n="lead.modal_desc">
+                        Para remitirle el desglose analítico en PDF con proyecciones fiduciarias detalladas y auditoría de titularidad, complete sus datos confidenciales:
+                    </p>
+                    <form id="calc-lead-form">
+                        <div class="mb-3">
+                            <input type="text" id="lead-name" class="form-control luxury-input" placeholder="Nombre Completo o Entidad Fiduciaria" data-i18n-placeholder="form.name_placeholder" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" id="lead-email" class="form-control luxury-input" placeholder="Correo Corporativo Confidencial" data-i18n-placeholder="form.email_placeholder" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="tel" id="lead-phone" class="form-control luxury-input" placeholder="Teléfono / WhatsApp (ej. +971... o +34...)" data-i18n-placeholder="form.phone_placeholder">
+                        </div>
+                        <button type="submit" class="btn btn-feral-cta w-100 py-3" data-i18n="lead.btn_submit">
+                            <i class="bi bi-send me-1"></i> Solicitar y Recibir Corrida Financiera
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
          MODAL DE CONFIRMACIÓN VIP
          ========================================== -->
     <div class="modal fade" id="vipConfirmationModal" tabindex="-1" aria-labelledby="vipModalLabel" aria-hidden="true">
@@ -581,6 +757,9 @@
     <!-- Bootstrap 5.3.3 Bundle JS (with Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
+    <!-- Leaflet 1.9.4 JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
     <!-- Script Modular Principal -->
     <script type="module" src="./js/main.js"></script>
 </body>

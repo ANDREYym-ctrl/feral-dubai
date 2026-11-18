@@ -671,6 +671,238 @@ small.text-muted,
 }
 
 /* ========================================================
+   MAPA INTERACTIVO CON GPS (LEAFLET.JS)
+   ======================================================== */
+.map-section {
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  padding: clamp(5rem, 8vw, 8rem) 1.5rem;
+  position: relative;
+}
+
+.dubai-map-container {
+  height: clamp(380px, 55vw, 560px);
+  width: 100%;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Custom Leaflet Marker Pins */
+.luxury-map-marker {
+  background: transparent;
+  border: none;
+}
+
+.marker-pin-wrapper {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marker-pin-pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(128, 0, 32, 0.25);
+  animation: pinPulse 2s infinite ease-out;
+}
+
+.marker-pin-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--feral-burgundy);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: 0 4px 14px var(--feral-burgundy-glow);
+  border: 2px solid #FFFFFF;
+  z-index: 2;
+  transition: var(--transition-smooth);
+}
+
+.luxury-map-marker:hover .marker-pin-badge {
+  transform: scale(1.15);
+  background: var(--feral-bordeaux);
+}
+
+@keyframes pinPulse {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  70% { transform: scale(2.2); opacity: 0; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+/* Leaflet Popup Styling */
+.luxury-leaflet-popup .leaflet-popup-content-wrapper {
+  background: #FFFFFF;
+  border-radius: 14px;
+  padding: 0;
+  border: 1px solid var(--border-burgundy);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.luxury-leaflet-popup .leaflet-popup-content {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.luxury-map-popup .popup-img-wrapper {
+  height: 135px;
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-map-popup .popup-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.luxury-map-popup .popup-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(128, 0, 32, 0.88);
+  color: #FFFFFF;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(4px);
+}
+
+.luxury-map-popup .popup-body {
+  padding: 12px 14px 14px 14px;
+}
+
+.luxury-map-popup .popup-area {
+  font-size: 0.74rem;
+  color: #777;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.luxury-map-popup .popup-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #141414;
+  margin-bottom: 6px;
+}
+
+.luxury-map-popup .popup-exclusivity {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--feral-burgundy);
+  margin-bottom: 10px;
+}
+
+/* ========================================================
+   CALCULADORA DE RENTABILIDAD ROI (LEAD MAGNET)
+   ======================================================== */
+.calculator-section {
+  background-color: var(--feral-bg-base);
+  padding: clamp(5rem, 8vw, 8rem) 1.5rem;
+  position: relative;
+}
+
+.calculator-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.8rem, 4vw, 3rem);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.04);
+}
+
+.calc-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: #E8E6DF;
+  outline: none;
+  transition: background 0.2s;
+}
+
+.calc-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--feral-burgundy);
+  cursor: pointer;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 4px 12px var(--feral-burgundy-glow);
+  transition: transform 0.2s;
+}
+
+.calc-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  background: var(--feral-bordeaux);
+}
+
+.calc-year-btn {
+  background: #F4F3ED;
+  border: 1px solid var(--border-light);
+  color: #444;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.calc-year-btn.active, .calc-year-btn:hover {
+  background: var(--feral-burgundy);
+  color: #FFFFFF;
+  border-color: var(--feral-burgundy);
+  box-shadow: 0 4px 12px var(--feral-burgundy-glow);
+}
+
+.calc-result-box {
+  background: var(--feral-bg-base);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+}
+
+.calc-result-highlight {
+  background: linear-gradient(135deg, rgba(128, 0, 32, 0.04) 0%, rgba(128, 0, 32, 0.09) 100%);
+  border: 1px solid var(--border-burgundy);
+  border-radius: var(--radius-md);
+  padding: 1.8rem;
+}
+
+.calc-metric-val {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--feral-text-primary);
+  line-height: 1.1;
+}
+
+.calc-metric-val.highlight {
+  color: var(--feral-burgundy);
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+}
+
+/* ========================================================
    LUXURY BURGUNDY BUTTONS (CTA PRINCIPAL)
    ======================================================== */
 .btn-feral-cta {

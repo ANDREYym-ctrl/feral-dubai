@@ -4,23 +4,31 @@
 
 import { renderCatalog } from './modules/renderCatalog.js';
 import { setLanguage, getCurrentLang, updateStaticTexts, t } from './modules/translations.js';
+import { initMap } from './modules/map.js';
+import { initCalculator } from './modules/calculator.js';
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("Feral Dubái: Inicializando plataforma de ultralujo...");
+  console.log("Feral Dubái: Inicializando plataforma fiduciaria de ultralujo...");
 
   // 1. Initialize Translations
   initLanguage();
 
-  // 2. Initialize Catalog
+  // 2. Initialize Dynamic Carousel
   renderCatalog();
 
-  // 3. Navbar scroll effect
+  // 3. Initialize Interactive GPS Map (Leaflet.js)
+  initMap();
+
+  // 4. Initialize ROI Calculator (Lead Magnet)
+  initCalculator();
+
+  // 5. Navbar scroll effect
   initNavbarScroll();
 
-  // 4. Mobile Offcanvas Auto-Close
+  // 6. Mobile Offcanvas Auto-Close
   initMobileNav();
 
-  // 5. Concierge VIP Form Handler
+  // 7. Concierge VIP Form Handler
   initConciergeForm();
 });
 

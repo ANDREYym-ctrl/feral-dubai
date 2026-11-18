@@ -1,6 +1,6 @@
 // ========================================================
 // FERAL DUBÁI - I18N TRANSLATION ENGINE (ES / EN)
-// Strategic Conversion Funnel & Institutional Authority
+// Strategic Conversion Funnel, GPS Map & ROI Calculator
 // ========================================================
 
 export const translations = {
@@ -14,6 +14,8 @@ export const translations = {
     "nav.home": "Inicio",
     "nav.about": "Acerca de Feral",
     "nav.portfolio": "Portafolio",
+    "nav.map": "Mapa GPS",
+    "nav.calculator": "Calculadora ROI",
     "nav.insights": "Por Qué Dubái",
     "nav.concierge": "Contacto VIP",
     "nav.cta": "Agendar Visita",
@@ -57,6 +59,38 @@ export const translations = {
     // Card Actions
     "card.consult": "Solicitar Dossier VIP",
     "card.private_inquiry": "Consulta Confidencial",
+
+    // Interactive Map Section (Leaflet.js)
+    "map.badge": "Ubicación Geoespacial Estratégica",
+    "map.title": "Geolocalización de Activos Exclusivos en Dubái",
+    "map.desc": "Explore la ubicación geoespacial exacta de nuestras residencias, amarres privados para superyates y sedes fiduciarias en los distritos de mayor plusvalía de los Emiratos Árabes Unidos.",
+    "map.instruction": "Haga clic en los marcadores interactivos para inspeccionar el activo y solicitar su asignación.",
+
+    // ROI Calculator Section (Lead Magnet)
+    "calc.badge": "Simulador de Crecimiento & Rendimiento",
+    "calc.title": "Calculadora Interactiva de Inversión Fiduciaria",
+    "calc.desc": "Simule la plusvalía proyectada de capital, los rendimientos netos por rentas y el ahorro fiscal total (0% impuestos en Dubái) con base en datos históricos auditados.",
+    "calc.label_amount": "Monto de Inversión Estimado",
+    "calc.label_asset": "Tipo de Activo Fiduciario",
+    "calc.label_horizon": "Horizonte Temporal de Inversión",
+    "calc.years_3": "3 Años",
+    "calc.years_5": "5 Años",
+    "calc.years_10": "10 Años",
+    "calc.opt_penthouse": "Penthouses & Residencial Prime (Downtown / Palm)",
+    "calc.opt_yachts": "Superyates & Chárter Privado de Alta Mar",
+    "calc.opt_cars": "Superdeportivos Bespoke & Colección",
+    "calc.opt_family": "Family Office & Estructuración Integral DIFC",
+    "calc.res_portfolio": "Valor Total Proyectado de Cartera",
+    "calc.res_return": "Retorno Total Estimado (Plusvalía + Rentas)",
+    "calc.res_appreciation": "Apreciación de Capital Proyectada",
+    "calc.res_yield": "Rendimiento Operativo / Rentas Acumuladas",
+    "calc.res_tax": "Ahorro Fiscal en Dubái (vs Jurisdicciones 42% Tax)",
+    "calc.cta_lead": "Descargar Corrida Financiera & Auditoría Completa (PDF)",
+    
+    // Lead Magnet Modal
+    "lead.modal_title": "Descargar Corrida Financiera Confidencial",
+    "lead.modal_desc": "Para remitirle el desglose analítico en PDF con proyecciones fiduciarias detalladas y auditoría de titularidad, complete sus datos confidenciales:",
+    "lead.btn_submit": "Solicitar y Recibir Corrida Financiera",
 
     // Strategic Investment Section (Why Dubai & Metrics)
     "insights.badge": "Arquitectura Patrimonial & Rendimiento",
@@ -116,6 +150,8 @@ export const translations = {
     "nav.home": "Home",
     "nav.about": "About Feral",
     "nav.portfolio": "Portfolio",
+    "nav.map": "GPS Map",
+    "nav.calculator": "ROI Calculator",
     "nav.insights": "Why Dubai",
     "nav.concierge": "VIP Contact",
     "nav.cta": "Book Private Tour",
@@ -159,6 +195,38 @@ export const translations = {
     // Card Actions
     "card.consult": "Request VIP Dossier",
     "card.private_inquiry": "Confidential Inquiry",
+
+    // Interactive Map Section (Leaflet.js)
+    "map.badge": "Strategic Geospatial Positioning",
+    "map.title": "Geospatial Mapping of Dubai Trophy Assets",
+    "map.desc": "Inspect the precise geospatial coordinates of our residences, private marina berths, and fiduciary offices across the United Arab Emirates.",
+    "map.instruction": "Click on any interactive marker to inspect specifications and request private allocation.",
+
+    // ROI Calculator Section (Lead Magnet)
+    "calc.badge": "Wealth & Growth Simulator",
+    "calc.title": "Interactive Fiduciary Investment Calculator",
+    "calc.desc": "Simulate projected capital growth, net rental yields, and complete fiscal preservation (0% taxes in Dubai) based on audited historical performance.",
+    "calc.label_amount": "Estimated Investment Capital",
+    "calc.label_asset": "Fiduciary Asset Category",
+    "calc.label_horizon": "Investment Time Horizon",
+    "calc.years_3": "3 Years",
+    "calc.years_5": "5 Years",
+    "calc.years_10": "10 Years",
+    "calc.opt_penthouse": "Prime Penthouses & Villas (Downtown / Palm)",
+    "calc.opt_yachts": "Superyachts & Ocean Charter Allocations",
+    "calc.opt_cars": "Bespoke Hypercars & Rare Collections",
+    "calc.opt_family": "Family Office & DIFC Multi-Asset Framework",
+    "calc.res_portfolio": "Total Projected Portfolio Value",
+    "calc.res_return": "Estimated Net Gain (Growth + Yield)",
+    "calc.res_appreciation": "Projected Capital Appreciation",
+    "calc.res_yield": "Cumulative Operating / Rental Yield",
+    "calc.res_tax": "Dubai Fiscal Shield (vs 42% Foreign Tax)",
+    "calc.cta_lead": "Download Full Financial Model & Dossier (PDF)",
+
+    // Lead Magnet Modal
+    "lead.modal_title": "Request Confidential Financial Model",
+    "lead.modal_desc": "Please provide your confidential details to receive the comprehensive PDF model with legal and fiduciary audits:",
+    "lead.btn_submit": "Generate & Deliver Financial Model",
 
     // Strategic Investment Section (Why Dubai & Metrics)
     "insights.badge": "Wealth Structuring & Performance",
@@ -226,7 +294,7 @@ export function setLanguage(lang) {
   localStorage.setItem('feral_lang', lang);
   updateStaticTexts();
 
-  // Notify listeners (e.g., renderCatalog)
+  // Notify listeners
   listeners.forEach(cb => {
     try {
       cb(currentLang);

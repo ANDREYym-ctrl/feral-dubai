@@ -10,6 +10,8 @@ Plataforma web de ultralujo y catálogo privado desarrollada con arquitectura **
 * **Exclusividad sin Precios Públicos (POA):** Supresión de precios explícitos en favor de etiquetas fiduciarias exclusivas (*"POA · Consulta Privada"*, *"Inversión Fiduciaria VIP"*), despertando curiosidad e incentivando la solicitud de dossiers privados.
 * **Sección Institucional & Autoridad ("Acerca de Feral"):** Bloque editorial de alta credibilidad con gobernanza DIFC Common Law, cuentas escrow certificadas y estrictos protocolos de confidencialidad (NDA).
 * **Bloque de Inversión Estratégica ("Por Qué Dubái"):** Presentación directa de ventajas fiscales (0% impuestos), plusvalía prime (+14.8%) y Golden Visa de 10 años.
+* **Mapa Interactivo con GPS (Leaflet.js):** Geolocalización geoespacial de proyectos, amarres y sedes fiduciarias en Dubái con pines interactivos y acceso a dossiers VIP.
+* **Calculadora Interactiva de Rentabilidad (Lead Magnet):** Simulador fiduciario de plusvalía y rendimientos netos con cálculo de ahorro fiscal (0% vs. 42% en el extranjero) y modal de captura para descarga de informes en PDF.
 * **Estética Luxury Light:** Paleta luminosa en *Blanco Perla / Marfil* (`#F9F9F5` / `#FFFFFF`), textos en *Antracita Profundo* (`#141414`) y acentos disciplinados en *Burgundy Profundo* (`#800020`) y *Ruby* (`#9B2335`).
 
 ---
@@ -25,8 +27,10 @@ Plataforma web de ultralujo y catálogo privado desarrollada con arquitectura **
 * **HTML5 Semántico:** Cumplimiento de estándares de accesibilidad, microformatos y metaetiquetas Open Graph / SEO.
 * **CSS3 Moderno:** Variables CSS nativas, retículas CSS Grid, Flexbox, media queries fluidas con funciones `clamp()` y optimización para pantallas táctiles.
 * **Bootstrap 5.3.3 & Bootstrap Icons 1.11.3:** Sistema de grillas responsivo, modales de confirmación y componentes offcanvas.
-* **JavaScript ES6+ Modular:**
+* **JavaScript ES6+ Modular & Leaflet.js:**
   * [`main.js`](./js/main.js): Orquestador principal, scrollspy de navbar, control de drawer móvil y validación de formularios.
+  * [`map.js`](./js/modules/map.js): Geolocalización interactiva con pines personalizados Leaflet en Dubái.
+  * [`calculator.js`](./js/modules/calculator.js): Simulador financiero de ROI y captador de leads fiduciarios.
   * [`translations.js`](./js/modules/translations.js): Motor de traducción y gestión reactiva de idiomas.
   * [`renderCatalog.js`](./js/modules/renderCatalog.js): Renderizado asíncrono, filtrado reactivo por categorías y enlaces automáticos a WhatsApp VIP.
   * [`catalog.json`](./js/data/catalog.json): Base de datos estructurada y bilingüe con fichas técnicas de activos.
@@ -52,6 +56,8 @@ feral-dubai-portfolio/
 │   │   └── catalog.json         # Base de datos estructurada bilingüe
 │   ├── modules/
 │   │   ├── renderCatalog.js     # Renderizado dinámico de tarjetas y filtros
+│   │   ├── map.js               # Mapa interactivo Leaflet con GPS Dubái
+│   │   ├── calculator.js        # Calculadora interactiva de rentabilidad (Lead Magnet)
 │   │   └── translations.js      # Diccionario y motor reactivo i18n
 │   └── main.js                  # Inicializador y lógica de interfaz
 │
