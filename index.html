@@ -82,10 +82,10 @@
                         <a class="nav-link text-uppercase" href="#hero" data-i18n="nav.home">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="#about" data-i18n="nav.about">Acerca de Feral</a>
+                        <a class="nav-link text-uppercase" href="#catalogo" data-i18n="nav.portfolio">Portafolio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="#catalogo" data-i18n="nav.portfolio">Portafolio</a>
+                        <a class="nav-link text-uppercase" href="#about" data-i18n="nav.about">Acerca de Feral</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-uppercase" href="#mapa" data-i18n="nav.map">Mapa GPS</a>
@@ -129,14 +129,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">
-                        <span data-i18n="nav.about">Acerca de Feral</span>
+                    <a class="nav-link" href="#catalogo">
+                        <span data-i18n="nav.portfolio">Portafolio</span>
                         <i class="bi bi-chevron-right small text-burgundy"></i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#catalogo">
-                        <span data-i18n="nav.portfolio">Portafolio</span>
+                    <a class="nav-link" href="#about">
+                        <span data-i18n="nav.about">Acerca de Feral</span>
                         <i class="bi bi-chevron-right small text-burgundy"></i>
                     </a>
                 </li>
@@ -205,7 +205,7 @@
             </span>
             
             <h1 class="font-heading hero-title" data-i18n="hero.title">
-                Inversión Fiduciaria en Activos de <br><span class="fst-italic" style="color: #E5C583;">Ultralujo</span> en Dubái
+                Inversión Fiduciaria en Activos de <br><span class="fst-italic hero-gold-text">Ultralujo</span> en Dubái
             </h1>
             
             <p class="hero-subtitle" data-i18n="hero.subtitle">
@@ -256,6 +256,336 @@
             </div>
         </div>
     </div>
+
+    <!-- ==========================================
+         SECCIÓN DE PORTAFOLIO: CARRUSEL HORIZONTAL INTERACTIVO AL INICIO
+         ========================================== -->
+    <main id="catalogo" class="portfolio-section">
+        <div class="container">
+            <!-- Encabezado con Controles de Carrusel -->
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-end mb-4 mb-md-5 gap-3">
+                <div>
+                    <span class="section-tag" data-i18n="portfolio.subtitle">Colección Privada 2026</span>
+                    <h2 class="font-heading section-title mt-2" data-i18n="portfolio.title">Catálogo Dinámico de Activos Exclusivos</h2>
+                    <p class="section-desc text-md-start m-0" data-i18n="portfolio.desc">
+                        Deslice a través de nuestro carrusel interactivo para consultar especificaciones de ingeniería y solicitar dossiers confidenciales sin precios públicos.
+                    </p>
+                </div>
+
+                <!-- Controles Flechas Prev / Next para Desktop -->
+                <div class="d-none d-md-flex align-items-center gap-2">
+                    <button class="carousel-nav-btn" id="carousel-prev-btn" aria-label="Activo Anterior" title="Anterior">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button class="carousel-nav-btn" id="carousel-next-btn" aria-label="Siguiente Activo" title="Siguiente">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pestañas de Filtrado de las 3 Categorías Principales -->
+            <div class="filter-tabs-wrapper mb-4">
+                <div class="d-flex justify-content-start align-items-center gap-2 px-1">
+                    <button class="category-filter-btn active" data-category="todos" data-i18n="filter.todos">
+                        Todos los Activos
+                    </button>
+                    <button class="category-filter-btn" data-category="apartamentos" data-i18n="filter.apartamentos">
+                        Bienes Raíces
+                    </button>
+                    <button class="category-filter-btn" data-category="yates" data-i18n="filter.yates">
+                        Yates Privados
+                    </button>
+                    <button class="category-filter-btn" data-category="autos" data-i18n="filter.autos">
+                        Superdeportivos
+                    </button>
+                </div>
+            </div>
+
+            <!-- Indicador Táctil para Móvil -->
+            <div class="d-flex d-md-none align-items-center justify-content-end mb-3 small text-muted">
+                <i class="bi bi-arrow-left-right text-burgundy me-1"></i>
+                <span data-i18n="portfolio.swipe_hint">Deslice horizontalmente para explorar</span>
+            </div>
+
+            <!-- Carrusel Horizontal Dinámico (Pre-renderizado para Disponibilidad Inmediata & Enriquecido por JS) -->
+            <div class="catalog-carousel-wrapper">
+                <div id="catalog-carousel" class="catalog-carousel">
+                    <!-- Activo 1: Penthouse Burj Crown -->
+                    <div class="carousel-card-item" data-category="apartamentos">
+                        <article class="luxury-card h-100 d-flex flex-column" data-category="apartamentos">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="./assets/img - apartamento/APARTAMENTO_VENTA.jpg" alt="Sky Penthouse Burj Crown" loading="eager">
+                                <div class="card-badges position-absolute top-0 start-0 p-3 d-flex flex-wrap gap-2">
+                                    <span class="badge bg-burgundy-subtle fw-semibold px-2 py-1 text-uppercase">Bienes Raíces</span>
+                                    <span class="badge bg-dark-glass fw-normal px-2 py-1">Residencia Insignia</span>
+                                </div>
+                                <div class="card-exclusivity-overlay position-absolute bottom-0 end-0 p-3">
+                                    <span class="exclusivity-pill">
+                                        <i class="bi bi-shield-lock-fill text-burgundy me-1"></i> POA · Consulta Privada
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column flex-grow-1">
+                                <div class="card-location small text-uppercase fw-semibold mb-2 d-flex align-items-center gap-1">
+                                    <i class="bi bi-geo-alt text-ruby"></i>
+                                    <span>Downtown Dubái · EAU</span>
+                                </div>
+                                <h3 class="font-heading card-title h4 fw-bold mb-2">Sky Penthouse Burj Crown</h3>
+                                <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
+                                    <i class="bi bi-shield-check text-ruby me-1"></i> Piso 68 · 840 m² · 5 Suites · Piscina Infinity Privada
+                                </div>
+                                <p class="card-description small mb-4 flex-grow-1">
+                                    Residencia de triple altura con vistas directas de 360° al Burj Khalifa y la Ópera de Dubái. Acabados en mármol de Carrara y domótica Crestron.
+                                </p>
+                                <div class="card-actions pt-3 border-top border-light-subtle d-flex align-items-center gap-2 mt-auto">
+                                    <button class="btn btn-luxury flex-grow-1 btn-consult-vip" data-item-id="penthouse-downtown" data-item-title="Sky Penthouse Burj Crown" data-item-cat="apartamentos">
+                                        <i class="bi bi-file-earmark-lock2 me-1"></i> Solicitar Dossier VIP
+                                    </button>
+                                    <a href="https://wa.me/97148883372?text=Hola%20Feral%20Dub%C3%A1i%2C%20deseo%20solicitar%20el%20dossier%20confidencial%20y%20asignaci%C3%B3n%20privada%20del%20activo%3A%20%22Sky%20Penthouse%20Burj%20Crown%22." target="_blank" rel="noopener noreferrer" class="btn btn-wa-icon" title="WhatsApp VIP" aria-label="WhatsApp VIP">
+                                        <i class="bi bi-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Activo 2: Palm Beachfront Villa -->
+                    <div class="carousel-card-item" data-category="apartamentos">
+                        <article class="luxury-card h-100 d-flex flex-column" data-category="apartamentos">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="./assets/img - apartamento/APARTAMENTO_SALE.jpg" alt="Royal Palm Beachfront Villa" loading="eager">
+                                <div class="card-badges position-absolute top-0 start-0 p-3 d-flex flex-wrap gap-2">
+                                    <span class="badge bg-burgundy-subtle fw-semibold px-2 py-1 text-uppercase">Bienes Raíces</span>
+                                    <span class="badge bg-dark-glass fw-normal px-2 py-1">Off-Market Allocation</span>
+                                </div>
+                                <div class="card-exclusivity-overlay position-absolute bottom-0 end-0 p-3">
+                                    <span class="exclusivity-pill">
+                                        <i class="bi bi-shield-lock-fill text-burgundy me-1"></i> Inversión Fiduciaria VIP
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column flex-grow-1">
+                                <div class="card-location small text-uppercase fw-semibold mb-2 d-flex align-items-center gap-1">
+                                    <i class="bi bi-geo-alt text-ruby"></i>
+                                    <span>Palm Jumeirah · Dubái</span>
+                                </div>
+                                <h3 class="font-heading card-title h4 fw-bold mb-2">Royal Palm Beachfront Villa</h3>
+                                <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
+                                    <i class="bi bi-shield-check text-ruby me-1"></i> Playa Privada · 1,120 m² · 6 Suites · Spa Privado
+                                </div>
+                                <p class="card-description small mb-4 flex-grow-1">
+                                    Acceso directo a playa privada sobre el Golfo Pérsico. Muelle para embarcaciones de recreo y arquitectura biofílica de vanguardia.
+                                </p>
+                                <div class="card-actions pt-3 border-top border-light-subtle d-flex align-items-center gap-2 mt-auto">
+                                    <button class="btn btn-luxury flex-grow-1 btn-consult-vip" data-item-id="penthouse-palm" data-item-title="Royal Palm Beachfront Villa" data-item-cat="apartamentos">
+                                        <i class="bi bi-file-earmark-lock2 me-1"></i> Solicitar Dossier VIP
+                                    </button>
+                                    <a href="https://wa.me/97148883372?text=Hola%20Feral%20Dub%C3%A1i%2C%20deseo%20solicitar%20el%20dossier%20confidencial%20y%20asignaci%C3%B3n%20privada%20del%20activo%3A%20%22Royal%20Palm%20Beachfront%20Villa%22." target="_blank" rel="noopener noreferrer" class="btn btn-wa-icon" title="WhatsApp VIP" aria-label="WhatsApp VIP">
+                                        <i class="bi bi-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Activo 3: Benetti Superyacht 65M -->
+                    <div class="carousel-card-item" data-category="yates">
+                        <article class="luxury-card h-100 d-flex flex-column" data-category="yates">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="./assets/img - yate/ALUMBRADO_FRONTAL_YATE.jpeg" alt="Benetti Custom Transoceanic 65M" loading="eager">
+                                <div class="card-badges position-absolute top-0 start-0 p-3 d-flex flex-wrap gap-2">
+                                    <span class="badge bg-burgundy-subtle fw-semibold px-2 py-1 text-uppercase">Yates Privados</span>
+                                    <span class="badge bg-dark-glass fw-normal px-2 py-1">Construcción a Medida</span>
+                                </div>
+                                <div class="card-exclusivity-overlay position-absolute bottom-0 end-0 p-3">
+                                    <span class="exclusivity-pill">
+                                        <i class="bi bi-shield-lock-fill text-burgundy me-1"></i> POA · Dossier Confidencial
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column flex-grow-1">
+                                <div class="card-location small text-uppercase fw-semibold mb-2 d-flex align-items-center gap-1">
+                                    <i class="bi bi-geo-alt text-ruby"></i>
+                                    <span>Dubai Harbour Marina</span>
+                                </div>
+                                <h3 class="font-heading card-title h4 fw-bold mb-2">Benetti Custom Transoceanic 65M</h3>
+                                <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
+                                    <i class="bi bi-shield-check text-ruby me-1"></i> Eslora 65 m · 6 Suites VIP · Helipuerto Touch-and-Go · Beach Club
+                                </div>
+                                <p class="card-description small mb-4 flex-grow-1">
+                                    Embarcación insignia con casco de acero naval, cubiertas de teca birmana, iluminación arquitectónica perimetral sumergida y autonomía transatlántica de 5,000 millas náuticas.
+                                </p>
+                                <div class="card-actions pt-3 border-top border-light-subtle d-flex align-items-center gap-2 mt-auto">
+                                    <button class="btn btn-luxury flex-grow-1 btn-consult-vip" data-item-id="superyacht-sanlorenzo" data-item-title="Benetti Custom Transoceanic 65M" data-item-cat="yates">
+                                        <i class="bi bi-file-earmark-lock2 me-1"></i> Solicitar Dossier VIP
+                                    </button>
+                                    <a href="https://wa.me/97148883372?text=Hola%20Feral%20Dub%C3%A1i%2C%20deseo%20solicitar%20el%20dossier%20confidencial%20y%20asignaci%C3%B3n%20privada%20del%20activo%3A%20%22Benetti%20Custom%20Transoceanic%2065M%22." target="_blank" rel="noopener noreferrer" class="btn btn-wa-icon" title="WhatsApp VIP" aria-label="WhatsApp VIP">
+                                        <i class="bi bi-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Activo 4: Ocean Explorer 50M -->
+                    <div class="carousel-card-item" data-category="yates">
+                        <article class="luxury-card h-100 d-flex flex-column" data-category="yates">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="./assets/img - yate/FRONTAL_YATE.jpeg" alt="Ocean Explorer 50M Custom" loading="lazy">
+                                <div class="card-badges position-absolute top-0 start-0 p-3 d-flex flex-wrap gap-2">
+                                    <span class="badge bg-burgundy-subtle fw-semibold px-2 py-1 text-uppercase">Yates Privados</span>
+                                    <span class="badge bg-dark-glass fw-normal px-2 py-1">Disponible en Marina</span>
+                                </div>
+                                <div class="card-exclusivity-overlay position-absolute bottom-0 end-0 p-3">
+                                    <span class="exclusivity-pill">
+                                        <i class="bi bi-shield-lock-fill text-burgundy me-1"></i> Asignación Exclusiva
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column flex-grow-1">
+                                <div class="card-location small text-uppercase fw-semibold mb-2 d-flex align-items-center gap-1">
+                                    <i class="bi bi-geo-alt text-ruby"></i>
+                                    <span>Port Rashid · Dubái</span>
+                                </div>
+                                <h3 class="font-heading card-title h4 fw-bold mb-2">Ocean Explorer 50M Custom</h3>
+                                <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
+                                    <i class="bi bi-shield-check text-ruby me-1"></i> Eslora 50 m · 12 Huéspedes · Jacuzzi Panorámico · Garaje Doble
+                                </div>
+                                <p class="card-description small mb-4 flex-grow-1">
+                                    Ingeniería de vanguardia diseñada para expediciones de ultralujo, con estabilizadores giroscópicos de fondeo cero y acabados interiores en roble ahumado y titanio.
+                                </p>
+                                <div class="card-actions pt-3 border-top border-light-subtle d-flex align-items-center gap-2 mt-auto">
+                                    <button class="btn btn-luxury flex-grow-1 btn-consult-vip" data-item-id="ocean-explorer-50m" data-item-title="Ocean Explorer 50M Custom" data-item-cat="yates">
+                                        <i class="bi bi-file-earmark-lock2 me-1"></i> Solicitar Dossier VIP
+                                    </button>
+                                    <a href="https://wa.me/97148883372?text=Hola%20Feral%20Dub%C3%A1i%2C%20deseo%20solicitar%20el%20dossier%20confidencial%20y%20asignaci%C3%B3n%20privada%20del%20activo%3A%20%22Ocean%20Explorer%2050M%20Custom%22." target="_blank" rel="noopener noreferrer" class="btn btn-wa-icon" title="WhatsApp VIP" aria-label="WhatsApp VIP">
+                                        <i class="bi bi-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Activo 5: Majesty Master Suite & Salon -->
+                    <div class="carousel-card-item" data-category="yates">
+                        <article class="luxury-card h-100 d-flex flex-column" data-category="yates">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="./assets/img - yate/INTERIOR_YATE.jpeg" alt="Majesty Master Suite & Salon" loading="lazy">
+                                <div class="card-badges position-absolute top-0 start-0 p-3 d-flex flex-wrap gap-2">
+                                    <span class="badge bg-burgundy-subtle fw-semibold px-2 py-1 text-uppercase">Yates Privados</span>
+                                    <span class="badge bg-dark-glass fw-normal px-2 py-1">Listo para Navegar</span>
+                                </div>
+                                <div class="card-exclusivity-overlay position-absolute bottom-0 end-0 p-3">
+                                    <span class="exclusivity-pill">
+                                        <i class="bi bi-shield-lock-fill text-burgundy me-1"></i> Custodia Fiduciaria
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column flex-grow-1">
+                                <div class="card-location small text-uppercase fw-semibold mb-2 d-flex align-items-center gap-1">
+                                    <i class="bi bi-geo-alt text-ruby"></i>
+                                    <span>Dubai Marina Yacht Club</span>
+                                </div>
+                                <h3 class="font-heading card-title h4 fw-bold mb-2">Majesty Master Suite & Salon</h3>
+                                <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
+                                    <i class="bi bi-shield-check text-ruby me-1"></i> Interiorismo Hermes · Audio Focal Utopia · Cava Climatizada
+                                </div>
+                                <p class="card-description small mb-4 flex-grow-1">
+                                    Salón principal y camarote armador con ebanistería artesanal italiana, mamparas acústicas de doble acristalamiento y cocina de chef profesional.
+                                </p>
+                                <div class="card-actions pt-3 border-top border-light-subtle d-flex align-items-center gap-2 mt-auto">
+                                    <button class="btn btn-luxury flex-grow-1 btn-consult-vip" data-item-id="yacht-executive-interior" data-item-title="Majesty Master Suite & Salon" data-item-cat="yates">
+                                        <i class="bi bi-file-earmark-lock2 me-1"></i> Solicitar Dossier VIP
+                                    </button>
+                                    <a href="https://wa.me/97148883372?text=Hola%20Feral%20Dub%C3%A1i%2C%20deseo%20solicitar%20el%20dossier%20confidencial%20y%20asignaci%C3%B3n%20privada%20del%20activo%3A%20%22Majesty%20Master%20Suite%20%26%20Salon%22." target="_blank" rel="noopener noreferrer" class="btn btn-wa-icon" title="WhatsApp VIP" aria-label="WhatsApp VIP">
+                                        <i class="bi bi-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Activo 6: Bugatti Chiron Super Sport 300+ -->
+                    <div class="carousel-card-item" data-category="autos">
+                        <article class="luxury-card h-100 d-flex flex-column" data-category="autos">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="./assets/img - carro/COLA_CARRO.jpeg" alt="Bugatti Chiron Super Sport 300+" loading="lazy">
+                                <div class="card-badges position-absolute top-0 start-0 p-3 d-flex flex-wrap gap-2">
+                                    <span class="badge bg-burgundy-subtle fw-semibold px-2 py-1 text-uppercase">Superdeportivos</span>
+                                    <span class="badge bg-dark-glass fw-normal px-2 py-1">1 de 30 Mundial</span>
+                                </div>
+                                <div class="card-exclusivity-overlay position-absolute bottom-0 end-0 p-3">
+                                    <span class="exclusivity-pill">
+                                        <i class="bi bi-shield-lock-fill text-burgundy me-1"></i> Colección Privada · POA
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column flex-grow-1">
+                                <div class="card-location small text-uppercase fw-semibold mb-2 d-flex align-items-center gap-1">
+                                    <i class="bi bi-geo-alt text-ruby"></i>
+                                    <span>DIFC Private Vault · Dubái</span>
+                                </div>
+                                <h3 class="font-heading card-title h4 fw-bold mb-2">Bugatti Chiron Super Sport 300+</h3>
+                                <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
+                                    <i class="bi bi-shield-check text-ruby me-1"></i> 8.0L W16 Quad-Turbo · 1,600 CV · 0-100 km/h: 2.4s · 440 km/h
+                                </div>
+                                <p class="card-description small mb-4 flex-grow-1">
+                                    Una de las 30 unidades mundiales en fibra de carbono expuesta con acentos Jet Orange. Mantenimiento fiduciario en bóveda climatizada con registro de kilometraje cero.
+                                </p>
+                                <div class="card-actions pt-3 border-top border-light-subtle d-flex align-items-center gap-2 mt-auto">
+                                    <button class="btn btn-luxury flex-grow-1 btn-consult-vip" data-item-id="bugatti-chiron-super-sport" data-item-title="Bugatti Chiron Super Sport 300+" data-item-cat="autos">
+                                        <i class="bi bi-file-earmark-lock2 me-1"></i> Solicitar Dossier VIP
+                                    </button>
+                                    <a href="https://wa.me/97148883372?text=Hola%20Feral%20Dub%C3%A1i%2C%20deseo%20solicitar%20el%20dossier%20confidencial%20y%20asignaci%C3%B3n%20privada%20del%20activo%3A%20%22Bugatti%20Chiron%20Super%20Sport%20300%2B%22." target="_blank" rel="noopener noreferrer" class="btn btn-wa-icon" title="WhatsApp VIP" aria-label="WhatsApp VIP">
+                                        <i class="bi bi-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Activo 7: Koenigsegg Jesko Attack -->
+                    <div class="carousel-card-item" data-category="autos">
+                        <article class="luxury-card h-100 d-flex flex-column" data-category="autos">
+                            <div class="card-img-wrapper position-relative">
+                                <img src="./assets/img - carro/TIMON_CARRO.jpeg" alt="Koenigsegg Jesko Attack Cockpit" loading="lazy">
+                                <div class="card-badges position-absolute top-0 start-0 p-3 d-flex flex-wrap gap-2">
+                                    <span class="badge bg-burgundy-subtle fw-semibold px-2 py-1 text-uppercase">Superdeportivos</span>
+                                    <span class="badge bg-dark-glass fw-normal px-2 py-1">Pista & Colección</span>
+                                </div>
+                                <div class="card-exclusivity-overlay position-absolute bottom-0 end-0 p-3">
+                                    <span class="exclusivity-pill">
+                                        <i class="bi bi-shield-lock-fill text-burgundy me-1"></i> Asignación Fiduciaria
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column flex-grow-1">
+                                <div class="card-location small text-uppercase fw-semibold mb-2 d-flex align-items-center gap-1">
+                                    <i class="bi bi-geo-alt text-ruby"></i>
+                                    <span>Dubai Autodrome Private Suite</span>
+                                </div>
+                                <h3 class="font-heading card-title h4 fw-bold mb-2">Koenigsegg Jesko Attack Cockpit</h3>
+                                <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
+                                    <i class="bi bi-shield-check text-ruby me-1"></i> V8 Twin-Turbo 1,600 CV · Caja LST 9 Velocidades · Telemetría F1
+                                </div>
+                                <p class="card-description small mb-4 flex-grow-1">
+                                    Cabina con instrumentación digital SmartCluster giratoria, acabados en fibra de carbono forjada, titanio anodizado y tapicería en alcántara ignífuga.
+                                </p>
+                                <div class="card-actions pt-3 border-top border-light-subtle d-flex align-items-center gap-2 mt-auto">
+                                    <button class="btn btn-luxury flex-grow-1 btn-consult-vip" data-item-id="hypercar-cockpit-bespoke" data-item-title="Koenigsegg Jesko Attack Cockpit" data-item-cat="autos">
+                                        <i class="bi bi-file-earmark-lock2 me-1"></i> Solicitar Dossier VIP
+                                    </button>
+                                    <a href="https://wa.me/97148883372?text=Hola%20Feral%20Dub%C3%A1i%2C%20deseo%20solicitar%20el%20dossier%20confidencial%20y%20asignaci%C3%B3n%20privada%20del%20activo%3A%20%22Koenigsegg%20Jesko%20Attack%20Cockpit%22." target="_blank" rel="noopener noreferrer" class="btn btn-wa-icon" title="WhatsApp VIP" aria-label="WhatsApp VIP">
+                                        <i class="bi bi-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <!-- ==========================================
          SECCIÓN INSTITUCIONAL & AUTORIDAD ("ACERCA DE FERAL")
@@ -334,65 +664,6 @@
             </div>
         </div>
     </section>
-
-    <!-- ==========================================
-         SECCIÓN DE PORTAFOLIO: CARRUSEL DINÁMICO
-         ========================================== -->
-    <main id="catalogo" class="portfolio-section">
-        <div class="container">
-            <!-- Encabezado con Controles de Carrusel -->
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-end mb-4 mb-md-5 gap-3">
-                <div>
-                    <span class="section-tag" data-i18n="portfolio.subtitle">Colección Privada 2026</span>
-                    <h2 class="font-heading section-title mt-2" data-i18n="portfolio.title">Catálogo Dinámico de Activos Exclusivos</h2>
-                    <p class="section-desc text-md-start m-0" data-i18n="portfolio.desc">
-                        Deslice a través de nuestro carrusel interactivo para consultar especificaciones de ingeniería y solicitar dossiers confidenciales sin precios públicos.
-                    </p>
-                </div>
-
-                <!-- Controles Flechas Prev / Next para Desktop -->
-                <div class="d-none d-md-flex align-items-center gap-2">
-                    <button class="carousel-nav-btn" id="carousel-prev-btn" aria-label="Activo Anterior" title="Anterior">
-                        <i class="bi bi-chevron-left"></i>
-                    </button>
-                    <button class="carousel-nav-btn" id="carousel-next-btn" aria-label="Siguiente Activo" title="Siguiente">
-                        <i class="bi bi-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Pestañas de Filtrado de las 3 Categorías Principales -->
-            <div class="filter-tabs-wrapper mb-4">
-                <div class="d-flex justify-content-start align-items-center gap-2 px-1">
-                    <button class="category-filter-btn active" data-category="todos" data-i18n="filter.todos">
-                        Todos los Activos
-                    </button>
-                    <button class="category-filter-btn" data-category="apartamentos" data-i18n="filter.apartamentos">
-                        Bienes Raíces
-                    </button>
-                    <button class="category-filter-btn" data-category="yates" data-i18n="filter.yates">
-                        Yates Privados
-                    </button>
-                    <button class="category-filter-btn" data-category="autos" data-i18n="filter.autos">
-                        Superdeportivos
-                    </button>
-                </div>
-            </div>
-
-            <!-- Indicador Táctil para Móvil -->
-            <div class="d-flex d-md-none align-items-center justify-content-end mb-3 small text-muted">
-                <i class="bi bi-arrow-left-right text-burgundy me-1"></i>
-                <span data-i18n="portfolio.swipe_hint">Deslice horizontalmente para explorar</span>
-            </div>
-
-            <!-- Carrusel Horizontal Dinámico Inyectado por JS -->
-            <div class="catalog-carousel-wrapper">
-                <div id="catalog-carousel" class="catalog-carousel">
-                    <!-- Renderizado horizontal por js/modules/renderCatalog.js -->
-                </div>
-            </div>
-        </div>
-    </main>
 
     <!-- ==========================================
          SECCIÓN MAPA INTERACTIVO CON GPS (LEAFLET.JS)
@@ -572,7 +843,7 @@
                     <div class="position-relative rounded-4 overflow-hidden shadow-sm border border-light-subtle">
                         <img src="./assets/img-pagina/fondo.jpg" alt="DIFC Family Office Architecture" class="w-100 object-fit-cover" style="height: clamp(340px, 45vw, 480px); filter: brightness(0.96) contrast(1.04);">
                         <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(transparent, rgba(20,20,20,0.85));">
-                            <span class="badge bg-burgundy-subtle text-white px-3 py-1 mb-2 text-uppercase">DIFC Gate District</span>
+                            <span class="badge px-3 py-1 mb-2 text-uppercase fw-semibold" style="background-color: var(--feral-burgundy); color: #FFFFFF;">DIFC Gate District</span>
                             <h4 class="font-heading h5 text-white mb-1">Dubai International Financial Centre</h4>
                             <p class="small text-white-50 mb-0">Epicentro regulatorio bajo jurisdicción Common Law independiente.</p>
                         </div>
@@ -762,5 +1033,83 @@
 
     <!-- Script Modular Principal -->
     <script type="module" src="./js/main.js"></script>
+
+    <!-- Resilient Standalone Fallback Script (Garantiza funcionalidad 100% bajo file:// y servidores locales) -->
+    <script>
+      (function() {
+        document.addEventListener("DOMContentLoaded", function() {
+          var container = document.getElementById('catalog-carousel');
+          var prevBtn = document.getElementById('carousel-prev-btn');
+          var nextBtn = document.getElementById('carousel-next-btn');
+          var filterBtns = document.querySelectorAll('.category-filter-btn');
+
+          // Carousel Arrow Navigation
+          if (prevBtn && container) {
+            prevBtn.addEventListener('click', function() {
+              var card = container.querySelector('.carousel-card-item');
+              var width = card ? (card.offsetWidth + 24) : 340;
+              container.scrollBy({ left: -width, behavior: 'smooth' });
+            });
+          }
+
+          if (nextBtn && container) {
+            nextBtn.addEventListener('click', function() {
+              var card = container.querySelector('.carousel-card-item');
+              var width = card ? (card.offsetWidth + 24) : 340;
+              container.scrollBy({ left: width, behavior: 'smooth' });
+            });
+          }
+
+          // Category Tabs Filter (Pure DOM show/hide fallback)
+          if (filterBtns && filterBtns.length) {
+            filterBtns.forEach(function(btn) {
+              btn.addEventListener('click', function(e) {
+                var category = btn.getAttribute('data-category');
+                filterBtns.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+
+                if (container) {
+                  var items = container.querySelectorAll('.carousel-card-item');
+                  items.forEach(function(item) {
+                    var itemCat = item.getAttribute('data-category');
+                    if (category === 'todos' || itemCat === category) {
+                      item.style.display = '';
+                    } else {
+                      item.style.display = 'none';
+                    }
+                  });
+                  container.scrollLeft = 0;
+                }
+              });
+            });
+          }
+
+          // VIP Inquiry Button Handlers
+          document.addEventListener('click', function(e) {
+            var btn = e.target.closest('.btn-consult-vip');
+            if (btn) {
+              e.preventDefault();
+              var itemTitle = btn.getAttribute('data-item-title') || '';
+              var itemCat = btn.getAttribute('data-item-cat') || '';
+              var concierge = document.getElementById('concierge');
+              if (concierge) {
+                concierge.scrollIntoView({ behavior: 'smooth' });
+                var sel = document.getElementById('concierge-interest');
+                if (sel) {
+                  if (itemCat === 'apartamentos') sel.value = 'penthouse';
+                  else if (itemCat === 'yates') sel.value = 'yachts';
+                  else if (itemCat === 'autos') sel.value = 'cars';
+                }
+                var msg = document.getElementById('concierge-message');
+                if (msg) {
+                  msg.value = 'Solicito el dossier confidencial y asignación fiduciaria de: ' + itemTitle + '.';
+                  msg.focus();
+                }
+              }
+            }
+          });
+        });
+      })();
+    </script>
 </body>
 </html>

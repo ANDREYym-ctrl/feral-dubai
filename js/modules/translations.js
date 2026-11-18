@@ -22,7 +22,7 @@ export const translations = {
 
     // Hero Section (High Clarity & Cold Lead Warming)
     "hero.badge": "Dubái · Gestión Patrimonial & Activos de Ultralujo",
-    "hero.title": "Inversión Fiduciaria en Activos de <br><span class=\"fst-italic text-burgundy\">Ultralujo</span> en Dubái",
+    "hero.title": "Inversión Fiduciaria en Activos de <br><span class=\"fst-italic hero-gold-text\">Ultralujo</span> en Dubái",
     "hero.subtitle": "Acceso off-market exclusivo y custodia fiduciaria para adquirir Penthouses panorámicos frente al Burj Khalifa, superyates transoceánicos y vehículos de colección bajo normativa DIFC Common Law.",
     "hero.cta_vip": "Solicitar Consulta Privada",
     "hero.cta_catalog": "Explorar Colección",
@@ -158,7 +158,7 @@ export const translations = {
 
     // Hero Section (High Clarity & Cold Lead Warming)
     "hero.badge": "Dubai · Private Wealth & Ultra-Luxury Assets",
-    "hero.title": "Fiduciary Investment in Dubai <br><span class=\"fst-italic text-burgundy\">Trophy Assets</span>",
+    "hero.title": "Fiduciary Investment in Dubai <br><span class=\"fst-italic hero-gold-text\">Trophy Assets</span>",
     "hero.subtitle": "Exclusive off-market allocations and fiduciary custody for iconic Burj Khalifa-facing penthouses, transoceanic superyachts, and collector hypercars under DIFC Common Law governance.",
     "hero.cta_vip": "Request Private Consultation",
     "hero.cta_catalog": "Explore Collection",

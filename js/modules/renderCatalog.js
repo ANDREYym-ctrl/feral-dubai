@@ -1,44 +1,264 @@
 // ========================================================
 // FERAL DUBÁI - DYNAMIC LUXURY ASSETS CAROUSEL
-// Horizontal Fluid Carousel · Exclusivity Tags (No Public Prices)
+// Horizontal Fluid Carousel · Zero-Latency Fail-Safe Architecture
 // ========================================================
 
 import { getCurrentLang, t, onLanguageChange } from './translations.js';
 
-let catalogItems = [];
+// Preloaded embedded catalog data (Guarantees zero-latency rendering & works offline / file:/// protocol)
+export const catalogItems = [
+  {
+    id: "skyline-penthouse",
+    category: "apartamentos",
+    categoryName: {
+      es: "Bienes Raíces Prime",
+      en: "Prime Real Estate"
+    },
+    title: {
+      es: "Skyline Presidential Penthouse",
+      en: "Skyline Presidential Penthouse"
+    },
+    location: {
+      es: "Downtown Dubái · Vistas al Burj Khalifa",
+      en: "Downtown Dubai · Direct Burj Khalifa View"
+    },
+    specs: {
+      es: "5 Habs · 820 m² · Piscina Infinita Privada · Domótica Crestron",
+      en: "5 Beds · 8,826 sq ft · Private Infinity Pool · Crestron Automation"
+    },
+    exclusivity: {
+      es: "POA · Consulta Privada",
+      en: "POA · Private Inquiry"
+    },
+    image: "./assets/img - apartamento/APARTAMENTO_COMEDOR.jpg",
+    description: {
+      es: "Residencia de gran altura con vistas panorámicas directas al Burj Khalifa, revestimientos en mármol Calacatta italiano, terraza perimetral y helipuerto con acceso directo.",
+      en: "Sky-high residence with direct panoramic Burj Khalifa views, Italian Calacatta marble cladding, wraparound sky terrace, and direct helipad access."
+    },
+    badge: {
+      es: "Entrega Inmediata",
+      en: "Immediate Handover"
+    }
+  },
+  {
+    id: "palm-water-villa",
+    category: "apartamentos",
+    categoryName: {
+      es: "Bienes Raíces Prime",
+      en: "Prime Real Estate"
+    },
+    title: {
+      es: "Palm Jumeirah Signature Water Villa",
+      en: "Palm Jumeirah Signature Water Villa"
+    },
+    location: {
+      es: "Palm Jumeirah · Frond N",
+      en: "Palm Jumeirah · Frond N"
+    },
+    specs: {
+      es: "7 Suites · 1,450 m² · Muelle Privado · Playa Exclusiva",
+      en: "7 Suites · 15,600 sq ft · Private Dock · Exclusive Beachfront"
+    },
+    exclusivity: {
+      es: "Inversión Fiduciaria VIP",
+      en: "VIP Fiduciary Allocation"
+    },
+    image: "./assets/img - apartamento/APARTAMENTO_SALE.jpg",
+    description: {
+      es: "Mansión frente al mar con acceso privado a la bahía, muelle para superyates, arquitectura bioclimática contemporánea y jardines zen diseñados por paisajistas europeos.",
+      en: "Beachfront trophy mansion with private bay access, private superyacht berth, contemporary bioclimatic architecture, and European-designed zen gardens."
+    },
+    badge: {
+      es: "Off-Market Exclusivo",
+      en: "Off-Market Exclusive"
+    }
+  },
+  {
+    id: "superyacht-royal-feral",
+    category: "yates",
+    categoryName: {
+      es: "Yates Privados",
+      en: "Private Superyachts"
+    },
+    title: {
+      es: "Superyacht Royal Feral 65M",
+      en: "Superyacht Royal Feral 65M"
+    },
+    location: {
+      es: "Dubai Harbour Marina · Golfo Pérsico",
+      en: "Dubai Harbour Marina · Arabian Gulf"
+    },
+    specs: {
+      es: "Eslora 65 m · 6 Suites VIP · Helipuerto Touch-and-Go · Beach Club",
+      en: "Length 65m · 6 VIP Suites · Touch-and-Go Helipad · Beach Club"
+    },
+    exclusivity: {
+      es: "POA · Dossier Confidencial",
+      en: "POA · Confidential Dossier"
+    },
+    image: "./assets/img - yate/ALUMBRADO_FRONTAL_YATE.jpeg",
+    description: {
+      es: "Embarcación insignia con casco de acero naval, cubiertas de teca birmana, iluminación arquitectónica perimetral sumergida y autonomía transatlántica de 5,000 millas náuticas.",
+      en: "Flagship vessel with naval steel hull, Burmese teak decks, submersible architectural lighting, and 5,000 nautical mile transatlantic autonomy."
+    },
+    badge: {
+      es: "Construcción a Medida",
+      en: "Bespoke Commission"
+    }
+  },
+  {
+    id: "ocean-explorer-50m",
+    category: "yates",
+    categoryName: {
+      es: "Yates Privados",
+      en: "Private Superyachts"
+    },
+    title: {
+      es: "Ocean Explorer 50M Custom",
+      en: "Ocean Explorer 50M Custom"
+    },
+    location: {
+      es: "Port Rashid · Dubái",
+      en: "Port Rashid · Dubai"
+    },
+    specs: {
+      es: "Eslora 50 m · 12 Huéspedes · Jacuzzi Panorámico · Garaje Doble",
+      en: "Length 50m · 12 Guests · Panoramic Jacuzzi · Twin Tender Garage"
+    },
+    exclusivity: {
+      es: "Asignación Exclusiva",
+      en: "Exclusive Allocation"
+    },
+    image: "./assets/img - yate/FRONTAL_YATE.jpeg",
+    description: {
+      es: "Ingeniería de vanguardia diseñada para expediciones de ultralujo, con estabilizadores giroscópicos de fondeo cero y acabados interiores en roble ahumado y titanio.",
+      en: "Avant-garde engineering designed for ultra-luxury worldwide expeditions, featuring zero-speed gyroscopic stabilizers and smoked oak and titanium interior accents."
+    },
+    badge: {
+      es: "Disponible en Marina",
+      en: "Marina Ready"
+    }
+  },
+  {
+    id: "yacht-executive-interior",
+    category: "yates",
+    categoryName: {
+      es: "Yates Privados",
+      en: "Private Superyachts"
+    },
+    title: {
+      es: "Majesty Master Suite & Salon",
+      en: "Majesty Master Suite & Salon"
+    },
+    location: {
+      es: "Dubai Marina Yacht Club",
+      en: "Dubai Marina Yacht Club"
+    },
+    specs: {
+      es: "Interiorismo Hermes · Audio Focal Utopia · Cava Climatizada",
+      en: "Hermes Interior Design · Focal Utopia Audio · Climatized Wine Cellar"
+    },
+    exclusivity: {
+      es: "POA · Edición Privada",
+      en: "POA · Private Edition"
+    },
+    image: "./assets/img - yate/INTERIOR_DE_YATE.jpeg",
+    description: {
+      es: "Diseño interior concebido por firmas de alta costura europea, con salones de conferencias privadas sobre el mar y suite de armador con terraza retráctil.",
+      en: "Interior architecture conceived by European haute-couture studios, featuring private sea-facing conference lounges and owner's suite with folding balconies."
+    },
+    badge: {
+      es: "Colección Privada",
+      en: "Private Collection"
+    }
+  },
+  {
+    id: "feral-phantom-gt",
+    category: "autos",
+    categoryName: {
+      es: "Superdeportivos",
+      en: "Bespoke Hypercars"
+    },
+    title: {
+      es: "Feral Phantom GT Black Badge",
+      en: "Feral Phantom GT Black Badge"
+    },
+    location: {
+      es: "Dubái Autodrome Club · Edición 1 de 5",
+      en: "Dubai Autodrome Club · Edition 1 of 5"
+    },
+    specs: {
+      es: "V12 Twin-Turbo 850 HP · 0-100 en 2.8s · Fibra de Carbono Aeroespacial",
+      en: "V12 Twin-Turbo 850 HP · 0-60 in 2.8s · Aerospace Carbon Fiber"
+    },
+    exclusivity: {
+      es: "Pieza de Colección VIP",
+      en: "VIP Collector's Piece"
+    },
+    image: "./assets/img - autos/ROLL_FRENTE.jpeg",
+    description: {
+      es: "Ingeniería de aerodinámica activa con chasis monocasco de fibra de carbono aeroespacial, detalles en oro mate de 24 quilates e interiores en piel Connolly personalizada.",
+      en: "Active aerodynamic engineering with aerospace-grade carbon fiber monocoque, 24-karat matte gold details, and personalized Connolly leather interior."
+    },
+    badge: {
+      es: "Edición Limitada",
+      en: "Limited Edition"
+    }
+  },
+  {
+    id: "aerodynamic-v12",
+    category: "autos",
+    categoryName: {
+      es: "Superdeportivos",
+      en: "Bespoke Hypercars"
+    },
+    title: {
+      es: "Rolls-Royce Spectre Bespoke Atelier",
+      en: "Rolls-Royce Spectre Bespoke Atelier"
+    },
+    location: {
+      es: "Showroom Flagship DIFC",
+      en: "DIFC Flagship Showroom"
+    },
+    specs: {
+      es: "Propulsión Eléctrica Bespoke · Techo Starlight · Blindaje Nivel VR7",
+      en: "Bespoke Electric Powertrain · Starlight Headliner · VR7 Armored"
+    },
+    exclusivity: {
+      es: "Asignación Bajo Pedido",
+      en: "Custom Allocation"
+    },
+    image: "./assets/img - autos/ROLL_ATRAS.jpeg",
+    description: {
+      es: "El pináculo de la elegancia silenciosa con programa de blindaje discreto para mandatarios y ejecutivos globales, acompañado de telemetría y seguridad satelital 24/7.",
+      en: "The pinnacle of silent luxury featuring discreet armored protection for global dignitaries and family offices, backed by 24/7 private satellite security."
+    },
+    badge: {
+      es: "Entrega Inmediata",
+      en: "Immediate Handover"
+    }
+  }
+];
+
 let activeCategory = 'todos';
 
-export async function renderCatalog() {
+export function renderCatalog() {
   const container = document.getElementById('catalog-carousel');
   if (!container) return;
 
-  try {
-    const response = await fetch('./js/data/catalog.json');
-    const data = await response.json();
-    catalogItems = data.items || [];
+  // Render initial items into carousel
+  displayCarouselItems(activeCategory);
 
-    // Initial render
+  // Setup Category Tabs
+  setupCategoryTabs();
+
+  // Setup Carousel Arrow Controls
+  setupCarouselArrows();
+
+  // Re-render when language changes
+  onLanguageChange(() => {
     displayCarouselItems(activeCategory);
-
-    // Setup Category Tabs
-    setupCategoryTabs();
-
-    // Setup Carousel Arrow Controls
-    setupCarouselArrows();
-
-    // Re-render when language changes
-    onLanguageChange(() => {
-      displayCarouselItems(activeCategory);
-    });
-
-  } catch (error) {
-    console.error("Error al cargar el catálogo:", error);
-    container.innerHTML = `
-      <div class="col-12 text-center py-5">
-        <p class="text-burgundy fw-semibold fs-5">${t('portfolio.desc')}</p>
-      </div>
-    `;
-  }
+  });
 }
 
 function setupCategoryTabs() {
@@ -62,21 +282,21 @@ function setupCarouselArrows() {
   const nextBtn = document.getElementById('carousel-next-btn');
 
   if (prevBtn && container) {
-    prevBtn.addEventListener('click', () => {
+    prevBtn.onclick = () => {
       const cardWidth = container.querySelector('.carousel-card-item')?.offsetWidth || 340;
       container.scrollBy({ left: -cardWidth - 24, behavior: 'smooth' });
-    });
+    };
   }
 
   if (nextBtn && container) {
-    nextBtn.addEventListener('click', () => {
+    nextBtn.onclick = () => {
       const cardWidth = container.querySelector('.carousel-card-item')?.offsetWidth || 340;
       container.scrollBy({ left: cardWidth + 24, behavior: 'smooth' });
-    });
+    };
   }
 }
 
-function displayCarouselItems(categoryKey) {
+export function displayCarouselItems(categoryKey) {
   const container = document.getElementById('catalog-carousel');
   if (!container) return;
 
@@ -99,6 +319,7 @@ function displayCarouselItems(categoryKey) {
   filteredItems.forEach((item, index) => {
     const cardWrapper = document.createElement('div');
     cardWrapper.className = 'carousel-card-item';
+    cardWrapper.setAttribute('data-category', item.category);
 
     const title = item.title[lang] || item.title.es;
     const location = item.location[lang] || item.location.es;
@@ -107,7 +328,7 @@ function displayCarouselItems(categoryKey) {
     const badge = item.badge ? (item.badge[lang] || item.badge.es) : null;
     const categoryName = item.categoryName ? (item.categoryName[lang] || item.categoryName.es) : '';
     const exclusivity = item.exclusivity ? (item.exclusivity[lang] || item.exclusivity.es) : (lang === 'es' ? 'POA · Consulta Privada' : 'POA · Private Inquiry');
-    const consultText = t('card.consult');
+    const consultText = t('card.consult') || (lang === 'es' ? 'Solicitar Dossier VIP' : 'Request VIP Dossier');
 
     // WhatsApp prefilled message
     const waText = encodeURIComponent(
@@ -118,7 +339,7 @@ function displayCarouselItems(categoryKey) {
     const waLink = `https://wa.me/97148883372?text=${waText}`;
 
     cardWrapper.innerHTML = `
-      <article class="luxury-card h-100 d-flex flex-column" data-category="${item.category}" style="animation: fadeInUp 0.4s ease backwards ${index * 0.05}s;">
+      <article class="luxury-card h-100 d-flex flex-column" data-category="${item.category}">
         <!-- Imagen y Badges -->
         <div class="card-img-wrapper position-relative">
           <img src="${item.image}" alt="${title}" loading="lazy">
@@ -126,7 +347,7 @@ function displayCarouselItems(categoryKey) {
             <span class="badge bg-burgundy-subtle fw-semibold px-2 py-1 text-uppercase">${categoryName}</span>
             ${badge ? `<span class="badge bg-dark-glass fw-normal px-2 py-1">${badge}</span>` : ''}
           </div>
-          <!-- Etiqueta de Exclusividad (Sin Precio Explícito) -->
+          <!-- Etiqueta de Exclusividad (Sin Precios Explícitos) -->
           <div class="card-exclusivity-overlay position-absolute bottom-0 end-0 p-3">
             <span class="exclusivity-pill">
               <i class="bi bi-shield-lock-fill text-burgundy me-1"></i> ${exclusivity}
@@ -172,12 +393,12 @@ function displayCarouselItems(categoryKey) {
 
   // Attach click events to "Solicitar Dossier VIP" buttons
   container.querySelectorAll('.btn-consult-vip').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    btn.onclick = (e) => {
       e.preventDefault();
       const itemTitle = btn.getAttribute('data-item-title');
       const itemCat = btn.getAttribute('data-item-cat');
       handleVipInquiry(itemTitle, itemCat);
-    });
+    };
   });
 }
 

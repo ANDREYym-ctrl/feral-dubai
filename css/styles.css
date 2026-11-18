@@ -80,12 +80,13 @@ body {
 }
 
 /* ========================================================
-   JERARQUÍA TIPOGRÁFICA Y COLORES DE TEXTO
+   JERARQUÍA TIPOGRÁFICA Y COLORES DE TEXTO (ALTO CONTRASTE)
    ======================================================== */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.font-heading {
   color: var(--feral-text-primary);
-  font-family: var(--font-serif);
-  font-weight: 700;
+  font-family: var(--font-serif) !important;
+  font-weight: 700 !important;
   letter-spacing: -0.015em;
 }
 
@@ -105,16 +106,18 @@ small.text-muted,
   opacity: 1 !important;
 }
 
-.font-heading {
-  font-family: var(--font-serif);
-}
-
 .text-burgundy {
   color: var(--feral-burgundy) !important;
 }
 
 .text-ruby {
   color: var(--feral-ruby) !important;
+}
+
+.hero-gold-text {
+  color: #F7E7C4 !important;
+  font-weight: 700 !important;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 2px 6px rgba(0, 0, 0, 0.8) !important;
 }
 
 .bg-burgundy-subtle {
@@ -377,22 +380,31 @@ small.text-muted,
 }
 
 .hero-title {
+  font-family: var(--font-serif) !important;
   font-size: clamp(2.3rem, 6vw, 4.4rem);
-  line-height: 1.12;
-  color: #FFFFFF;
-  font-weight: 700;
+  line-height: 1.15;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
   margin-bottom: 1.6rem;
-  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.95), 0 2px 6px rgba(0, 0, 0, 0.8) !important;
+}
+
+.hero-title span,
+.hero-title .text-burgundy,
+.hero-title .hero-gold-text {
+  color: #F7E7C4 !important;
+  font-weight: 700 !important;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.95), 0 2px 6px rgba(0, 0, 0, 0.8) !important;
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 2.1vw, 1.25rem);
-  color: #F0F0F0;
-  font-weight: 300;
+  font-size: clamp(1.05rem, 2.1vw, 1.25rem);
+  color: #F9F9F5 !important;
+  font-weight: 400 !important;
   max-width: 740px;
   margin: 0 auto 2.8rem auto;
   line-height: 1.75;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
 }
 
 /* ========================================================
@@ -476,11 +488,15 @@ small.text-muted,
   font-weight: 600;
 }
 
-.section-title {
+.section-title,
+h2.section-title {
+  font-family: var(--font-serif) !important;
   font-size: clamp(2.1rem, 4.5vw, 3.4rem);
-  font-weight: 700;
-  color: var(--feral-text-primary);
-  line-height: 1.15;
+  font-weight: 700 !important;
+  color: #141414 !important;
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+  text-shadow: none !important;
 }
 
 .section-desc {
@@ -653,7 +669,9 @@ small.text-muted,
 }
 
 .card-title {
-  color: var(--feral-text-primary);
+  color: #141414 !important;
+  font-family: var(--font-serif) !important;
+  font-weight: 700 !important;
   font-size: 1.4rem;
   line-height: 1.3;
 }
