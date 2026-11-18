@@ -1,6 +1,6 @@
 // ========================================================
 // FERAL DUBÁI - I18N TRANSLATION ENGINE (ES / EN)
-// Official Burgundy & Wine Palette · WCAG AAA Contrast
+// Luxury Light System · Dubai Holding Communities Style
 // ========================================================
 
 export const translations = {
@@ -19,7 +19,7 @@ export const translations = {
 
     // Hero Section
     "hero.badge": "Dubái · Bienes Raíces de Ultralujo & Family Office",
-    "hero.title": "El Arte de Vivir <br><span class=\"text-ruby-light fst-italic\">sin Límites</span> en Dubái",
+    "hero.title": "El Arte de Vivir <br><span class=\"fst-italic\" style=\"color: #E5C583;\">sin Límites</span> en Dubái",
     "hero.subtitle": "Plataforma privada de inversión en Penthouses panorámicos frente al Burj Khalifa, superyates de alta mar y vehículos bespoke de colección.",
     "hero.cta_catalog": "Explorar Portafolio",
     "hero.cta_vip": "Asesoría Privada",
@@ -101,7 +101,7 @@ export const translations = {
 
     // Hero Section
     "hero.badge": "Dubai · Ultra-Luxury Assets & Family Office",
-    "hero.title": "The Art of Living <br><span class=\"text-ruby-light fst-italic\">Without Limits</span> in Dubai",
+    "hero.title": "The Art of Living <br><span class=\"fst-italic\" style=\"color: #E5C583;\">Without Limits</span> in Dubai",
     "hero.subtitle": "Private advisory platform for iconic Burj Khalifa-facing penthouses, transoceanic superyachts, and bespoke collector hypercars.",
     "hero.cta_catalog": "Explore Portfolio",
     "hero.cta_vip": "Private Advisory",

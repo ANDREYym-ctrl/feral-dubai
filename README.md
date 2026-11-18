@@ -5,10 +5,10 @@ Plataforma web de ultralujo y catálogo privado desarrollada con arquitectura **
 ---
 
 ## 🏛️ Dirección de Arte & Experiencia de Usuario (UI/UX)
-* **Estética de Ultralujo:** Paleta sobria basada en *Obsidian Carbon* (`#060606`), acentos en *Oro Champán* (`#d4af37`) y llamados a la acción institucionales en *Rojo Carmesí* (`#8B0000`).
-* **Tipografía Editorial de Alto Contraste:** Títulos en serifa clásica de alta costura (*Bodoni Moda*) combinados con una sans-serif geométrica minimalista (*Plus Jakarta Sans*) para especificaciones y cifras financieras.
-* **Glassmorphism & Microinteracciones:** Paneles translúcidos con desenfoque (`backdrop-filter: blur(20px)`), bordes dorados de 1px y transiciones sutiles optimizadas para pantallas OLED.
-* **Mobile-First Absoluto:** Menú drawer lateral flotante con navegación táctil, tarjetas adaptables a una columna con áreas de pulsación cómodas para el pulgar, y botón flotante de atención VIP inmediata.
+* **Estética Luxury Light (Inspiración Dubai Holding Communities):** Paleta luminosa y sofisticada basada en *Blanco Perla / Marfil Suave* (`#F9F9F5`), *Blanco Puro* (`#FFFFFF`) y textos de alto contraste en *Antracita Profundo* (`#141414`).
+* **Acentos de Marca Borgoña & Wine:** Toques elegantes de *Burgundy Profundo* (`#800020`), *Bordeaux* (`#6B0F1A`) y *Ruby* (`#9B2335`) aplicados con disciplina editorial en botones primarios (CTA), líneas divisorias y estados activos.
+* **Tipografía Editorial de Alto Contraste:** Títulos en serifa clásica (*Bodoni Moda*) combinados con una sans-serif geométrica minimalista (*Plus Jakarta Sans*) para especificaciones y cifras financieras.
+* **Mobile-First Absoluto & Generous Whitespace:** Menú drawer lateral flotante con navegación táctil, tarjetas aireadas de alta legibilidad, selector bilingüe compacto y botón flotante de atención VIP inmediata.
 
 ---
 

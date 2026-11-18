@@ -1,6 +1,6 @@
 // ========================================================
 // FERAL DUBÁI - DYNAMIC LUXURY CATALOG RENDERER
-// Burgundy & Wine Brand Palette · WCAG AAA Contrast
+// Luxury Light System · Dubai Holding Communities Style
 // ========================================================
 
 import { getCurrentLang, t, onLanguageChange } from './translations.js';
@@ -32,7 +32,7 @@ export async function renderCatalog() {
     console.error("Error al cargar el catálogo:", error);
     container.innerHTML = `
       <div class="col-12 text-center py-5">
-        <p class="text-ruby fw-semibold fs-5">${t('portfolio.desc')}</p>
+        <p class="text-burgundy fw-semibold fs-5">${t('portfolio.desc')}</p>
       </div>
     `;
   }
@@ -94,29 +94,29 @@ function displayItems(categoryKey) {
     const waLink = `https://wa.me/97148883372?text=${waText}`;
 
     col.innerHTML = `
-      <article class="luxury-card h-100 d-flex flex-column" data-category="${item.category}" style="animation: fadeInUp 0.5s ease backwards ${index * 0.08}s;">
+      <article class="luxury-card h-100 d-flex flex-column" data-category="${item.category}" style="animation: fadeInUp 0.4s ease backwards ${index * 0.06}s;">
         <!-- Imagen y Badges -->
         <div class="card-img-wrapper position-relative">
           <img src="${item.image}" alt="${title}" loading="lazy">
           <div class="card-badges position-absolute top-0 start-0 p-3 d-flex flex-wrap gap-2">
-            <span class="badge bg-burgundy-subtle text-white fw-semibold px-2 py-1 text-uppercase">${categoryName}</span>
-            ${badge ? `<span class="badge bg-dark-glass text-white fw-normal px-2 py-1">${badge}</span>` : ''}
+            <span class="badge bg-burgundy-subtle fw-semibold px-2 py-1 text-uppercase">${categoryName}</span>
+            ${badge ? `<span class="badge bg-dark-glass fw-normal px-2 py-1">${badge}</span>` : ''}
           </div>
           <div class="card-price-overlay position-absolute bottom-0 end-0 p-3">
-            <span class="price-pill fw-bold">${item.price}</span>
+            <span class="price-pill">${item.price}</span>
           </div>
         </div>
 
-        <!-- Contenido de Alto Contraste -->
+        <!-- Contenido Minimalista & Aireado -->
         <div class="card-body p-4 d-flex flex-column flex-grow-1">
-          <div class="card-location text-muted small text-uppercase fw-semibold mb-2 d-flex align-items-center gap-1">
+          <div class="card-location small text-uppercase fw-semibold mb-2 d-flex align-items-center gap-1">
             <i class="bi bi-geo-alt text-ruby"></i>
             <span>${location}</span>
           </div>
 
-          <h3 class="font-heading card-title h4 fw-bold mb-2 text-white">${title}</h3>
+          <h3 class="font-heading card-title h4 fw-bold mb-2">${title}</h3>
           
-          <div class="card-specs small mb-3 pb-2 border-bottom border-secondary-subtle">
+          <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
             <i class="bi bi-shield-check text-ruby me-1"></i> ${specs}
           </div>
 
@@ -125,7 +125,7 @@ function displayItems(categoryKey) {
           </p>
 
           <!-- Acciones Ergonómicas para Móvil y Desktop -->
-          <div class="card-actions pt-3 border-top border-secondary-subtle d-flex align-items-center gap-2 mt-auto">
+          <div class="card-actions pt-3 border-top border-light-subtle d-flex align-items-center gap-2 mt-auto">
             <button class="btn btn-luxury flex-grow-1 btn-consult-vip" data-item-id="${item.id}" data-item-title="${title}" data-item-cat="${item.category}">
               <i class="bi bi-calendar2-check me-1"></i> ${consultText}
             </button>
