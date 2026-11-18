@@ -1,6 +1,6 @@
 // ========================================================
-// FERAL DUBÁI - DYNAMIC LUXURY CATALOG RENDERER
-// Luxury Light System · Dubai Holding Communities Style
+// FERAL DUBÁI - DYNAMIC LUXURY ASSETS CAROUSEL
+// Horizontal Fluid Carousel · Exclusivity Tags (No Public Prices)
 // ========================================================
 
 import { getCurrentLang, t, onLanguageChange } from './translations.js';
@@ -9,7 +9,7 @@ let catalogItems = [];
 let activeCategory = 'todos';
 
 export async function renderCatalog() {
-  const container = document.getElementById('catalog-container');
+  const container = document.getElementById('catalog-carousel');
   if (!container) return;
 
   try {
@@ -18,14 +18,17 @@ export async function renderCatalog() {
     catalogItems = data.items || [];
 
     // Initial render
-    displayItems(activeCategory);
+    displayCarouselItems(activeCategory);
 
     // Setup Category Tabs
     setupCategoryTabs();
 
+    // Setup Carousel Arrow Controls
+    setupCarouselArrows();
+
     // Re-render when language changes
     onLanguageChange(() => {
-      displayItems(activeCategory);
+      displayCarouselItems(activeCategory);
     });
 
   } catch (error) {
@@ -48,13 +51,33 @@ function setupCategoryTabs() {
       target.classList.add('active');
 
       activeCategory = target.getAttribute('data-category') || 'todos';
-      displayItems(activeCategory);
+      displayCarouselItems(activeCategory);
     });
   });
 }
 
-function displayItems(categoryKey) {
-  const container = document.getElementById('catalog-container');
+function setupCarouselArrows() {
+  const container = document.getElementById('catalog-carousel');
+  const prevBtn = document.getElementById('carousel-prev-btn');
+  const nextBtn = document.getElementById('carousel-next-btn');
+
+  if (prevBtn && container) {
+    prevBtn.addEventListener('click', () => {
+      const cardWidth = container.querySelector('.carousel-card-item')?.offsetWidth || 340;
+      container.scrollBy({ left: -cardWidth - 24, behavior: 'smooth' });
+    });
+  }
+
+  if (nextBtn && container) {
+    nextBtn.addEventListener('click', () => {
+      const cardWidth = container.querySelector('.carousel-card-item')?.offsetWidth || 340;
+      container.scrollBy({ left: cardWidth + 24, behavior: 'smooth' });
+    });
+  }
+}
+
+function displayCarouselItems(categoryKey) {
+  const container = document.getElementById('catalog-carousel');
   if (!container) return;
 
   const lang = getCurrentLang();
@@ -66,7 +89,7 @@ function displayItems(categoryKey) {
 
   if (filteredItems.length === 0) {
     container.innerHTML = `
-      <div class="col-12 text-center py-5">
+      <div class="w-100 text-center py-5">
         <p class="fs-5 text-muted">${lang === 'es' ? 'No se encontraron activos disponibles en esta categoría.' : 'No assets available under this category.'}</p>
       </div>
     `;
@@ -74,8 +97,8 @@ function displayItems(categoryKey) {
   }
 
   filteredItems.forEach((item, index) => {
-    const col = document.createElement('div');
-    col.className = 'col-12 col-md-6 col-lg-4 mb-4';
+    const cardWrapper = document.createElement('div');
+    cardWrapper.className = 'carousel-card-item';
 
     const title = item.title[lang] || item.title.es;
     const location = item.location[lang] || item.location.es;
@@ -83,18 +106,19 @@ function displayItems(categoryKey) {
     const description = item.description[lang] || item.description.es;
     const badge = item.badge ? (item.badge[lang] || item.badge.es) : null;
     const categoryName = item.categoryName ? (item.categoryName[lang] || item.categoryName.es) : '';
+    const exclusivity = item.exclusivity ? (item.exclusivity[lang] || item.exclusivity.es) : (lang === 'es' ? 'POA · Consulta Privada' : 'POA · Private Inquiry');
     const consultText = t('card.consult');
 
     // WhatsApp prefilled message
     const waText = encodeURIComponent(
       lang === 'es'
-        ? `Hola Feral Dubái, deseo agendar una consulta privada sobre el activo: "${title}" (${item.price}).`
-        : `Hello Feral Dubai, I would like to schedule a private consultation regarding: "${title}" (${item.price}).`
+        ? `Hola Feral Dubái, deseo solicitar el dossier confidencial y asignación privada del activo: "${title}".`
+        : `Hello Feral Dubai, I would like to request the confidential dossier and private allocation details for: "${title}".`
     );
     const waLink = `https://wa.me/97148883372?text=${waText}`;
 
-    col.innerHTML = `
-      <article class="luxury-card h-100 d-flex flex-column" data-category="${item.category}" style="animation: fadeInUp 0.4s ease backwards ${index * 0.06}s;">
+    cardWrapper.innerHTML = `
+      <article class="luxury-card h-100 d-flex flex-column" data-category="${item.category}" style="animation: fadeInUp 0.4s ease backwards ${index * 0.05}s;">
         <!-- Imagen y Badges -->
         <div class="card-img-wrapper position-relative">
           <img src="${item.image}" alt="${title}" loading="lazy">
@@ -102,8 +126,11 @@ function displayItems(categoryKey) {
             <span class="badge bg-burgundy-subtle fw-semibold px-2 py-1 text-uppercase">${categoryName}</span>
             ${badge ? `<span class="badge bg-dark-glass fw-normal px-2 py-1">${badge}</span>` : ''}
           </div>
-          <div class="card-price-overlay position-absolute bottom-0 end-0 p-3">
-            <span class="price-pill">${item.price}</span>
+          <!-- Etiqueta de Exclusividad (Sin Precio Explícito) -->
+          <div class="card-exclusivity-overlay position-absolute bottom-0 end-0 p-3">
+            <span class="exclusivity-pill">
+              <i class="bi bi-shield-lock-fill text-burgundy me-1"></i> ${exclusivity}
+            </span>
           </div>
         </div>
 
@@ -124,10 +151,10 @@ function displayItems(categoryKey) {
             ${description}
           </p>
 
-          <!-- Acciones Ergonómicas para Móvil y Desktop -->
+          <!-- Acciones de Conversión -->
           <div class="card-actions pt-3 border-top border-light-subtle d-flex align-items-center gap-2 mt-auto">
             <button class="btn btn-luxury flex-grow-1 btn-consult-vip" data-item-id="${item.id}" data-item-title="${title}" data-item-cat="${item.category}">
-              <i class="bi bi-calendar2-check me-1"></i> ${consultText}
+              <i class="bi bi-file-earmark-lock2 me-1"></i> ${consultText}
             </button>
             <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="btn btn-wa-icon" title="WhatsApp VIP" aria-label="WhatsApp VIP">
               <i class="bi bi-whatsapp"></i>
@@ -137,10 +164,13 @@ function displayItems(categoryKey) {
       </article>
     `;
 
-    container.appendChild(col);
+    container.appendChild(cardWrapper);
   });
 
-  // Attach click events to "Consultar VIP" buttons
+  // Reset scroll position to beginning
+  container.scrollLeft = 0;
+
+  // Attach click events to "Solicitar Dossier VIP" buttons
   container.querySelectorAll('.btn-consult-vip').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -170,8 +200,8 @@ function handleVipInquiry(itemTitle, itemCat) {
     if (messageInput) {
       const lang = getCurrentLang();
       messageInput.value = lang === 'es'
-        ? `Solicito información detallada y dossier confidencial sobre: ${itemTitle}.`
-        : `I request detailed confidential dossier and specifications regarding: ${itemTitle}.`;
+        ? `Solicito el dossier confidencial e información de asignación privada sobre: ${itemTitle}.`
+        : `I request the confidential dossier and private allocation details regarding: ${itemTitle}.`;
       
       messageInput.focus();
     }

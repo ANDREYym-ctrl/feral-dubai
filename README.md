@@ -4,11 +4,13 @@ Plataforma web de ultralujo y catálogo privado desarrollada con arquitectura **
 
 ---
 
-## 🏛️ Dirección de Arte & Experiencia de Usuario (UI/UX)
-* **Estética Luxury Light (Inspiración Dubai Holding Communities):** Paleta luminosa y sofisticada basada en *Blanco Perla / Marfil Suave* (`#F9F9F5`), *Blanco Puro* (`#FFFFFF`) y textos de alto contraste en *Antracita Profundo* (`#141414`).
-* **Acentos de Marca Borgoña & Wine:** Toques elegantes de *Burgundy Profundo* (`#800020`), *Bordeaux* (`#6B0F1A`) y *Ruby* (`#9B2335`) aplicados con disciplina editorial en botones primarios (CTA), líneas divisorias y estados activos.
-* **Tipografía Editorial de Alto Contraste:** Títulos en serifa clásica (*Bodoni Moda*) combinados con una sans-serif geométrica minimalista (*Plus Jakarta Sans*) para especificaciones y cifras financieras.
-* **Mobile-First Absoluto & Generous Whitespace:** Menú drawer lateral flotante con navegación táctil, tarjetas aireadas de alta legibilidad, selector bilingüe compacto y botón flotante de atención VIP inmediata.
+## 🏛️ Dirección de Arte & Embudo de Conversión (UI/UX)
+* **Embudo de Conversión de Ultralujo:** Diseñado para calentar clientes e inversores en frío mediante transparencia, autoridad institucional y propuesta de valor contundente en los primeros 3 segundos.
+* **Carrusel Dinámico de Activos (Touch-Snap):** Sustitución del listado vertical largo por un carrusel interactivo horizontal con gestos táctiles fluidos, controles de flecha en desktop y snap-scroll nativo.
+* **Exclusividad sin Precios Públicos (POA):** Supresión de precios explícitos en favor de etiquetas fiduciarias exclusivas (*"POA · Consulta Privada"*, *"Inversión Fiduciaria VIP"*), despertando curiosidad e incentivando la solicitud de dossiers privados.
+* **Sección Institucional & Autoridad ("Acerca de Feral"):** Bloque editorial de alta credibilidad con gobernanza DIFC Common Law, cuentas escrow certificadas y estrictos protocolos de confidencialidad (NDA).
+* **Bloque de Inversión Estratégica ("Por Qué Dubái"):** Presentación directa de ventajas fiscales (0% impuestos), plusvalía prime (+14.8%) y Golden Visa de 10 años.
+* **Estética Luxury Light:** Paleta luminosa en *Blanco Perla / Marfil* (`#F9F9F5` / `#FFFFFF`), textos en *Antracita Profundo* (`#141414`) y acentos disciplinados en *Burgundy Profundo* (`#800020`) y *Ruby* (`#9B2335`).
 
 ---
 

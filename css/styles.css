@@ -1,6 +1,6 @@
 /* ========================================================
    FERAL DUBÁI — LUXURY ASSETS & FAMILY OFFICE
-   Master Stylesheet (Luxury Light Mode · Dubai Holding Style)
+   Master Stylesheet (Strategic Conversion Funnel & Luxury Light)
    ======================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
@@ -14,7 +14,7 @@
   --feral-ruby: #9B2335;            /* Ruby Accent Oficial */
   --feral-ruby-light: #B83346;      /* Ruby Claro para Realces */
   --feral-ruby-subtle: rgba(128, 0, 32, 0.07);
-  --feral-burgundy-glow: rgba(128, 0, 32, 0.22);
+  --feral-burgundy-glow: rgba(128, 0, 32, 0.2);
   --feral-gold-accent: #C5A059;     /* Detalle de Oro suave */
 
   /* ========================================================
@@ -22,7 +22,7 @@
      ======================================================== */
   --feral-bg-base: #F9F9F5;          /* Blanco Marfil / Perla Suave */
   --feral-bg-white: #FFFFFF;         /* Blanco Puro para Tarjetas */
-  --feral-bg-subtle: #F3F2EB;        /* Fondo Sutil para Métricas */
+  --feral-bg-subtle: #F4F3EC;        /* Fondo Sutil para Métricas / Acerca */
   --feral-card-bg: #FFFFFF;          /* Superficie de Tarjetas */
   --feral-card-hover: #FFFFFF;
 
@@ -35,7 +35,7 @@
   --feral-text-ruby: #800020;        /* Acentos de Texto Borgoña */
 
   /* Bordes de Lujo & Glassmorphism Claro */
-  --border-light: rgba(0, 0, 0, 0.07);
+  --border-light: rgba(0, 0, 0, 0.08);
   --border-subtle: rgba(0, 0, 0, 0.04);
   --border-burgundy: rgba(128, 0, 32, 0.2);
   --border-ruby-glass: rgba(155, 35, 53, 0.3);
@@ -314,15 +314,15 @@ small.text-muted,
 }
 
 /* ========================================================
-   HERO SECTION (CINEMATIC & REFINED)
+   HERO SECTION (CINEMATIC & DIRECT CONVERSION VALUE)
    ======================================================== */
 .hero-luxury {
   position: relative;
-  min-height: 88vh;
+  min-height: 86vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(6.5rem, 11vw, 10rem) 1.5rem clamp(4.5rem, 7vw, 7rem) 1.5rem;
+  padding: clamp(6.5rem, 11vw, 9.5rem) 1.5rem clamp(4rem, 7vw, 6.5rem) 1.5rem;
   background-color: #141414;
   overflow: hidden;
 }
@@ -351,21 +351,21 @@ small.text-muted,
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, rgba(15, 15, 15, 0.35) 0%, rgba(15, 15, 15, 0.75) 75%, rgba(15, 15, 15, 0.9) 100%);
+  background: radial-gradient(circle at center, rgba(15, 15, 15, 0.35) 0%, rgba(15, 15, 15, 0.75) 75%, rgba(15, 15, 15, 0.92) 100%);
   z-index: 2;
 }
 
 .hero-content {
   position: relative;
   z-index: 3;
-  max-width: 920px;
+  max-width: 940px;
 }
 
 .hero-badge {
   display: inline-block;
-  padding: 7px 20px;
+  padding: 7px 22px;
   background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.32);
   border-radius: var(--radius-pill);
   font-size: 0.76rem;
   letter-spacing: 0.22em;
@@ -377,7 +377,7 @@ small.text-muted,
 }
 
 .hero-title {
-  font-size: clamp(2.3rem, 6vw, 4.5rem);
+  font-size: clamp(2.3rem, 6vw, 4.4rem);
   line-height: 1.12;
   color: #FFFFFF;
   font-weight: 700;
@@ -389,10 +389,285 @@ small.text-muted,
   font-size: clamp(1rem, 2.1vw, 1.25rem);
   color: #F0F0F0;
   font-weight: 300;
-  max-width: 700px;
+  max-width: 740px;
   margin: 0 auto 2.8rem auto;
   line-height: 1.75;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+/* ========================================================
+   TRUST BAR (INSTITUTIONAL CONFIDENCE ANCHOR)
+   ======================================================== */
+.trust-bar-wrapper {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--border-light);
+  padding: 1.4rem 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  position: relative;
+  z-index: 10;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #333333;
+  letter-spacing: 0.02em;
+}
+
+.trust-item i {
+  color: var(--feral-burgundy);
+  font-size: 1.1rem;
+}
+
+/* ========================================================
+   SECCIÓN INSTITUCIONAL & AUTORIDAD ("ACERCA DE FERAL")
+   ======================================================== */
+.about-section {
+  background-color: var(--feral-bg-white);
+  padding: clamp(5rem, 8vw, 8rem) 1.5rem;
+  position: relative;
+}
+
+.pillar-card {
+  background: var(--feral-bg-base);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.8rem 1.5rem;
+  transition: var(--transition-smooth);
+}
+
+.pillar-card:hover {
+  border-color: var(--border-burgundy);
+  background: #FFFFFF;
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+.pillar-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: var(--feral-ruby-subtle);
+  color: var(--feral-burgundy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  margin-bottom: 1.2rem;
+}
+
+/* ========================================================
+   CARRUSEL INTERACTIVO DE ACTIVOS (HORIZONTAL & TOUCH)
+   ======================================================== */
+.portfolio-section {
+  background-color: var(--feral-bg-base);
+  padding: clamp(5rem, 8vw, 8rem) 1.5rem;
+  position: relative;
+}
+
+.section-tag {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--feral-burgundy);
+  font-weight: 600;
+}
+
+.section-title {
+  font-size: clamp(2.1rem, 4.5vw, 3.4rem);
+  font-weight: 700;
+  color: var(--feral-text-primary);
+  line-height: 1.15;
+}
+
+.section-desc {
+  color: var(--feral-text-muted);
+  max-width: 660px;
+  margin: 1rem auto 0 auto;
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+/* Category Filter Tabs */
+.filter-tabs-wrapper {
+  overflow-x: auto;
+  padding: 0.8rem 0 1.8rem 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--feral-burgundy) transparent;
+}
+
+.filter-tabs-wrapper::-webkit-scrollbar {
+  height: 3px;
+}
+
+.filter-tabs-wrapper::-webkit-scrollbar-thumb {
+  background: var(--border-burgundy);
+  border-radius: 4px;
+}
+
+.category-filter-btn {
+  background: #FFFFFF;
+  color: #444444;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-pill);
+  padding: 0.7rem 1.6rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.category-filter-btn:hover {
+  color: var(--feral-burgundy);
+  border-color: var(--border-burgundy);
+  transform: translateY(-2px);
+}
+
+.category-filter-btn.active {
+  background-color: var(--feral-burgundy);
+  color: #FFFFFF;
+  border-color: var(--feral-burgundy);
+  font-weight: 600;
+  box-shadow: 0 4px 16px var(--feral-burgundy-glow);
+  transform: translateY(-2px);
+}
+
+/* Horizontal Scroll-Snap Carousel Container */
+.catalog-carousel-wrapper {
+  position: relative;
+}
+
+.catalog-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 1.5rem;
+  padding: 0.5rem 0.25rem 2rem 0.25rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.catalog-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-card-item {
+  flex: 0 0 88%;
+  max-width: 380px;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 768px) {
+  .carousel-card-item {
+    flex: 0 0 calc(50% - 0.75rem);
+    max-width: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .carousel-card-item {
+    flex: 0 0 calc(33.333% - 1rem);
+    max-width: none;
+  }
+}
+
+/* Carousel Arrow Controls */
+.carousel-nav-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--border-burgundy);
+  background-color: #FFFFFF;
+  color: var(--feral-burgundy);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.carousel-nav-btn:hover {
+  background-color: var(--feral-burgundy);
+  color: #FFFFFF;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px var(--feral-burgundy-glow);
+}
+
+/* ========================================================
+   TARJETAS DE ACTIVOS (EXCLUSIVIDAD & SIN PRECIOS PÚBLICOS)
+   ======================================================== */
+.luxury-card {
+  background-color: var(--feral-card-bg);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-soft);
+}
+
+.luxury-card:hover {
+  border-color: var(--border-burgundy);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-img-wrapper {
+  height: 290px;
+  overflow: hidden;
+  background-color: #F0EEE9;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.luxury-card:hover .card-img-wrapper img {
+  transform: scale(1.06);
+}
+
+/* Exclusivity Tag (Replaces Explicit Price) */
+.exclusivity-pill {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(128, 0, 32, 0.22);
+  color: var(--feral-text-primary);
+  font-size: 0.84rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.card-title {
+  color: var(--feral-text-primary);
+  font-size: 1.4rem;
+  line-height: 1.3;
+}
+
+.card-specs {
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  color: #4A4A4A;
+}
+
+.card-description {
+  color: #555555 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.7;
 }
 
 /* ========================================================
@@ -498,153 +773,7 @@ small.text-muted,
 }
 
 /* ========================================================
-   SECCIÓN PORTAFOLIO & PESTAÑAS (AIRY & WHITESPACE)
-   ======================================================== */
-.portfolio-section {
-  background-color: var(--feral-bg-base);
-  padding: clamp(5rem, 8vw, 8rem) 1.5rem;
-  position: relative;
-}
-
-.section-tag {
-  font-size: 0.78rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--feral-burgundy);
-  font-weight: 600;
-}
-
-.section-title {
-  font-size: clamp(2.1rem, 4.5vw, 3.4rem);
-  font-weight: 700;
-  color: var(--feral-text-primary);
-  line-height: 1.15;
-}
-
-.section-desc {
-  color: var(--feral-text-muted);
-  max-width: 660px;
-  margin: 1rem auto 0 auto;
-  font-size: 0.98rem;
-  line-height: 1.75;
-}
-
-/* Category Filter Tabs (Scroll Táctil Móvil Suave) */
-.filter-tabs-wrapper {
-  overflow-x: auto;
-  padding: 0.8rem 0 1.8rem 0;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--feral-burgundy) transparent;
-}
-
-.filter-tabs-wrapper::-webkit-scrollbar {
-  height: 3px;
-}
-
-.filter-tabs-wrapper::-webkit-scrollbar-thumb {
-  background: var(--border-burgundy);
-  border-radius: 4px;
-}
-
-.category-filter-btn {
-  background: #FFFFFF;
-  color: #444444;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-pill);
-  padding: 0.7rem 1.6rem;
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-  font-weight: 500;
-  text-transform: uppercase;
-  white-space: nowrap;
-  transition: var(--transition-smooth);
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-}
-
-.category-filter-btn:hover {
-  color: var(--feral-burgundy);
-  border-color: var(--border-burgundy);
-  transform: translateY(-2px);
-}
-
-.category-filter-btn.active {
-  background-color: var(--feral-burgundy);
-  color: #FFFFFF;
-  border-color: var(--feral-burgundy);
-  font-weight: 600;
-  box-shadow: 0 4px 16px var(--feral-burgundy-glow);
-  transform: translateY(-2px);
-}
-
-/* ========================================================
-   TARJETAS DEL CATÁLOGO (LUXURY LIGHT CARDS)
-   ======================================================== */
-.luxury-card {
-  background-color: var(--feral-card-bg);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  transition: var(--transition-smooth);
-  box-shadow: var(--shadow-soft);
-}
-
-.luxury-card:hover {
-  border-color: var(--border-burgundy);
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-hover);
-}
-
-.card-img-wrapper {
-  height: 290px;
-  overflow: hidden;
-  background-color: #F0EEE9;
-}
-
-.card-img-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.luxury-card:hover .card-img-wrapper img {
-  transform: scale(1.06);
-}
-
-.price-pill {
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  color: var(--feral-text-primary);
-  font-size: 0.9rem;
-  font-weight: 700;
-  padding: 6px 15px;
-  border-radius: var(--radius-pill);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-}
-
-.card-title {
-  color: var(--feral-text-primary);
-  font-size: 1.4rem;
-  line-height: 1.3;
-}
-
-.card-specs {
-  font-size: 0.82rem;
-  letter-spacing: 0.02em;
-  color: #4A4A4A;
-}
-
-.card-description {
-  color: #555555 !important;
-  font-size: 0.9rem !important;
-  line-height: 1.7;
-}
-
-/* ========================================================
-   SECCIÓN DE EXCELENCIA & FAMILY OFFICE (MÉTRICAS CLARAS)
+   PROPUESTA DE VALOR E INVERSIÓN (POR QUÉ DUBÁI)
    ======================================================== */
 .insights-section {
   background-color: var(--feral-bg-subtle);
@@ -685,7 +814,7 @@ small.text-muted,
 }
 
 /* ========================================================
-   SECCIÓN CONCIERGE & FORMULARIO (LIGHT MODE ELEGANTE)
+   SECCIÓN CONCIERGE & FORMULARIO (CONVERSION EMBED)
    ======================================================== */
 .concierge-section {
   position: relative;
@@ -708,7 +837,6 @@ small.text-muted,
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
 }
 
-/* Inputs Refinados para Fondo Claro */
 .luxury-input {
   background-color: #F9F9F7 !important;
   border: 1px solid #DCD9D0 !important;
