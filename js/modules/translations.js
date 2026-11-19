@@ -19,7 +19,7 @@ export const translations = {
     "nav.insights": "Por Qué Dubái",
     "nav.insights_map": "Por Qué Dubái & Mapa",
     "nav.concierge": "Contacto VIP",
-    "nav.cta": "Agendar Visita",
+    "nav.cta": "Agendar Consulta",
 
     // Hero Section (High Clarity & Cold Lead Warming)
     "hero.badge": "Dubái · Gestión Patrimonial & Activos de Ultralujo",
@@ -157,7 +157,7 @@ export const translations = {
     "nav.insights": "Why Dubai",
     "nav.insights_map": "Why Dubai & Map",
     "nav.concierge": "VIP Contact",
-    "nav.cta": "Book Private Tour",
+    "nav.cta": "Schedule Consultation",
 
     // Hero Section (High Clarity & Cold Lead Warming)
     "hero.badge": "Dubai · Private Wealth & Ultra-Luxury Assets",

@@ -556,9 +556,13 @@ h2.section-title {
   transform: translateY(-2px);
 }
 
-/* Horizontal Scroll-Snap Carousel Container */
+/* ========================================================
+   VITRINA VISUAL DINÁMICA COVERFLOW (AUTO-ROTACIÓN & ENFOQUE)
+   ======================================================== */
 .catalog-carousel-wrapper {
   position: relative;
+  overflow: hidden;
+  padding: 1rem 0 2rem 0;
 }
 
 .catalog-carousel {
@@ -566,10 +570,11 @@ h2.section-title {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  gap: 1.5rem;
-  padding: 0.5rem 0.25rem 2rem 0.25rem;
+  gap: 1.8rem;
+  padding: 1.5rem 1.5rem 2.5rem 1.5rem;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  align-items: center;
 }
 
 .catalog-carousel::-webkit-scrollbar {
@@ -577,23 +582,80 @@ h2.section-title {
 }
 
 .carousel-card-item {
-  flex: 0 0 88%;
+  flex: 0 0 86%;
   max-width: 380px;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease, box-shadow 0.45s ease;
+  transform: scale(0.92);
+  opacity: 0.72;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
   .carousel-card-item {
-    flex: 0 0 calc(50% - 0.75rem);
-    max-width: none;
+    flex: 0 0 460px;
+    max-width: 460px;
   }
 }
 
 @media (min-width: 1200px) {
   .carousel-card-item {
-    flex: 0 0 calc(33.333% - 1rem);
-    max-width: none;
+    flex: 0 0 500px;
+    max-width: 500px;
   }
+}
+
+/* Tarjeta Activa / Central en Vitrina */
+.carousel-card-item.is-active {
+  transform: scale(1.04);
+  opacity: 1;
+  cursor: default;
+  z-index: 5;
+}
+
+.carousel-card-item.is-active .luxury-card {
+  border-color: var(--feral-burgundy);
+  box-shadow: 0 24px 55px rgba(128, 0, 32, 0.16), 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.carousel-card-item .card-expandable-details {
+  display: block;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.carousel-card-item.is-active .card-expandable-details {
+  max-height: 520px;
+  opacity: 1;
+}
+
+/* Indicadores de Vitrina (Dots) */
+.showcase-indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 1.2rem;
+}
+
+.showcase-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.18);
+  border: none;
+  padding: 0;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.showcase-dot.active {
+  width: 32px;
+  border-radius: var(--radius-pill);
+  background-color: var(--feral-burgundy);
+  box-shadow: 0 2px 8px var(--feral-burgundy-glow);
 }
 
 /* Carousel Arrow Controls */
@@ -1177,12 +1239,15 @@ h2.section-title {
 }
 
 /* ========================================================
-   SECCIÓN CONCIERGE & FORMULARIO (CONVERSION EMBED)
+   SECCIÓN CONCIERGE & FORMULARIO (PROTAGONISTA DE CONVERSIÓN)
    ======================================================== */
 .concierge-section {
   position: relative;
-  background-color: var(--feral-bg-base);
-  padding: clamp(5rem, 8vw, 8rem) 1.5rem;
+  background: radial-gradient(ellipse at 80% 20%, rgba(128, 0, 32, 0.45) 0%, rgba(20, 6, 11, 0.98) 60%, #080305 100%) !important;
+  color: #FFFFFF;
+  border-top: 1px solid rgba(197, 160, 89, 0.35);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.35);
+  padding: clamp(5.5rem, 9vw, 8.5rem) 1.5rem;
   overflow: hidden;
 }
 
@@ -1193,11 +1258,86 @@ h2.section-title {
 }
 
 .concierge-box {
-  background: #FFFFFF;
-  border: 1px solid var(--border-burgundy);
+  background: rgba(22, 8, 12, 0.88) !important;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(197, 160, 89, 0.35) !important;
   border-radius: var(--radius-lg);
-  padding: clamp(2rem, 5vw, 3.8rem);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+  padding: clamp(2.5rem, 6vw, 4.2rem);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.75), 0 0 50px rgba(128, 0, 32, 0.25) !important;
+  color: #FFFFFF;
+}
+
+.concierge-section .section-tag {
+  background: rgba(128, 0, 32, 0.45);
+  color: #F5E6CC !important;
+  border: 1px solid rgba(197, 160, 89, 0.45);
+}
+
+.concierge-section .section-title,
+.concierge-box h2 {
+  color: #FFFFFF !important;
+}
+
+.concierge-box .concierge-desc {
+  color: #D6D2CA !important;
+}
+
+.concierge-box .concierge-feat-item {
+  color: #E2DFD8 !important;
+}
+
+.concierge-box label {
+  color: #E8E5DF !important;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.concierge-box .luxury-input {
+  background-color: #17070B !important;
+  border: 1px solid rgba(197, 160, 89, 0.32) !important;
+  color: #FFFFFF !important;
+  border-radius: var(--radius-md) !important;
+  padding: 0.9rem 1.2rem !important;
+  font-size: 0.94rem !important;
+  transition: var(--transition-smooth);
+}
+
+.concierge-box .luxury-input:focus {
+  background-color: #220B11 !important;
+  border-color: #C5A059 !important;
+  box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.3) !important;
+  outline: none;
+}
+
+.concierge-box .luxury-input::placeholder {
+  color: #8C847E !important;
+}
+
+.concierge-box select.luxury-input option {
+  background-color: #17070B;
+  color: #FFFFFF;
+}
+
+.concierge-legal-note {
+  font-size: 0.78rem;
+  color: #A39D97;
+  line-height: 1.5;
+  margin-top: 0.85rem;
+}
+
+.btn-whatsapp-concierge {
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  background: rgba(255, 255, 255, 0.06);
+  color: #FFFFFF !important;
+  transition: var(--transition-smooth);
+}
+
+.btn-whatsapp-concierge:hover {
+  background: rgba(37, 211, 102, 0.18);
+  border-color: #25D366;
+  color: #FFFFFF !important;
 }
 
 .luxury-input {
@@ -1313,10 +1453,37 @@ footer.footer-luxury {
     border-radius: 16px;
   }
   .concierge-box {
-    padding: 1.6rem 1.2rem;
+    padding: 1.8rem 1.2rem !important;
   }
   .btn-feral-cta, .btn-feral-outline {
     width: 100%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .catalog-carousel {
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+  .carousel-card-item {
+    flex: 0 0 88%;
+    max-width: 360px;
+  }
+  .carousel-card-item .card-body {
+    padding: 1.25rem !important;
+  }
+  .carousel-card-item .luxury-card-title {
+    font-size: 1.25rem !important;
+    line-height: 1.25;
+  }
+  .carousel-card-item .card-luxury-desc {
+    font-size: 0.85rem !important;
+    line-height: 1.45;
+  }
+  .card-expandable-details .specs-grid-mini {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+    font-size: 0.8rem;
   }
 }
 

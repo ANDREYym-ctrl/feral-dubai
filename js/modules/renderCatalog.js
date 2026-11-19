@@ -241,12 +241,15 @@ export const catalogItems = [
 ];
 
 let activeCategory = 'todos';
+let activeIndex = 0;
+let autoRotateInterval = null;
+let resumeTimeout = null;
 
 export function renderCatalog() {
   const container = document.getElementById('catalog-carousel');
   if (!container) return;
 
-  // Render initial items into carousel
+  // Render initial items into coverflow showcase
   displayCarouselItems(activeCategory);
 
   // Setup Category Tabs
@@ -271,27 +274,31 @@ function setupCategoryTabs() {
       target.classList.add('active');
 
       activeCategory = target.getAttribute('data-category') || 'todos';
+      activeIndex = 0;
       displayCarouselItems(activeCategory);
     });
   });
 }
 
 function setupCarouselArrows() {
-  const container = document.getElementById('catalog-carousel');
   const prevBtn = document.getElementById('carousel-prev-btn');
   const nextBtn = document.getElementById('carousel-next-btn');
 
-  if (prevBtn && container) {
-    prevBtn.onclick = () => {
-      const cardWidth = container.querySelector('.carousel-card-item')?.offsetWidth || 340;
-      container.scrollBy({ left: -cardWidth - 24, behavior: 'smooth' });
+  if (prevBtn) {
+    prevBtn.onclick = (e) => {
+      e.preventDefault();
+      pauseAutoRotate();
+      navigateShowcase(-1);
+      resumeAutoRotateAfterDelay();
     };
   }
 
-  if (nextBtn && container) {
-    nextBtn.onclick = () => {
-      const cardWidth = container.querySelector('.carousel-card-item')?.offsetWidth || 340;
-      container.scrollBy({ left: cardWidth + 24, behavior: 'smooth' });
+  if (nextBtn) {
+    nextBtn.onclick = (e) => {
+      e.preventDefault();
+      pauseAutoRotate();
+      navigateShowcase(1);
+      resumeAutoRotateAfterDelay();
     };
   }
 }
@@ -300,6 +307,7 @@ export function displayCarouselItems(categoryKey) {
   const container = document.getElementById('catalog-carousel');
   if (!container) return;
 
+  stopAutoRotate();
   const lang = getCurrentLang();
   container.innerHTML = '';
 
@@ -318,8 +326,9 @@ export function displayCarouselItems(categoryKey) {
 
   filteredItems.forEach((item, index) => {
     const cardWrapper = document.createElement('div');
-    cardWrapper.className = 'carousel-card-item';
+    cardWrapper.className = `carousel-card-item ${index === activeIndex ? 'is-active' : ''}`;
     cardWrapper.setAttribute('data-category', item.category);
+    cardWrapper.setAttribute('data-index', index);
 
     const title = item.title[lang] || item.title.es;
     const location = item.location[lang] || item.location.es;
@@ -328,21 +337,13 @@ export function displayCarouselItems(categoryKey) {
     const badge = item.badge ? (item.badge[lang] || item.badge.es) : null;
     const categoryName = item.categoryName ? (item.categoryName[lang] || item.categoryName.es) : '';
     const exclusivity = item.exclusivity ? (item.exclusivity[lang] || item.exclusivity.es) : (lang === 'es' ? 'POA · Consulta Privada' : 'POA · Private Inquiry');
-    const consultText = t('card.consult') || (lang === 'es' ? 'Solicitar Dossier VIP' : 'Request VIP Dossier');
-
-    // WhatsApp prefilled message
-    const waText = encodeURIComponent(
-      lang === 'es'
-        ? `Hola Feral Dubái, deseo solicitar el dossier confidencial y asignación privada del activo: "${title}".`
-        : `Hello Feral Dubai, I would like to request the confidential dossier and private allocation details for: "${title}".`
-    );
-    const waLink = `https://wa.me/97148883372?text=${waText}`;
+    const consultText = t('card.consult') || (lang === 'es' ? 'Solicitar Dossier Confidencial' : 'Request VIP Dossier');
 
     cardWrapper.innerHTML = `
       <article class="luxury-card h-100 d-flex flex-column" data-category="${item.category}">
         <!-- Imagen y Badges -->
         <div class="card-img-wrapper position-relative">
-          <img src="${item.image}" alt="${title}" loading="lazy">
+          <img src="${item.image}" alt="${title}" loading="${index < 2 ? 'eager' : 'lazy'}">
           <div class="card-badges position-absolute top-0 start-0 p-3 d-flex flex-wrap gap-2">
             <span class="badge bg-burgundy-subtle fw-semibold px-2 py-1 text-uppercase">${categoryName}</span>
             ${badge ? `<span class="badge bg-dark-glass fw-normal px-2 py-1">${badge}</span>` : ''}
@@ -364,42 +365,218 @@ export function displayCarouselItems(categoryKey) {
 
           <h3 class="font-heading card-title h4 fw-bold mb-2">${title}</h3>
           
-          <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
-            <i class="bi bi-shield-check text-ruby me-1"></i> ${specs}
-          </div>
+          <!-- Bloque Expandible en Coverflow / Tarjeta Activa -->
+          <div class="card-expandable-details">
+            <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
+              <i class="bi bi-shield-check text-ruby me-1"></i> ${specs}
+            </div>
 
-          <p class="card-description small mb-4 flex-grow-1">
-            ${description}
-          </p>
+            <p class="card-description small mb-4">
+              ${description}
+            </p>
 
-          <!-- Acciones de Conversión -->
-          <div class="card-actions pt-3 border-top border-light-subtle d-flex align-items-center gap-2 mt-auto">
-            <button class="btn btn-luxury flex-grow-1 btn-consult-vip" data-item-id="${item.id}" data-item-title="${title}" data-item-cat="${item.category}">
-              <i class="bi bi-file-earmark-lock2 me-1"></i> ${consultText}
-            </button>
-            <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="btn btn-wa-icon" title="WhatsApp VIP" aria-label="WhatsApp VIP">
-              <i class="bi bi-whatsapp"></i>
-            </a>
+            <div class="card-actions pt-2 border-top border-light-subtle mt-auto">
+              <button class="btn btn-luxury w-100 btn-consult-vip" data-item-id="${item.id}" data-item-title="${title}" data-item-cat="${item.category}">
+                <i class="bi bi-file-earmark-lock2 me-1"></i> ${consultText}
+              </button>
+            </div>
           </div>
         </div>
       </article>
     `;
 
+    // Click on card: Focus & center card if not active
+    cardWrapper.addEventListener('click', (e) => {
+      if (e.target.closest('.btn-consult-vip')) {
+        return; // Handled separately
+      }
+      if (activeIndex !== index) {
+        pauseAutoRotate();
+        focusCardByIndex(index, true);
+        resumeAutoRotateAfterDelay();
+      }
+    });
+
     container.appendChild(cardWrapper);
   });
 
-  // Reset scroll position to beginning
-  container.scrollLeft = 0;
+  // Render Indicator Dots
+  renderShowcaseDots(filteredItems.length);
 
-  // Attach click events to "Solicitar Dossier VIP" buttons
+  // Setup interaction listeners for auto-rotate pause/resume
+  setupHoverAndTouchListeners(container);
+
+  // Setup Mobile Horizontal Scroll Observation
+  setupScrollObserver(container);
+
+  // Focus initial card
+  focusCardByIndex(activeIndex, false);
+
+  // Start auto-rotation
+  startAutoRotate(filteredItems.length);
+
+  // Attach click events to VIP buttons
   container.querySelectorAll('.btn-consult-vip').forEach(btn => {
     btn.onclick = (e) => {
       e.preventDefault();
+      e.stopPropagation();
       const itemTitle = btn.getAttribute('data-item-title');
       const itemCat = btn.getAttribute('data-item-cat');
       handleVipInquiry(itemTitle, itemCat);
     };
   });
+}
+
+function focusCardByIndex(index, smoothScroll = true) {
+  const container = document.getElementById('catalog-carousel');
+  if (!container) return;
+
+  const cards = container.querySelectorAll('.carousel-card-item');
+  if (!cards.length) return;
+
+  if (index < 0) index = cards.length - 1;
+  if (index >= cards.length) index = 0;
+
+  activeIndex = index;
+
+  cards.forEach((card, idx) => {
+    if (idx === index) {
+      card.classList.add('is-active');
+      if (smoothScroll) {
+        card.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    } else {
+      card.classList.remove('is-active');
+    }
+  });
+
+  updateShowcaseDots(activeIndex);
+}
+
+function navigateShowcase(direction) {
+  const container = document.getElementById('catalog-carousel');
+  if (!container) return;
+  const cards = container.querySelectorAll('.carousel-card-item');
+  if (!cards.length) return;
+
+  let newIndex = activeIndex + direction;
+  if (newIndex >= cards.length) newIndex = 0;
+  if (newIndex < 0) newIndex = cards.length - 1;
+
+  focusCardByIndex(newIndex, true);
+}
+
+function startAutoRotate(totalCards) {
+  stopAutoRotate();
+  if (totalCards <= 1) return;
+
+  autoRotateInterval = setInterval(() => {
+    navigateShowcase(1);
+  }, 4500);
+}
+
+function stopAutoRotate() {
+  if (autoRotateInterval) {
+    clearInterval(autoRotateInterval);
+    autoRotateInterval = null;
+  }
+}
+
+function pauseAutoRotate() {
+  stopAutoRotate();
+  if (resumeTimeout) {
+    clearTimeout(resumeTimeout);
+    resumeTimeout = null;
+  }
+}
+
+function resumeAutoRotateAfterDelay() {
+  if (resumeTimeout) clearTimeout(resumeTimeout);
+  resumeTimeout = setTimeout(() => {
+    const container = document.getElementById('catalog-carousel');
+    const totalCards = container?.querySelectorAll('.carousel-card-item')?.length || 0;
+    startAutoRotate(totalCards);
+  }, 5000);
+}
+
+function setupHoverAndTouchListeners(container) {
+  container.addEventListener('mouseenter', pauseAutoRotate, { passive: true });
+  container.addEventListener('mouseleave', resumeAutoRotateAfterDelay, { passive: true });
+  container.addEventListener('touchstart', pauseAutoRotate, { passive: true });
+  container.addEventListener('touchend', resumeAutoRotateAfterDelay, { passive: true });
+}
+
+function renderShowcaseDots(count) {
+  let dotsContainer = document.getElementById('showcase-dots');
+  const carouselWrapper = document.querySelector('.catalog-carousel-wrapper');
+  
+  if (!dotsContainer && carouselWrapper) {
+    dotsContainer = document.createElement('div');
+    dotsContainer.id = 'showcase-dots';
+    dotsContainer.className = 'showcase-indicators';
+    carouselWrapper.appendChild(dotsContainer);
+  }
+
+  if (!dotsContainer) return;
+  dotsContainer.innerHTML = '';
+
+  for (let i = 0; i < count; i++) {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = `showcase-dot ${i === activeIndex ? 'active' : ''}`;
+    dot.setAttribute('aria-label', `Ver activo ${i + 1}`);
+    dot.onclick = () => {
+      pauseAutoRotate();
+      focusCardByIndex(i, true);
+      resumeAutoRotateAfterDelay();
+    };
+    dotsContainer.appendChild(dot);
+  }
+}
+
+function updateShowcaseDots(index) {
+  const dots = document.querySelectorAll('.showcase-dot');
+  dots.forEach((dot, idx) => {
+    if (idx === index) {
+      dot.classList.add('active');
+    } else {
+      dot.classList.remove('active');
+    }
+  });
+}
+
+function setupScrollObserver(container) {
+  let scrollDebounce = null;
+  container.addEventListener('scroll', () => {
+    if (scrollDebounce) clearTimeout(scrollDebounce);
+    scrollDebounce = setTimeout(() => {
+      const cards = container.querySelectorAll('.carousel-card-item');
+      if (!cards.length) return;
+
+      const containerCenter = container.getBoundingClientRect().left + container.offsetWidth / 2;
+      let closestCard = null;
+      let closestDistance = Infinity;
+      let closestIndex = 0;
+
+      cards.forEach((card, idx) => {
+        const rect = card.getBoundingClientRect();
+        const cardCenter = rect.left + rect.width / 2;
+        const dist = Math.abs(containerCenter - cardCenter);
+        if (dist < closestDistance) {
+          closestDistance = dist;
+          closestCard = card;
+          closestIndex = idx;
+        }
+      });
+
+      if (closestCard && activeIndex !== closestIndex) {
+        cards.forEach(c => c.classList.remove('is-active'));
+        closestCard.classList.add('is-active');
+        activeIndex = closestIndex;
+        updateShowcaseDots(activeIndex);
+      }
+    }, 120);
+  }, { passive: true });
 }
 
 function handleVipInquiry(itemTitle, itemCat) {

@@ -85,20 +85,17 @@
                         <a class="nav-link text-uppercase" href="#catalogo" data-i18n="nav.portfolio">Portafolio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="#about" data-i18n="nav.about">Acerca de Feral</a>
+                        <a class="nav-link text-uppercase" href="acerca-de.html" data-i18n="nav.about">Acerca de Feral</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-uppercase" href="#mapa" data-i18n="nav.insights_map">Por Qué Dubái & Mapa</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="#calculadora" data-i18n="nav.calculator">Calculadora ROI</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-uppercase" href="#concierge" data-i18n="nav.concierge">Contacto VIP</a>
                     </li>
                     <li class="nav-item ms-2">
                         <a href="#concierge" class="btn btn-feral-cta" data-i18n="nav.cta">
-                            <i class="bi bi-calendar2-check"></i> Agendar Visita
+                            <i class="bi bi-calendar2-check"></i> Agendar Consulta
                         </a>
                     </li>
                 </ul>
@@ -132,7 +129,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">
+                    <a class="nav-link" href="acerca-de.html">
                         <span data-i18n="nav.about">Acerca de Feral</span>
                         <i class="bi bi-chevron-right small text-burgundy"></i>
                     </a>
@@ -140,12 +137,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#mapa">
                         <span data-i18n="nav.insights_map">Por Qué Dubái & Mapa</span>
-                        <i class="bi bi-chevron-right small text-burgundy"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#calculadora">
-                        <span data-i18n="nav.calculator">Calculadora ROI</span>
                         <i class="bi bi-chevron-right small text-burgundy"></i>
                     </a>
                 </li>
@@ -167,7 +158,7 @@
                 </div>
                 
                 <a href="#concierge" class="btn btn-feral-cta w-100 mb-3" data-i18n="nav.cta">
-                    <i class="bi bi-calendar2-check"></i> Agendar Visita
+                    <i class="bi bi-calendar2-check"></i> Agendar Consulta
                 </a>
                 
                 <a href="https://wa.me/97148883372?text=Hola%20Feral%20Dubai%2C%20deseo%20atencion%20VIP" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark w-100 py-3 rounded-pill d-flex align-items-center justify-content-center gap-2">
@@ -298,11 +289,11 @@
                 <span data-i18n="portfolio.swipe_hint">Deslice horizontalmente para explorar</span>
             </div>
 
-            <!-- Carrusel Horizontal Dinámico (Pre-renderizado para Disponibilidad Inmediata & Enriquecido por JS) -->
+            <!-- Carrusel Horizontal Dinámico Coverflow (Pre-renderizado para Disponibilidad Inmediata & Enriquecido por JS) -->
             <div class="catalog-carousel-wrapper">
                 <div id="catalog-carousel" class="catalog-carousel">
                     <!-- Activo 1: Penthouse Burj Crown -->
-                    <div class="carousel-card-item" data-category="apartamentos">
+                    <div class="carousel-card-item is-active" data-category="apartamentos">
                         <article class="luxury-card h-100 d-flex flex-column" data-category="apartamentos">
                             <div class="card-img-wrapper position-relative">
                                 <img src="./assets/img - apartamento/APARTAMENTO_VENTA.jpg" alt="Sky Penthouse Burj Crown" loading="eager">
@@ -322,19 +313,18 @@
                                     <span>Downtown Dubái · EAU</span>
                                 </div>
                                 <h3 class="font-heading card-title h4 fw-bold mb-2">Sky Penthouse Burj Crown</h3>
-                                <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
-                                    <i class="bi bi-shield-check text-ruby me-1"></i> Piso 68 · 840 m² · 5 Suites · Piscina Infinity Privada
-                                </div>
-                                <p class="card-description small mb-4 flex-grow-1">
-                                    Residencia de triple altura con vistas directas de 360° al Burj Khalifa y la Ópera de Dubái. Acabados en mármol de Carrara y domótica Crestron.
-                                </p>
-                                <div class="card-actions pt-3 border-top border-light-subtle d-flex align-items-center gap-2 mt-auto">
-                                    <button class="btn btn-luxury flex-grow-1 btn-consult-vip" data-item-id="penthouse-downtown" data-item-title="Sky Penthouse Burj Crown" data-item-cat="apartamentos">
-                                        <i class="bi bi-file-earmark-lock2 me-1"></i> Solicitar Dossier VIP
-                                    </button>
-                                    <a href="https://wa.me/97148883372?text=Hola%20Feral%20Dub%C3%A1i%2C%20deseo%20solicitar%20el%20dossier%20confidencial%20y%20asignaci%C3%B3n%20privada%20del%20activo%3A%20%22Sky%20Penthouse%20Burj%20Crown%22." target="_blank" rel="noopener noreferrer" class="btn btn-wa-icon" title="WhatsApp VIP" aria-label="WhatsApp VIP">
-                                        <i class="bi bi-whatsapp"></i>
-                                    </a>
+                                <div class="card-expandable-details">
+                                    <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
+                                        <i class="bi bi-shield-check text-ruby me-1"></i> Piso 68 · 840 m² · 5 Suites · Piscina Infinity Privada
+                                    </div>
+                                    <p class="card-description small mb-4 flex-grow-1">
+                                        Residencia de triple altura con vistas directas de 360° al Burj Khalifa y la Ópera de Dubái. Acabados en mármol de Carrara y domótica Crestron.
+                                    </p>
+                                    <div class="card-actions pt-2 border-top border-light-subtle mt-auto">
+                                        <button class="btn btn-luxury w-100 btn-consult-vip" data-item-id="penthouse-downtown" data-item-title="Sky Penthouse Burj Crown" data-item-cat="apartamentos">
+                                            <i class="bi bi-file-earmark-lock2 me-1"></i> Solicitar Dossier VIP
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -361,19 +351,18 @@
                                     <span>Palm Jumeirah · Dubái</span>
                                 </div>
                                 <h3 class="font-heading card-title h4 fw-bold mb-2">Royal Palm Beachfront Villa</h3>
-                                <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
-                                    <i class="bi bi-shield-check text-ruby me-1"></i> Playa Privada · 1,120 m² · 6 Suites · Spa Privado
-                                </div>
-                                <p class="card-description small mb-4 flex-grow-1">
-                                    Acceso directo a playa privada sobre el Golfo Pérsico. Muelle para embarcaciones de recreo y arquitectura biofílica de vanguardia.
-                                </p>
-                                <div class="card-actions pt-3 border-top border-light-subtle d-flex align-items-center gap-2 mt-auto">
-                                    <button class="btn btn-luxury flex-grow-1 btn-consult-vip" data-item-id="penthouse-palm" data-item-title="Royal Palm Beachfront Villa" data-item-cat="apartamentos">
-                                        <i class="bi bi-file-earmark-lock2 me-1"></i> Solicitar Dossier VIP
-                                    </button>
-                                    <a href="https://wa.me/97148883372?text=Hola%20Feral%20Dub%C3%A1i%2C%20deseo%20solicitar%20el%20dossier%20confidencial%20y%20asignaci%C3%B3n%20privada%20del%20activo%3A%20%22Royal%20Palm%20Beachfront%20Villa%22." target="_blank" rel="noopener noreferrer" class="btn btn-wa-icon" title="WhatsApp VIP" aria-label="WhatsApp VIP">
-                                        <i class="bi bi-whatsapp"></i>
-                                    </a>
+                                <div class="card-expandable-details">
+                                    <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
+                                        <i class="bi bi-shield-check text-ruby me-1"></i> Playa Privada · 1,120 m² · 6 Suites · Spa Privado
+                                    </div>
+                                    <p class="card-description small mb-4 flex-grow-1">
+                                        Acceso directo a playa privada sobre el Golfo Pérsico. Muelle para embarcaciones de recreo y arquitectura biofílica de vanguardia.
+                                    </p>
+                                    <div class="card-actions pt-2 border-top border-light-subtle mt-auto">
+                                        <button class="btn btn-luxury w-100 btn-consult-vip" data-item-id="penthouse-palm" data-item-title="Royal Palm Beachfront Villa" data-item-cat="apartamentos">
+                                            <i class="bi bi-file-earmark-lock2 me-1"></i> Solicitar Dossier VIP
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -400,19 +389,18 @@
                                     <span>Dubai Harbour Marina</span>
                                 </div>
                                 <h3 class="font-heading card-title h4 fw-bold mb-2">Benetti Custom Transoceanic 65M</h3>
-                                <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
-                                    <i class="bi bi-shield-check text-ruby me-1"></i> Eslora 65 m · 6 Suites VIP · Helipuerto Touch-and-Go · Beach Club
-                                </div>
-                                <p class="card-description small mb-4 flex-grow-1">
-                                    Embarcación insignia con casco de acero naval, cubiertas de teca birmana, iluminación arquitectónica perimetral sumergida y autonomía transatlántica de 5,000 millas náuticas.
-                                </p>
-                                <div class="card-actions pt-3 border-top border-light-subtle d-flex align-items-center gap-2 mt-auto">
-                                    <button class="btn btn-luxury flex-grow-1 btn-consult-vip" data-item-id="superyacht-sanlorenzo" data-item-title="Benetti Custom Transoceanic 65M" data-item-cat="yates">
-                                        <i class="bi bi-file-earmark-lock2 me-1"></i> Solicitar Dossier VIP
-                                    </button>
-                                    <a href="https://wa.me/97148883372?text=Hola%20Feral%20Dub%C3%A1i%2C%20deseo%20solicitar%20el%20dossier%20confidencial%20y%20asignaci%C3%B3n%20privada%20del%20activo%3A%20%22Benetti%20Custom%20Transoceanic%2065M%22." target="_blank" rel="noopener noreferrer" class="btn btn-wa-icon" title="WhatsApp VIP" aria-label="WhatsApp VIP">
-                                        <i class="bi bi-whatsapp"></i>
-                                    </a>
+                                <div class="card-expandable-details">
+                                    <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
+                                        <i class="bi bi-shield-check text-ruby me-1"></i> Eslora 65 m · 6 Suites VIP · Helipuerto Touch-and-Go · Beach Club
+                                    </div>
+                                    <p class="card-description small mb-4 flex-grow-1">
+                                        Embarcación insignia con casco de acero naval, cubiertas de teca birmana, iluminación arquitectónica perimetral sumergida y autonomía transatlántica de 5,000 millas náuticas.
+                                    </p>
+                                    <div class="card-actions pt-2 border-top border-light-subtle mt-auto">
+                                        <button class="btn btn-luxury w-100 btn-consult-vip" data-item-id="superyacht-sanlorenzo" data-item-title="Benetti Custom Transoceanic 65M" data-item-cat="yates">
+                                            <i class="bi bi-file-earmark-lock2 me-1"></i> Solicitar Dossier VIP
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -439,19 +427,18 @@
                                     <span>Port Rashid · Dubái</span>
                                 </div>
                                 <h3 class="font-heading card-title h4 fw-bold mb-2">Ocean Explorer 50M Custom</h3>
-                                <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
-                                    <i class="bi bi-shield-check text-ruby me-1"></i> Eslora 50 m · 12 Huéspedes · Jacuzzi Panorámico · Garaje Doble
-                                </div>
-                                <p class="card-description small mb-4 flex-grow-1">
-                                    Ingeniería de vanguardia diseñada para expediciones de ultralujo, con estabilizadores giroscópicos de fondeo cero y acabados interiores en roble ahumado y titanio.
-                                </p>
-                                <div class="card-actions pt-3 border-top border-light-subtle d-flex align-items-center gap-2 mt-auto">
-                                    <button class="btn btn-luxury flex-grow-1 btn-consult-vip" data-item-id="ocean-explorer-50m" data-item-title="Ocean Explorer 50M Custom" data-item-cat="yates">
-                                        <i class="bi bi-file-earmark-lock2 me-1"></i> Solicitar Dossier VIP
-                                    </button>
-                                    <a href="https://wa.me/97148883372?text=Hola%20Feral%20Dub%C3%A1i%2C%20deseo%20solicitar%20el%20dossier%20confidencial%20y%20asignaci%C3%B3n%20privada%20del%20activo%3A%20%22Ocean%20Explorer%2050M%20Custom%22." target="_blank" rel="noopener noreferrer" class="btn btn-wa-icon" title="WhatsApp VIP" aria-label="WhatsApp VIP">
-                                        <i class="bi bi-whatsapp"></i>
-                                    </a>
+                                <div class="card-expandable-details">
+                                    <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
+                                        <i class="bi bi-shield-check text-ruby me-1"></i> Eslora 50 m · 12 Huéspedes · Jacuzzi Panorámico · Garaje Doble
+                                    </div>
+                                    <p class="card-description small mb-4 flex-grow-1">
+                                        Ingeniería de vanguardia diseñada para expediciones de ultralujo, con estabilizadores giroscópicos de fondeo cero y acabados interiores en roble ahumado y titanio.
+                                    </p>
+                                    <div class="card-actions pt-2 border-top border-light-subtle mt-auto">
+                                        <button class="btn btn-luxury w-100 btn-consult-vip" data-item-id="ocean-explorer-50m" data-item-title="Ocean Explorer 50M Custom" data-item-cat="yates">
+                                            <i class="bi bi-file-earmark-lock2 me-1"></i> Solicitar Dossier VIP
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -478,19 +465,18 @@
                                     <span>Dubai Marina Yacht Club</span>
                                 </div>
                                 <h3 class="font-heading card-title h4 fw-bold mb-2">Majesty Master Suite & Salon</h3>
-                                <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
-                                    <i class="bi bi-shield-check text-ruby me-1"></i> Interiorismo Hermes · Audio Focal Utopia · Cava Climatizada
-                                </div>
-                                <p class="card-description small mb-4 flex-grow-1">
-                                    Salón principal y camarote armador con ebanistería artesanal italiana, mamparas acústicas de doble acristalamiento y cocina de chef profesional.
-                                </p>
-                                <div class="card-actions pt-3 border-top border-light-subtle d-flex align-items-center gap-2 mt-auto">
-                                    <button class="btn btn-luxury flex-grow-1 btn-consult-vip" data-item-id="yacht-executive-interior" data-item-title="Majesty Master Suite & Salon" data-item-cat="yates">
-                                        <i class="bi bi-file-earmark-lock2 me-1"></i> Solicitar Dossier VIP
-                                    </button>
-                                    <a href="https://wa.me/97148883372?text=Hola%20Feral%20Dub%C3%A1i%2C%20deseo%20solicitar%20el%20dossier%20confidencial%20y%20asignaci%C3%B3n%20privada%20del%20activo%3A%20%22Majesty%20Master%20Suite%20%26%20Salon%22." target="_blank" rel="noopener noreferrer" class="btn btn-wa-icon" title="WhatsApp VIP" aria-label="WhatsApp VIP">
-                                        <i class="bi bi-whatsapp"></i>
-                                    </a>
+                                <div class="card-expandable-details">
+                                    <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
+                                        <i class="bi bi-shield-check text-ruby me-1"></i> Interiorismo Hermes · Audio Focal Utopia · Cava Climatizada
+                                    </div>
+                                    <p class="card-description small mb-4 flex-grow-1">
+                                        Salón principal y camarote armador con ebanistería artesanal italiana, mamparas acústicas de doble acristalamiento y cocina de chef profesional.
+                                    </p>
+                                    <div class="card-actions pt-2 border-top border-light-subtle mt-auto">
+                                        <button class="btn btn-luxury w-100 btn-consult-vip" data-item-id="yacht-executive-interior" data-item-title="Majesty Master Suite & Salon" data-item-cat="yates">
+                                            <i class="bi bi-file-earmark-lock2 me-1"></i> Solicitar Dossier VIP
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -517,19 +503,18 @@
                                     <span>DIFC Private Vault · Dubái</span>
                                 </div>
                                 <h3 class="font-heading card-title h4 fw-bold mb-2">Bugatti Chiron Super Sport 300+</h3>
-                                <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
-                                    <i class="bi bi-shield-check text-ruby me-1"></i> 8.0L W16 Quad-Turbo · 1,600 CV · 0-100 km/h: 2.4s · 440 km/h
-                                </div>
-                                <p class="card-description small mb-4 flex-grow-1">
-                                    Una de las 30 unidades mundiales en fibra de carbono expuesta con acentos Jet Orange. Mantenimiento fiduciario en bóveda climatizada con registro de kilometraje cero.
-                                </p>
-                                <div class="card-actions pt-3 border-top border-light-subtle d-flex align-items-center gap-2 mt-auto">
-                                    <button class="btn btn-luxury flex-grow-1 btn-consult-vip" data-item-id="bugatti-chiron-super-sport" data-item-title="Bugatti Chiron Super Sport 300+" data-item-cat="autos">
-                                        <i class="bi bi-file-earmark-lock2 me-1"></i> Solicitar Dossier VIP
-                                    </button>
-                                    <a href="https://wa.me/97148883372?text=Hola%20Feral%20Dub%C3%A1i%2C%20deseo%20solicitar%20el%20dossier%20confidencial%20y%20asignaci%C3%B3n%20privada%20del%20activo%3A%20%22Bugatti%20Chiron%20Super%20Sport%20300%2B%22." target="_blank" rel="noopener noreferrer" class="btn btn-wa-icon" title="WhatsApp VIP" aria-label="WhatsApp VIP">
-                                        <i class="bi bi-whatsapp"></i>
-                                    </a>
+                                <div class="card-expandable-details">
+                                    <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
+                                        <i class="bi bi-shield-check text-ruby me-1"></i> 8.0L W16 Quad-Turbo · 1,600 CV · 0-100 km/h: 2.4s · 440 km/h
+                                    </div>
+                                    <p class="card-description small mb-4 flex-grow-1">
+                                        Una de las 30 unidades mundiales en fibra de carbono expuesta con acentos Jet Orange. Mantenimiento fiduciario en bóveda climatizada con registro de kilometraje cero.
+                                    </p>
+                                    <div class="card-actions pt-2 border-top border-light-subtle mt-auto">
+                                        <button class="btn btn-luxury w-100 btn-consult-vip" data-item-id="bugatti-chiron-super-sport" data-item-title="Bugatti Chiron Super Sport 300+" data-item-cat="autos">
+                                            <i class="bi bi-file-earmark-lock2 me-1"></i> Solicitar Dossier VIP
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -556,107 +541,28 @@
                                     <span>Dubai Autodrome Private Suite</span>
                                 </div>
                                 <h3 class="font-heading card-title h4 fw-bold mb-2">Koenigsegg Jesko Attack Cockpit</h3>
-                                <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
-                                    <i class="bi bi-shield-check text-ruby me-1"></i> V8 Twin-Turbo 1,600 CV · Caja LST 9 Velocidades · Telemetría F1
-                                </div>
-                                <p class="card-description small mb-4 flex-grow-1">
-                                    Cabina con instrumentación digital SmartCluster giratoria, acabados en fibra de carbono forjada, titanio anodizado y tapicería en alcántara ignífuga.
-                                </p>
-                                <div class="card-actions pt-3 border-top border-light-subtle d-flex align-items-center gap-2 mt-auto">
-                                    <button class="btn btn-luxury flex-grow-1 btn-consult-vip" data-item-id="hypercar-cockpit-bespoke" data-item-title="Koenigsegg Jesko Attack Cockpit" data-item-cat="autos">
-                                        <i class="bi bi-file-earmark-lock2 me-1"></i> Solicitar Dossier VIP
-                                    </button>
-                                    <a href="https://wa.me/97148883372?text=Hola%20Feral%20Dub%C3%A1i%2C%20deseo%20solicitar%20el%20dossier%20confidencial%20y%20asignaci%C3%B3n%20privada%20del%20activo%3A%20%22Koenigsegg%20Jesko%20Attack%20Cockpit%22." target="_blank" rel="noopener noreferrer" class="btn btn-wa-icon" title="WhatsApp VIP" aria-label="WhatsApp VIP">
-                                        <i class="bi bi-whatsapp"></i>
-                                    </a>
+                                <div class="card-expandable-details">
+                                    <div class="card-specs small mb-3 pb-2 border-bottom border-light-subtle">
+                                        <i class="bi bi-shield-check text-ruby me-1"></i> V8 Twin-Turbo 1,600 CV · Caja LST 9 Velocidades · Telemetría F1
+                                    </div>
+                                    <p class="card-description small mb-4 flex-grow-1">
+                                        Cabina con instrumentación digital SmartCluster giratoria, acabados en fibra de carbono forjada, titanio anodizado y tapicería en alcántara ignífuga.
+                                    </p>
+                                    <div class="card-actions pt-2 border-top border-light-subtle mt-auto">
+                                        <button class="btn btn-luxury w-100 btn-consult-vip" data-item-id="hypercar-cockpit-bespoke" data-item-title="Koenigsegg Jesko Attack Cockpit" data-item-cat="autos">
+                                            <i class="bi bi-file-earmark-lock2 me-1"></i> Solicitar Dossier VIP
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </article>
                     </div>
                 </div>
+                <!-- Indicadores de Vitrina (Dots) -->
+                <div id="showcase-dots" class="showcase-indicators"></div>
             </div>
         </div>
     </main>
-
-    <hr class="luxury-divider">
-
-    <!-- ==========================================
-         SECCIÓN INSTITUCIONAL & AUTORIDAD ("ACERCA DE FERAL")
-         ========================================== -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <span class="section-tag" data-i18n="about.badge">Custodia Fiduciaria & Autoridad Institucional</span>
-                    <h2 class="font-heading section-title my-3" data-i18n="about.title">
-                        El Puente Fiduciario Hacia los Activos Más Codiciados de Dubái
-                    </h2>
-                    
-                    <p class="fs-5 fw-medium text-dark lh-base mb-3" data-i18n="about.lead">
-                        Feral Dubái fue creada para responder a una necesidad crítica de los inversores de alto patrimonio: navegar el mercado de ultralujo con total transparencia, seguridad jurídica y acceso exclusivo.
-                    </p>
-                    
-                    <p class="lh-lg mb-4" style="color: #4A4A4A;" data-i18n="about.desc1">
-                        Con sede operativa en el Dubai International Financial Centre (DIFC), actuamos como asesores fiduciarios independientes para familias de alto patrimonio (UHNWI) y Family Offices internacionales. No operamos como intermediarios convencionales; realizamos auditorías de titularidad, estructuración societaria y custodia contractual sobre cada activo.
-                    </p>
-                    
-                    <p class="lh-lg mb-5" style="color: #4A4A4A;" data-i18n="about.desc2">
-                        Más del 70% de las transacciones de gran escala en Dubái nunca se publican abiertamente. Feral ofrece acceso directo y discreto a estas oportunidades 'off-market', garantizando liquidaciones multimonedas seguras (USD, AED, EUR y Criptoactivos con escrow) y anonimato institucional.
-                    </p>
-
-                    <div class="d-flex flex-wrap gap-3">
-                        <a href="#concierge" class="btn btn-feral-cta" data-i18n="hero.cta_vip">
-                            <i class="bi bi-chat-left-text"></i> Solicitar Consulta Privada
-                        </a>
-                        <a href="#catalogo" class="btn btn-outline-dark px-4 py-2 rounded-pill" data-i18n="hero.cta_catalog">
-                            Explorar Colección
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Pilares de Autoridad Fiduciaria -->
-                <div class="col-lg-6">
-                    <div class="row g-4">
-                        <div class="col-12">
-                            <div class="pillar-card">
-                                <div class="pillar-icon">
-                                    <i class="bi bi-bank"></i>
-                                </div>
-                                <h4 class="font-heading h5 mb-2" data-i18n="about.pillar1_title">Seguridad Jurídica DIFC</h4>
-                                <p class="small mb-0" style="color: #555555;" data-i18n="about.pillar1_desc">
-                                    Contratos estructurados bajo el derecho anglosajón del DIFC, respaldados por tribunales internacionales independientes.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <div class="pillar-card">
-                                <div class="pillar-icon">
-                                    <i class="bi bi-shield-check"></i>
-                                </div>
-                                <h4 class="font-heading h5 mb-2" data-i18n="about.pillar2_title">Cuentas Escrow Certificadas</h4>
-                                <p class="small mb-0" style="color: #555555;" data-i18n="about.pillar2_desc">
-                                    Protección de fondos en depósitos fiduciarios aprobados por el Banco Central de los EAU y el Dubai Land Department.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <div class="pillar-card">
-                                <div class="pillar-icon">
-                                    <i class="bi bi-lock"></i>
-                                </div>
-                                <h4 class="font-heading h5 mb-2" data-i18n="about.pillar3_title">Protocolos Estrictos de NDA</h4>
-                                <p class="small mb-0" style="color: #555555;" data-i18n="about.pillar3_desc">
-                                    Máxima discreción en cada etapa, protegiendo la identidad patrimonial de nuestros clientes y coleccionistas.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <hr class="luxury-divider">
 
@@ -735,109 +641,7 @@
     <hr class="luxury-divider">
 
     <!-- ==========================================
-         SECCIÓN DESTACADA: CALCULADORA DE RENTABILIDAD & LEAD MAGNET (ALTO IMPACTO)
-         ========================================== -->
-    <section id="calculadora" class="calculator-section text-center">
-        <div class="container">
-            <span class="section-tag" data-i18n="calc.badge">Simulador Patrimonial · Lead Magnet</span>
-            <h2 class="font-heading section-title mt-2 text-white" data-i18n="calc.title">Simulador de Rentabilidad Fiduciaria & Ahorro Fiscal</h2>
-            <p class="section-desc" data-i18n="calc.desc">
-                Le invitamos a simular su inversión patrimonial estimada en activos prime de Dubái. Ajuste el capital y reciba una corrida financiera confidencial auditada bajo normativa DIFC.
-            </p>
-
-            <!-- Mensaje Asesor de Invitación Directa -->
-            <div class="calculator-advisor-pill mx-auto mb-4 mb-md-5 mt-3 text-center">
-                <i class="bi bi-shield-check text-warning me-2 fs-5"></i>
-                <span data-i18n="calc.advisor_note">Diseñado para clientes e inversores fiduciarios: simule sus parámetros y solicite su corrida financiera a medida con auditoría DIFC.</span>
-            </div>
-
-            <div class="calculator-card mx-auto text-start" id="investment-calculator" style="max-width: 1040px;">
-                <div class="row g-4 g-lg-5 align-items-center">
-                    <!-- Controles de Entrada -->
-                    <div class="col-lg-6">
-                        <!-- Slider de Capital -->
-                        <div class="mb-4">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <label class="fw-semibold small text-uppercase tracking-widest text-white" data-i18n="calc.label_amount">Monto de Inversión Estimado</label>
-                                <span class="fs-4 fw-bold font-heading" id="calc-amount-display" style="color: #F7E7C4 !important;">$5,000,000</span>
-                            </div>
-                            <input type="range" class="calc-slider" id="calc-amount-slider" min="1000000" max="25000000" step="500000" value="5000000">
-                            <div class="d-flex justify-content-between small text-white-50 mt-1">
-                                <span>$1,000,000 USD</span>
-                                <span>$25,000,000+ USD</span>
-                            </div>
-                        </div>
-
-                        <!-- Selector de Tipo de Activo -->
-                        <div class="mb-4">
-                            <label class="fw-semibold small text-uppercase tracking-widest text-white mb-2 d-block" data-i18n="calc.label_asset">Tipo de Activo Fiduciario</label>
-                            <select class="form-select luxury-input" id="calc-asset-type">
-                                <option value="penthouse" selected data-i18n="calc.opt_penthouse">Penthouses & Residencial Prime (Downtown / Palm)</option>
-                                <option value="yachts" data-i18n="calc.opt_yachts">Superyates & Chárter Privado de Alta Mar</option>
-                                <option value="cars" data-i18n="calc.opt_cars">Superdeportivos Bespoke & Colección</option>
-                                <option value="family" data-i18n="calc.opt_family">Family Office & Estructuración Integral DIFC</option>
-                            </select>
-                        </div>
-
-                        <!-- Horizonte Temporal -->
-                        <div class="mb-3">
-                            <label class="fw-semibold small text-uppercase tracking-widest text-white mb-2 d-block" data-i18n="calc.label_horizon">Horizonte Temporal de Inversión</label>
-                            <div class="d-flex gap-2">
-                                <button type="button" class="calc-year-btn flex-grow-1" data-years="3" data-i18n="calc.years_3">3 Años</button>
-                                <button type="button" class="calc-year-btn flex-grow-1 active" data-years="5" data-i18n="calc.years_5">5 Años</button>
-                                <button type="button" class="calc-year-btn flex-grow-1" data-years="10" data-i18n="calc.years_10">10 Años</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Resultados Dinámicos & Lead Magnet -->
-                    <div class="col-lg-6">
-                        <div class="calc-result-highlight mb-3">
-                            <span class="small text-uppercase fw-semibold d-block mb-1 text-white-50" data-i18n="calc.res_portfolio">Valor Total Proyectado de Cartera</span>
-                            <div class="calc-metric-val highlight" id="calc-portfolio-value">$8,655,000</div>
-                            <div class="small fw-semibold mt-1 d-flex align-items-center gap-1" style="color: #6BE89B;">
-                                <i class="bi bi-arrow-up-right-circle-fill"></i>
-                                <span data-i18n="calc.res_return">Retorno Total Estimado:</span>
-                                <span id="calc-total-return" class="ms-1">+$3,655,000</span>
-                            </div>
-                        </div>
-
-                        <div class="row g-2 mb-4">
-                            <div class="col-6">
-                                <div class="calc-result-box">
-                                    <span class="small text-white-50 d-block" style="font-size: 0.76rem;" data-i18n="calc.res_appreciation">Apreciación Capital</span>
-                                    <div class="fw-bold fs-6 mt-1 text-white" id="calc-appreciation">+$2,485,000</div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="calc-result-box">
-                                    <span class="small text-white-50 d-block" style="font-size: 0.76rem;" data-i18n="calc.res_yield">Rentas / Yield</span>
-                                    <div class="fw-bold fs-6 mt-1 text-white" id="calc-yield">+$1,170,000</div>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="calc-result-box border" style="background: rgba(128, 0, 32, 0.25); border-color: rgba(197, 160, 89, 0.4) !important;">
-                                    <span class="small text-white-50 d-block" style="font-size: 0.76rem;" data-i18n="calc.res_tax">Ahorro Fiscal en Dubái (0% vs Jurisdicciones 42% Tax)</span>
-                                    <div class="fw-bold fs-5 mt-1" id="calc-tax-savings" style="color: #F7E7C4;">$1,535,100</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Botón Disparador del Lead Magnet Modal -->
-                        <button type="button" class="btn btn-lead-magnet w-100 py-3 shadow" data-bs-toggle="modal" data-bs-target="#leadMagnetModal">
-                            <i class="bi bi-file-earmark-pdf-fill me-2"></i>
-                            <span data-i18n="calc.cta_lead">Descargar Corrida Financiera & Auditoría Completa (PDF)</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <hr class="luxury-divider">
-
-    <!-- ==========================================
-         SECCIÓN CONCIERGE VIP & EMBUDO DE CONVERSIÓN
+         SECCIÓN CONCIERGE VIP & EMBUDO DE CONVERSIÓN (PROTAGONISTA)
          ========================================== -->
     <section id="concierge" class="concierge-section">
         <div class="container concierge-container">
@@ -846,31 +650,31 @@
                     <!-- Información y Beneficios VIP -->
                     <div class="col-lg-6">
                         <span class="section-tag" data-i18n="concierge.badge">Atención Personalizada 24/7</span>
-                        <h2 class="font-heading display-6 fw-bold my-3" data-i18n="concierge.title">
+                        <h2 class="font-heading display-6 fw-bold my-3 text-white" data-i18n="concierge.title">
                             Inicie su Consulta Patrimonial Privada
                         </h2>
-                        <p class="fs-6 fw-light mb-4" style="color: #4A4A4A; line-height: 1.8;" data-i18n="concierge.desc">
+                        <p class="concierge-desc fs-6 fw-light mb-4" data-i18n="concierge.desc">
                             Nuestros directores de gestión en Downtown Dubai y DIFC responderán en menos de 2 horas hábiles bajo estricto acuerdo de confidencialidad (NDA).
                         </p>
                         
                         <ul class="list-unstyled small mt-4">
-                            <li class="mb-3 d-flex align-items-start gap-2">
-                                <span class="text-burgundy fs-5 lh-1">✓</span>
-                                <span style="color: #383838;" data-i18n="concierge.feat1">Estructuración legal y fiduciaria bajo estándar DIFC Common Law.</span>
+                            <li class="mb-3 d-flex align-items-start gap-2 concierge-feat-item">
+                                <i class="bi bi-shield-check text-warning fs-5 lh-1 flex-shrink-0"></i>
+                                <span data-i18n="concierge.feat1">Estructuración legal y fiduciaria bajo estándar DIFC Common Law.</span>
                             </li>
-                            <li class="mb-3 d-flex align-items-start gap-2">
-                                <span class="text-burgundy fs-5 lh-1">✓</span>
-                                <span style="color: #383838;" data-i18n="concierge.feat2">Inspecciones privadas VIP en Rolls-Royce o Superyate.</span>
+                            <li class="mb-3 d-flex align-items-start gap-2 concierge-feat-item">
+                                <i class="bi bi-shield-check text-warning fs-5 lh-1 flex-shrink-0"></i>
+                                <span data-i18n="concierge.feat2">Inspecciones privadas VIP en Rolls-Royce o Superyate.</span>
                             </li>
-                            <li class="d-flex align-items-start gap-2">
-                                <span class="text-burgundy fs-5 lh-1">✓</span>
-                                <span style="color: #383838;" data-i18n="concierge.feat3">Liquidación institucional en USD, AED, EUR y Criptoactivos con custodia escrow certificada.</span>
+                            <li class="d-flex align-items-start gap-2 concierge-feat-item">
+                                <i class="bi bi-shield-check text-warning fs-5 lh-1 flex-shrink-0"></i>
+                                <span data-i18n="concierge.feat3">Liquidación institucional en USD, AED, EUR y Criptoactivos con custodia escrow certificada.</span>
                             </li>
                         </ul>
 
                         <!-- Botón WhatsApp Directo -->
                         <div class="mt-4 pt-2">
-                            <a href="https://wa.me/97148883372?text=Hola%20Feral%20Dubai%2C%20deseo%20iniciar%20consulta%20VIP" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark py-3 px-4 rounded-pill d-inline-flex align-items-center justify-content-center gap-2">
+                            <a href="https://wa.me/97148883372?text=Hola%20Feral%20Dubai%2C%20deseo%20iniciar%20consulta%20VIP" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-concierge py-3 px-4 rounded-pill d-inline-flex align-items-center justify-content-center gap-2">
                                 <i class="bi bi-whatsapp text-success fs-5"></i>
                                 <span data-i18n="form.whatsapp_direct">Chatear de Inmediato por WhatsApp VIP</span>
                             </a>
@@ -903,47 +707,15 @@
                             <button type="submit" class="btn btn-feral-cta w-100 py-3" data-i18n="form.submit">
                                 <i class="bi bi-send"></i> Agendar Consulta Confidencial VIP
                             </button>
+                            <div class="concierge-legal-note text-center">
+                                <i class="bi bi-shield-lock me-1"></i> Asesoría confidencial protegida bajo NDA y jurisdicción DIFC Common Law.
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- ==========================================
-         MODAL LEAD MAGNET (CORRIDA FINANCIERA & AUDITORÍA)
-         ========================================== -->
-    <div class="modal fade" id="leadMagnetModal" tabindex="-1" aria-labelledby="leadMagnetModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content modal-luxury-content">
-                <div class="modal-header border-0 pb-0">
-                    <h3 class="font-heading h4 text-dark mb-0" id="leadMagnetModalLabel" data-i18n="lead.modal_title">
-                        Descargar Corrida Financiera Confidencial
-                    </h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-                <div class="modal-body py-3">
-                    <p class="small text-muted mb-4" data-i18n="lead.modal_desc">
-                        Para remitirle el desglose analítico en PDF con proyecciones fiduciarias detalladas y auditoría de titularidad, complete sus datos confidenciales:
-                    </p>
-                    <form id="calc-lead-form">
-                        <div class="mb-3">
-                            <input type="text" id="lead-name" class="form-control luxury-input" placeholder="Nombre Completo o Entidad Fiduciaria" data-i18n-placeholder="form.name_placeholder" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" id="lead-email" class="form-control luxury-input" placeholder="Correo Corporativo Confidencial" data-i18n-placeholder="form.email_placeholder" required>
-                        </div>
-                        <div class="mb-4">
-                            <input type="tel" id="lead-phone" class="form-control luxury-input" placeholder="Teléfono / WhatsApp (ej. +971... o +34...)" data-i18n-placeholder="form.phone_placeholder">
-                        </div>
-                        <button type="submit" class="btn btn-feral-cta w-100 py-3" data-i18n="lead.btn_submit">
-                            <i class="bi bi-send me-1"></i> Solicitar y Recibir Corrida Financiera
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- ==========================================
          MODAL DE CONFIRMACIÓN VIP
@@ -1016,121 +788,5 @@
 
     <!-- Script Modular Principal -->
     <script type="module" src="./js/main.js"></script>
-
-    <!-- Resilient Standalone Fallback Script (Garantiza funcionalidad 100% bajo file:// y servidores locales) -->
-    <script>
-      (function() {
-        document.addEventListener("DOMContentLoaded", function() {
-          var container = document.getElementById('catalog-carousel');
-          var prevBtn = document.getElementById('carousel-prev-btn');
-          var nextBtn = document.getElementById('carousel-next-btn');
-          var filterBtns = document.querySelectorAll('.category-filter-btn');
-
-          // Carousel Arrow Navigation
-          if (prevBtn && container) {
-            prevBtn.addEventListener('click', function() {
-              var card = container.querySelector('.carousel-card-item');
-              var width = card ? (card.offsetWidth + 24) : 340;
-              container.scrollBy({ left: -width, behavior: 'smooth' });
-            });
-          }
-
-          if (nextBtn && container) {
-            nextBtn.addEventListener('click', function() {
-              var card = container.querySelector('.carousel-card-item');
-              var width = card ? (card.offsetWidth + 24) : 340;
-              container.scrollBy({ left: width, behavior: 'smooth' });
-            });
-          }
-
-          // Category Tabs Filter (Pure DOM show/hide fallback)
-          if (filterBtns && filterBtns.length) {
-            filterBtns.forEach(function(btn) {
-              btn.addEventListener('click', function(e) {
-                var category = btn.getAttribute('data-category');
-                filterBtns.forEach(function(b) { b.classList.remove('active'); });
-                btn.classList.add('active');
-
-                if (container) {
-                  var items = container.querySelectorAll('.carousel-card-item');
-                  items.forEach(function(item) {
-                    var itemCat = item.getAttribute('data-category');
-                    if (category === 'todos' || itemCat === category) {
-                      item.style.display = '';
-                    } else {
-                      item.style.display = 'none';
-                    }
-                  });
-                  container.scrollLeft = 0;
-                }
-              });
-            });
-          }
-
-          // VIP Inquiry Button Handlers
-          document.addEventListener('click', function(e) {
-            var btn = e.target.closest('.btn-consult-vip');
-            if (btn) {
-              e.preventDefault();
-              var itemTitle = btn.getAttribute('data-item-title') || '';
-              var itemCat = btn.getAttribute('data-item-cat') || '';
-              var concierge = document.getElementById('concierge');
-              if (concierge) {
-                concierge.scrollIntoView({ behavior: 'smooth' });
-                var sel = document.getElementById('concierge-interest');
-                if (sel) {
-                  if (itemCat === 'apartamentos') sel.value = 'penthouse';
-                  else if (itemCat === 'yates') sel.value = 'yachts';
-                  else if (itemCat === 'autos') sel.value = 'cars';
-                }
-                var msg = document.getElementById('concierge-message');
-                if (msg) {
-                  msg.value = 'Solicito el dossier confidencial y asignación fiduciaria de: ' + itemTitle + '.';
-                  msg.focus();
-                }
-              }
-            }
-          });
-
-          // Calculator Fallback Interaction (for file:// protocol)
-          var slider = document.getElementById('calc-amount-slider');
-          var amountDisplay = document.getElementById('calc-amount-display');
-          var yearBtns = document.querySelectorAll('.calc-year-btn');
-          var portfolioVal = document.getElementById('calc-portfolio-value');
-          var totalReturnVal = document.getElementById('calc-total-return');
-          var taxSavingsVal = document.getElementById('calc-tax-savings');
-
-          function updateQuickCalc() {
-            if (!slider) return;
-            var val = parseFloat(slider.value) || 5000000;
-            if (amountDisplay) amountDisplay.textContent = '$' + Number(val).toLocaleString('en-US');
-            var years = 5;
-            yearBtns.forEach(function(b) {
-              if (b.classList.contains('active')) years = parseInt(b.getAttribute('data-years') || '5', 10);
-            });
-            var future = val * Math.pow(1 + 0.148, years);
-            var yieldTot = val * 0.078 * years;
-            var ret = (future - val) + yieldTot;
-            var tot = val + ret;
-            if (portfolioVal) portfolioVal.textContent = '$' + Math.round(tot).toLocaleString('en-US');
-            if (totalReturnVal) totalReturnVal.textContent = '+$' + Math.round(ret).toLocaleString('en-US');
-            if (taxSavingsVal) taxSavingsVal.textContent = '$' + Math.round(ret * 0.42).toLocaleString('en-US');
-          }
-
-          if (slider) {
-            slider.addEventListener('input', updateQuickCalc);
-          }
-          if (yearBtns && yearBtns.length) {
-            yearBtns.forEach(function(btn) {
-              btn.addEventListener('click', function() {
-                yearBtns.forEach(function(b) { b.classList.remove('active'); });
-                btn.classList.add('active');
-                updateQuickCalc();
-              });
-            });
-          }
-        });
-      })();
-    </script>
 </body>
 </html>
