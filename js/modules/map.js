@@ -227,7 +227,7 @@ function renderMapMarkers() {
               messageInput.value = lang === 'es'
                 ? `Solicito el dossier confidencial del activo geoespacial: ${itemTitle}.`
                 : `I request the confidential dossier for the geospatial asset: ${itemTitle}.`;
-              messageInput.focus();
+              messageInput.focus({ preventScroll: true });
             }
           }
         };

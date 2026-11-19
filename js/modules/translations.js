@@ -107,6 +107,21 @@ export const translations = {
     "insights.stat4_val": "100%",
     "insights.stat4_lbl": "Propiedad extranjera total en zonas Freehold con título de propiedad pleno e irrevocable.",
 
+    // Video Lifestyle Section (Imagínate Dubái)
+    "video.badge": "Cine Patrimonial · Formato Vertical Reel",
+    "video.title": "Imagínate Dubái: Donde el Capital se Encuentra con el Máximo Estatus",
+    "video.desc": "Más allá de la protección fiduciaria y la tasa impositiva cero, Dubái ofrece una calidad de vida que redefine el ultralujo internacional. Desde marinas de clase mundial hasta residencias de autor con helipuerto privado en Downtown.",
+    "video.feat1_title": "Seguridad Ciudadana #1 Global",
+    "video.feat1_desc": "Tranquilidad absoluta para su familia y patrimonio en el entorno más pacífico y neutral del mundo.",
+    "video.feat2_title": "Hub de Conectividad Estratégica",
+    "video.feat2_desc": "A menos de 8 horas de vuelo de Europa, Asia y África a través del aeropuerto líder mundial.",
+    "video.feat3_title": "Residencia Fiduciaria & Golden Visa",
+    "video.feat3_desc": "Estatus de residencia de 10 años respaldado por inversión inmobiliaria o estructuración fiduciaria DIFC.",
+    "video.unmute_cta": "Activar Sonido del Video",
+    "video.mute_cta": "Silenciar Audio",
+    "video.advisory_cta": "Agendar Consulta",
+    "video.expand_label": "Ampliar",
+
     // Concierge Section (Conversion Funnel)
     "concierge.badge": "Atención Personalizada 24/7",
     "concierge.title": "Inicie su Consulta Patrimonial Privada",
@@ -244,6 +259,21 @@ export const translations = {
     "insights.stat3_lbl": "Guaranteed Golden Visa residency for the investor, immediate family, and key executive personnel.",
     "insights.stat4_val": "100%",
     "insights.stat4_lbl": "Total foreign freehold property ownership with complete and irrevocable title deed.",
+
+    // Video Lifestyle Section (Picture Dubai)
+    "video.badge": "Cinematic Lifestyle · 9:16 Vertical Reel",
+    "video.title": "Picture Dubai: Where Capital Meets Supreme Prestige",
+    "video.desc": "Beyond fiduciary asset governance and zero personal taxation, Dubai delivers a caliber of living that redefines international ultra-luxury. From world-class marina berths to trophy sky residences in Downtown.",
+    "video.feat1_title": "#1 Global Safety & Peace of Mind",
+    "video.feat1_desc": "Absolute security for your family, legacy, and capital in the world's most stable and neutral jurisdiction.",
+    "video.feat2_title": "Global Gateway & Premier Hub",
+    "video.feat2_desc": "Within 8 hours flight time from two-thirds of the world's wealth centers via Dubai International Airport.",
+    "video.feat3_title": "Fiduciary Residency & Golden Visa",
+    "video.feat3_desc": "10-year Golden Visa residency backed by prime real estate acquisition or bespoke DIFC trust framework.",
+    "video.unmute_cta": "Enable Video Audio",
+    "video.mute_cta": "Mute Video Audio",
+    "video.advisory_cta": "Schedule Consultation",
+    "video.expand_label": "Expand",
 
     // Concierge Section (Conversion Funnel)
     "concierge.badge": "24/7 Bespoke Attention",

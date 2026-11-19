@@ -269,13 +269,30 @@ function setupCategoryTabs() {
   tabButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
+      e.stopPropagation();
       tabButtons.forEach(b => b.classList.remove('active'));
       const target = e.currentTarget;
       target.classList.add('active');
 
       activeCategory = target.getAttribute('data-category') || 'todos';
       activeIndex = 0;
+
+      // Maintain stable height during re-render to avoid layout shift / scroll jump
+      const container = document.getElementById('catalog-carousel');
+      if (container) {
+        const prevH = container.offsetHeight;
+        if (prevH > 100) {
+          container.style.minHeight = `${prevH}px`;
+        }
+      }
+
       displayCarouselItems(activeCategory);
+
+      if (container) {
+        requestAnimationFrame(() => {
+          container.style.minHeight = '';
+        });
+      }
     });
   });
 }
@@ -287,6 +304,7 @@ function setupCarouselArrows() {
   if (prevBtn) {
     prevBtn.onclick = (e) => {
       e.preventDefault();
+      e.stopPropagation();
       pauseAutoRotate();
       navigateShowcase(-1);
       resumeAutoRotateAfterDelay();
@@ -296,6 +314,7 @@ function setupCarouselArrows() {
   if (nextBtn) {
     nextBtn.onclick = (e) => {
       e.preventDefault();
+      e.stopPropagation();
       pauseAutoRotate();
       navigateShowcase(1);
       resumeAutoRotateAfterDelay();
@@ -376,7 +395,7 @@ export function displayCarouselItems(categoryKey) {
             </p>
 
             <div class="card-actions pt-2 border-top border-light-subtle mt-auto">
-              <button class="btn btn-luxury w-100 btn-consult-vip" data-item-id="${item.id}" data-item-title="${title}" data-item-cat="${item.category}">
+              <button type="button" class="btn btn-luxury w-100 btn-consult-vip" data-item-id="${item.id}" data-item-title="${title}" data-item-cat="${item.category}">
                 <i class="bi bi-file-earmark-lock2 me-1"></i> ${consultText}
               </button>
             </div>
@@ -385,11 +404,12 @@ export function displayCarouselItems(categoryKey) {
       </article>
     `;
 
-    // Click on card: Focus & center card if not active
+    // Click on card: Focus & center card in horizontal container without window jump
     cardWrapper.addEventListener('click', (e) => {
       if (e.target.closest('.btn-consult-vip')) {
         return; // Handled separately
       }
+      e.preventDefault();
       if (activeIndex !== index) {
         pauseAutoRotate();
         focusCardByIndex(index, true);
@@ -409,11 +429,12 @@ export function displayCarouselItems(categoryKey) {
   // Setup Mobile Horizontal Scroll Observation
   setupScrollObserver(container);
 
-  // Focus initial card
-  focusCardByIndex(activeIndex, false);
+  // Set initial scroll without triggering window scroll jump
+  container.scrollLeft = 0;
+  updateShowcaseDots(activeIndex);
 
-  // Start auto-rotation
-  startAutoRotate(filteredItems.length);
+  // Setup Viewport Observer: pause autoRotate when outside view
+  setupViewportObserver(container);
 
   // Attach click events to VIP buttons
   container.querySelectorAll('.btn-consult-vip').forEach(btn => {
@@ -424,6 +445,18 @@ export function displayCarouselItems(categoryKey) {
       const itemCat = btn.getAttribute('data-item-cat');
       handleVipInquiry(itemTitle, itemCat);
     };
+  });
+}
+
+function scrollContainerToCard(container, card, smoothScroll = true) {
+  if (!container || !card) return;
+  const cardLeft = card.offsetLeft;
+  const cardWidth = card.offsetWidth;
+  const containerWidth = container.clientWidth;
+  const targetScrollLeft = cardLeft - (containerWidth / 2) + (cardWidth / 2);
+  container.scrollTo({
+    left: Math.max(0, targetScrollLeft),
+    behavior: smoothScroll ? 'smooth' : 'auto'
   });
 }
 
@@ -443,7 +476,7 @@ function focusCardByIndex(index, smoothScroll = true) {
     if (idx === index) {
       card.classList.add('is-active');
       if (smoothScroll) {
-        card.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        scrollContainerToCard(container, card, true);
       }
     } else {
       card.classList.remove('is-active');
@@ -601,7 +634,26 @@ function handleVipInquiry(itemTitle, itemCat) {
         ? `Solicito el dossier confidencial e información de asignación privada sobre: ${itemTitle}.`
         : `I request the confidential dossier and private allocation details regarding: ${itemTitle}.`;
       
-      messageInput.focus();
+      messageInput.focus({ preventScroll: true });
     }
   }
+}
+
+let catalogObserver = null;
+function setupViewportObserver(container) {
+  if (typeof IntersectionObserver === 'undefined') return;
+  if (catalogObserver) catalogObserver.disconnect();
+
+  catalogObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const totalCards = container.querySelectorAll('.carousel-card-item').length;
+        startAutoRotate(totalCards);
+      } else {
+        stopAutoRotate();
+      }
+    });
+  }, { threshold: 0.15 });
+
+  catalogObserver.observe(container);
 }

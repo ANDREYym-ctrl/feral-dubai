@@ -6,6 +6,8 @@ import { renderCatalog } from './modules/renderCatalog.js';
 import { setLanguage, getCurrentLang, updateStaticTexts, t } from './modules/translations.js';
 import { initMap } from './modules/map.js';
 import { initCalculator } from './modules/calculator.js';
+import { initHeroFanShowcase } from './modules/heroFanShowcase.js';
+import { initLifestyleVideo } from './modules/lifestyleVideo.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Feral Dubái: Inicializando plataforma fiduciaria de ultralujo...");
@@ -13,22 +15,28 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1. Initialize Translations
   initLanguage();
 
-  // 2. Initialize Dynamic Carousel
+  // 2. Initialize Hero Tiered Fan Showcase (Vitrina Escalonada Abanico)
+  initHeroFanShowcase();
+
+  // 3. Initialize Dynamic Portfolio Carousel (Zero-Jump Architecture)
   renderCatalog();
 
-  // 3. Initialize Interactive GPS Map (Leaflet.js)
+  // 4. Initialize Interactive GPS Map (Leaflet.js)
   initMap();
 
-  // 4. Initialize ROI Calculator (Lead Magnet)
+  // 5. Initialize Lifestyle Vertical Video (9:16 Reel Player)
+  initLifestyleVideo();
+
+  // 6. Initialize ROI Calculator (Lead Magnet)
   initCalculator();
 
-  // 5. Navbar scroll effect
+  // 7. Navbar scroll effect
   initNavbarScroll();
 
-  // 6. Mobile Offcanvas Auto-Close
+  // 8. Mobile Offcanvas Auto-Close
   initMobileNav();
 
-  // 7. Concierge VIP Form Handler
+  // 9. Concierge VIP Form Handler
   initConciergeForm();
 });
 
